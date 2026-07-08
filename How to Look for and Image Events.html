@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronomical Events</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+        .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+    <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header>
+    
+<h1 style="text-align: center; padding-top: 10px;"><strong>HOW TO LOOK FOR AND IMAGE EVENTS</strong></h1>
+<div class="container">
+    <div class="box">
+        <h2><strong>LOOKING FOR EVENTS</strong></h2>
+        <p>Obviously, different events take place at different times during the day/night and in different positions of the sky. The most important thing is to know when events are occuring (you can find that out <a href="2026Events.html">here!</a>). Often, the best time to view events is right after sunset/right before sunrise or in the middle of the night. This can make planets or objects at the peak of their visibility. If the event is most visible just after sunset, it will most likely be in the western sky, and eastern if right before sunrise. If in the middle of the night, it is usually high overhead. Urban areas aren't the greatest for viewing the night sky. Try to find a flat, dark space with minimal light pollution, such as a field. Let your eyes adjust to the darkness - this helps your eyes pick up faint objects, and avoid looking at your phone (some devices and apps have 'night mode' which turns the screen dark or red - these colours protect night vision). And always check the peak time of events (you can also find that on AstroHub!). Use all of these together, and you will have the best chance of clearly viewing any astronomical event.</p>
+    </div>
+        <div class="image-block">
+            <img src="https://www.hammockuniverse.com/cdn/shop/articles/HammockU-stargazing_1200x.jpg?v=1678896365" alt="Stargazing">
+            <div class="caption">Stargazing is a simple yet rewarding experience.</div>
+        </div>
+
+    <div class="box">
+        <h2><strong>>IMAGE EVENTS</strong></h2>
+        <p>There are many options to image events to remember them forever or share them with your friends. The easiest is with your phone. Use a tripod or rest it on something stable. On iPhones, tap the top right-hand corner and turn it to night mode - here you can adjust the exposure, a higher exposure captures more light from faint and distant objects - change it depending on what you are trying to see. Make sure your brightness is down, and you don't zoom in too much, else it will become too blurry and more difficult to centre.</p>
+        <p>The second option is to use a DSLR or mirrorless camera. These have better quality and control. Put your settings to ISO 800-3200, shutter to 10-25 seconds, and aperture as low as possible. This will let you capture stars clearly, the Milky Way, and showers.</p>
+        <p>The third option is to use telescope imaging - attach a camera or phone to a telescope, and track objects as Earth rotates. This allows you to capture planets in detail and deep-space objects.</p>
+        <p>Remember to never look directly at the sun without adequate protection, this can cause irreparable damage to your eyes.</p>
+        <p>You don't need expensive equipment to explore the sky, just curiosity, patience, and a clear night.</p>
+    </div>
+        <div class="image-block">
+            <img src="data:image/jpeg;base64,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" alt="Aurora">
+            <div class="caption">Auroras are often imaged using long exposure time.</div>
+        </div>
+</div>
+</body>

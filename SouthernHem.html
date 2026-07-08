@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Southern Hemisphere</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- BOX DROP DOWNS ---------- */
+.showmore-box {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.showmore-box input[type="checkbox"] {
+    display: none;
+}
+
+.showmore-button {
+    display: inline-block;
+    background-color: #A08CCF;
+    color: #140047;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.showmore-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.showmore-box input[type="checkbox"]:checked ~ .showmore-content {
+    max-height: 700px; /* adjust depending on how much content you have */
+}
+
+.showmore-box input[type="checkbox"]:checked + .showmore-button::after {
+    content: " (Show Less)";
+}
+
+.showmore-button::after {
+    content: "";
+}
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3, p, li, ul {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; 
+        padding-bottom: 5px;}
+    h3 { font-size: 18px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    a, button{text-align: center;}
+
+    /* ---------- LAYOUT ---------- */
+    .container {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 100%px;
+        max-width: 400px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+
+    /* ----------- INTERACTIVE ------------ */
+     .star {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: rgb(183, 45, 45), transparent; 
+        border-radius: 50%;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+    }
+
+    .star:hover {
+        box-shadow: 0 0 4px 2px #93c0f6;
+    }
+
+    .tooltip {
+        position: absolute;
+        background: rgba(253, 196, 255, 0.8);
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        white-space: nowrap;
+        transform: translate(-50%, -140%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+    }
+
+    .star:hover .tooltip {opacity: 1;}
+
+    .constellation-container {
+        position: relative;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .constellation-img {
+        width: 100%;
+        border-radius: 10px;
+    }
+</style>
+</head>
+
+<body>
+<header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+</header>
+
+<div class="container">
+    <h1 style="font-size: 50px; text-align: center;"><strong>SOUTHERN HEMISPHERE</strong></h1>
+<h1>Most Visible &#127775 &#127775 &#127775</h1> 
+
+<!-- ORION --> 
+<section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-1">         
+        <h2>Orion</h2>  
+    <div class="constellation-container">        
+        <div class="image-block">             
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Orion_IAU.svg/960px-Orion_IAU.svg.png" alt="Orion constellation diagram">         
+            <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Betelgeuse</div></div>
+            <div class="star" style="top: 65.7%; left: 54.9%;"><div class="tooltip">Rigel</div></div>
+            <div class="star" style="top: 44.6%; left: 52%;"><div class="tooltip">Bellatrix</div></div>
+            <div class="star" style="top: 56.3%; left: 46.8%;"><div class="tooltip">Alnitak</div></div>
+            <div class="star" style="top: 55.3%; left: 48%;"><div class="tooltip">Alnilam</div></div>
+            <div class="star" style="top: 54%; left: 49.5%;"><div class="tooltip">Mintaka</div></div>
+            <div class="star" style="top: 68%; left: 45%;"><div class="tooltip">Saiph</div></div>
+        </div>  
+    </div>  
+
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Hunter” / “The Saucepan”</li>             
+            <li><strong>Brightest star:</strong> Betelgeuse — an unstable red supergiant ~425 ly away, usually magnitude ~0.5 but known to dim dramatically</li>             
+            <li><strong>Location:</strong> Southern sky</li>             
+            <li><strong>Best months:</strong> October-March (peak in January)</li>             
+            <li><strong>How to find it:</strong> Look for three bright stars in a straight line (Orion's Belt), with four bright stars forming a large rectangle around them</li>         
+        </ul>       
+
+        <label for="toggle-more-1" class="showmore-button">Show More</label>          
+        <div class="showmore-content">            
+            <h3>Background & Mythology</h3>             
+            <p>Orion appears in Babylonian star catalogues from around 1200 BCE, where it represented a celestial shepherd or warrior. In Greek mythology, Orion was a giant hunter placed among the stars by Zeus. Ancient Egyptians associated Orion with Osiris, god of the afterlife, and the alignment of the pyramids at Giza is thought to reflect the Belt stars. In Indigenous Australian astronomy, Orion's Belt and Sword often represent three brothers or hunters carrying spears (Yolŋ), or ancestral figures tied to seasonal food cycles. In Māori astronomy, the Belt is known as Tautoru and marks seasonal change.</p>              
+            <h3>Astronomy</h3>             
+            <p>Orion contains several major stars: Betelgeuse (red supergiant), Rigel (blue supergiant ~860 ly, magnitude ~0.1), Bellatrix (blue giant ~250 ly), and Saiph (blue supergiant ~650 ly). The constellation lies along the Orion Arm of the Milky Way, making it rich in star‐forming regions.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Orion contains some of the most significant deep-sky objects in the sky: the Orion Nebula (M42), a massive star-forming region visible to the naked eye; the Horsehead Nebula, a dark nebula silhouetted against bright gas; and Barnard's Loop, a huge arc of glowing hydrogen gas.</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Orion appears in cultures worldwide — Greek, Egyptian, Norse, Hindu, Māori, and many Indigenous Australian traditions — often representing hunters, warriors, or ancestral beings.</p>         
+        </div>     
+    </div> 
+</section> 
+
+<!-- SCORPIUS --> 
+ <section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-2">         
+        <h2>Scorpius</h2>  
+        <div class="constellation-container">      
+            <div class="image-block">             
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Scorpius_IAU.svg/960px-Scorpius_IAU.svg.png" alt="Scorpius constellation diagram">         
+                <div class="star" style="top: 44.86%; left: 54.3%;"><div class="tooltip">Antares</div></div>
+                <div class="star" style="top: 61.2%; left: 38.4%;"><div class="tooltip">Shaula</div></div>
+                <div class="star" style="top: 69.93%; left: 38.42%;"><div class="tooltip">Sargas</div></div>
+                <div class="star" style="top: 44.77%; left: 62.4%;"><div class="tooltip">Acrab</div></div>
+                <div class="star" style="top: 43.47%; left: 56.53%;"><div class="tooltip">Alniyat</div></div>
+                <div class="star" style="top: 39.8%; left: 62.4%;"><div class="tooltip">Dschubba</div></div>
+                <div class="star" style="top: 35.4%; left: 61.44%;"><div class="tooltip">Graffias</div></div>
+                <div class="star" style="top: 61.4%; left: 39%;"><div class="tooltip">Lesath</div></div>
+            </div>       
+        </div>      
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Scorpion” (Zodiac)</li>             
+            <li><strong>Brightest star:</strong> Antares — a red supergiant ~170 ly away, magnitude ~1.0, deep orange colour</li>             
+            <li><strong>Location:</strong> Near Libra and Sagittarius</li>             
+            <li><strong>Best months:</strong> May-August (peak in July)</li>             
+            <li><strong>How to find it:</strong> Look for two triangles connected by a curved line of stars forming the tail</li>         
+        </ul>          
+        <label for="toggle-more-2" class="showmore-button">Show More</label>          
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Scorpius appears in Sumerian records as early as 2000 BCE. In Greek mythology, it represents the scorpion sent to kill Orion, explaining why the two constellations never appear in the sky at the same time. In Polynesian navigation, parts of Scorpius form the “Fishhook of Maui.” In Indigenous Australian astronomy, Scorpius is often seen as a crocodile, eagle, or ancestral figure depending on the Nation.</p>              
+            <h3>Astronomy</h3>             
+            <p>Key stars include Antares (red supergiant), Shaula (blue subgiant ~570 ly), and Sargas (yellow giant ~270 ly). The constellation lies along the Milky Way, making it rich in star fields.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Notable objects include the Butterfly Cluster (M6) and the Ptolemy Cluster (M7), both bright open clusters easily visible in dark skies.</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Scorpius is central in Greek, Polynesian, and Indigenous Australian sky traditions, often marking seasonal change and navigation.</p>         
+        </div>     
+    </div> 
+</section> 
+
+<!-- SAGITTARIUS --> 
+ <section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-3">         
+        <h2>Sagittarius</h2> 
+        <div class="constellation-container">         
+            <div class="image-block">             
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Sagittarius_IAU.svg/960px-Sagittarius_IAU.svg.png" alt="Sagittarius constellation diagram">         
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Nunki</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Kaus Borealis</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Kaus Australis</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Kaus Media</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Acsella</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Alnasl</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Rukbat</div></div>
+                <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Arkab Prior</div></div>
+            </div>    
+        </div>   
+
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Archer”</li>             
+            <li><strong>Brightest star:</strong> Kaus Australis — a blue-white giant ~140 ly away, magnitude ~1.8</li>             
+            <li><strong>Location:</strong> Toward the densest part of the Milky Way</li>             
+            <li><strong>Best months:</strong> July-August</li>             
+            <li><strong>How to find it:</strong> Look for the “teapot” shape or a central rhombus with curved arms</li>         
+        </ul>          
+        <label for="toggle-more-3" class="showmore-button">Show More</label>          
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Sagittarius was recorded by the Babylonians as the god Pabilsag, a centaur-like archer. In Greek mythology, it is associated with Crotus, the satyr companion of the Muses. In Māori astronomy, parts of Sagittarius form the bow of Tautoru's hunting figure. Indigenous Australian interpretations focus on the bright Milky Way region rather than the Western constellation shape.</p>              
+            <h3>Astronomy</h3>             
+            <p>Notable stars include Kaus Australis (blue-white giant) and Nunki (blue subgiant ~230 ly). Sagittarius lies toward the Galactic Centre, making it one of the richest regions of the sky.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Significant objects include Sagittarius A*, the supermassive black hole at the centre of the Milky Way (~4 million solar masses), the Lagoon Nebula (M8), and the Trifid Nebula (M20).</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Sagittarius is important in Greek, Babylonian, and Polynesian traditions, and its region of the sky is central to many Indigenous Australian stories about the Milky Way.</p>         
+        </div>     
+    </div> 
+</section>  
+
+<!-- CRUX --> 
+ <section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-4">         
+        <h2>Crux</h2>         
+        <div class="image-block">             
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Crux_IAU.svg/960px-Crux_IAU.svg.png" alt="Crux constellation diagram">         
+        </div>          
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Southern Cross”</li>             
+            <li><strong>Brightest star:</strong> Acrux — a blue-white multiple star system ~320 ly away, magnitude ~1.3</li>             
+            <li><strong>Location:</strong> Southern sky, near Centaurus</li>             
+            <li><strong>Best months:</strong> Visible most of the year; highest in autumn</li>             
+            <li><strong>How to find it:</strong> Look for a small cross shape; use the two bright pointer stars in Centaurus</li>         
+        </ul>          
+        <label for="toggle-more-4" class="showmore-button">Show More</label>          
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Crux was recognised by Ancient Greek sailors but later fell below the horizon for Mediterranean observers due to precession. It was rediscovered by European navigators in the 1500s. In Indigenous Australian astronomy, Crux is deeply significant — appearing in stories from the Noongar, Kamilaroi, Yolŋ, and many other Nations. In Māori astronomy, it is known as Te Punga, the anchor of the great sky canoe.</p>              
+            <h3>Astronomy</h3>             
+            <p>Key stars include Acrux (blue-white multiple system), Mimosa (blue-white giant ~280 ly), and Gacrux (red giant ~88 ly). Crux lies along the Milky Way, making it rich in star fields.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Significant objects include the Jewel Box Cluster (NGC 4755), one of the most colourful open clusters, and the Coalsack Nebula, a prominent dark nebula.</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Crux is central to navigation in the Southern Hemisphere and appears in the flags of Australia, New Zealand, Papua New Guinea, and Brazil. It is one of the most important constellations in Indigenous Australian sky knowledge.</p>         
+        </div>     
+    </div> 
+</section>  
+
+<!-- CENTAURUS --> 
+<section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-5">         
+        <h2>Centaurus</h2>          
+        <div class="image-block">             
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Centaurus_IAU.svg/960px-Centaurus_IAU.svg.png" alt="Centaurus constellation diagram">         
+        </div>          
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Centaur”</li>             
+            <li><strong>Brightest star:</strong> Alpha Centauri — a triple star system 4.37 ly away, includes a Sun-like star and a red dwarf, magnitude ~0.0</li>             
+            <li><strong>Location:</strong> Southern sky, surrounds Crux</li>             
+            <li><strong>Best months:</strong> April-June</li>             
+            <li><strong>How to find it:</strong> Look for the two bright pointer stars near Crux</li>         
+        </ul>          
+        <label for="toggle-more-5" class="showmore-button">Show More</label>         
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Centaurus was known to the Babylonians and later adopted by the Greeks, who associated it with Chiron, the wise centaur. In Polynesian navigation, its bright stars were used for open-ocean wayfinding. Indigenous Australian interpretations vary, often focusing on the bright pointer stars as part of larger Milky Way narratives.</p>              
+            <h3>Astronomy</h3>             
+            <p>Key stars include Alpha Centauri (closest star system to Earth) and Beta Centauri (Hadar), a blue-white giant ~390 ly away. The constellation spans a large region of the southern sky.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Significant objects include Omega Centauri, the largest and brightest globular cluster in the Milky Way, and Centaurus A, a powerful radio galaxy with a distinctive dust lane.</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Centaurus is important in Greek, Polynesian, and Indigenous Australian traditions, often tied to navigation and seasonal change.</p>        
+        </div>     
+    </div> 
+</section>  
+
+ <!-- CARINA --> 
+  <section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-6">         
+        <h2>Carina</h2>          
+        <div class="image-block">             
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carina_IAU.svg/960px-Carina_IAU.svg.png" alt="Carina constellation diagram">         
+        </div>          
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Keel of a Ship” (formerly part of Argo Navis)</li>             
+            <li><strong>Brightest star:</strong> Canopus — a white supergiant ~210 ly away, magnitude ~-0.7</li>             
+            <li><strong>Location:</strong> Southern sky, along the Milky Way</li>             
+            <li><strong>Best months:</strong> January-March</li>            
+            <li><strong>How to find it:</strong> Look for Canopus, a very bright slightly yellow-white star below Sirius</li>         
+        </ul>          
+        <label for="toggle-more-6" class="showmore-button">Show More</label>          
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Carina was once part of the massive Greek constellation Argo Navis, representing Jason's ship. It was divided into Carina, Puppis, and Vela by astronomer Nicolas Lacaille in the 18th century. In Indigenous Australian astronomy, stars in this region often form part of the Emu in the Sky or other Milky Way figures.</p>              
+            <h3>Astronomy</h3>             
+            <p>Carina contains Canopus, the second-brightest star in the night sky. It also contains Eta Carinae, a highly unstable luminous blue variable star system undergoing massive eruptions.</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>The Carina Nebula (NGC 3372) is one of the largest star‐forming regions in the Milky Way, containing the Keyhole Nebula and Eta Carinae. It is brighter and larger than the Orion Nebula.</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Carina's stars appear in Greek, Polynesian, and Indigenous Australian traditions, often forming parts of larger sky figures rather than a single constellation.</p>         
+        </div>     
+    </div> 
+</section>  
+
+<!-- CANIS MAJOR --> 
+<section class="container">     
+    <div class="showmore-box">         
+        <input type="checkbox" id="toggle-more-7">         
+        <h2>Canis Major</h2>          
+        <div class="image-block">             
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Canis_Major_IAU.svg/960px-Canis_Major_IAU.svg.png" alt="Canis Major constellation diagram">         
+        </div>          
+        <ul class="visible-info">             
+            <li><strong>Nickname:</strong> “The Greater Dog”</li>             
+            <li><strong>Brightest star:</strong> Sirius — a white main-sequence star ~8.6 ly away, magnitude −1.46, the brightest star in the night sky</li>             
+            <li><strong>Location:</strong> Below Orion</li>             
+            <li><strong>Best months:</strong> January-March</li>             
+            <li><strong>How to find it:</strong> Follow Orion's Belt downward to Sirius</li>         
+        </ul>          
+        <label for="toggle-more-7" class="showmore-button">Show More</label>          
+        <div class="showmore-content">             
+            <h3>Background & Mythology</h3>             
+            <p>Canis Major was recognised by the Greeks as one of Orion's hunting dogs. In Ancient Egypt, the heliacal rising of Sirius marked the flooding of the Nile and the start of the new year. In Polynesian navigation, Sirius (Takurua) is a major seasonal marker. In Indigenous Australian astronomy, Sirius appears in stories about seasonal change and ancestral beings.</p>              
+            <h3>Astronomy</h3>             
+            <p>Sirius is a binary system consisting of Sirius A (white star) and Sirius B (white dwarf). Other notable stars include Adhara (blue giant ~430 ly) and Wezen (yellow-white supergiant ~1,600 ly).</p>              
+            <h3>Deep-Sky Objects</h3>             
+            <p>Canis Major contains the Canis Major Overdensity, a debated dwarf galaxy currently merging with the Milky Way. It also hosts the open cluster Messier 41 (M41), visible to the naked eye, and the emission nebula NGC 2359 (Thor's Helmet Nebula).</p>              
+            <h3>Cultural Significance</h3>             
+            <p>Canis Major is significant in many cultures worldwide, symbolising loyalty, hunting, and seasonal cycles. It appears in Greek, Egyptian, Polynesian, and Indigenous Australian traditions, often linked to Orion and seasonal changes.</p>         
+        </div>     
+    </div> 
+</section>
+
+<!-- TAURUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-8">
+        <h2>Taurus</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Taurus_IAU.svg/960px-Taurus_IAU.svg.png" alt="Taurus constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Bull” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Aldebaran — an orange giant ~65 ly away, magnitude ~0.9</li>
+            <li><strong>Location:</strong> Near Orion and the Pleiades</li>
+            <li><strong>Best months:</strong> November-February</li>
+            <li><strong>How to find it:</strong> Look for a V-shaped cluster of stars with bright orange Aldebaran at one end</li>
+        </ul>
+        <label for="toggle-more-8" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Taurus is one of the oldest recorded constellations, appearing in Babylonian astronomy over 4,000 years ago. In Greek mythology, it represents Zeus disguised as a bull. In many cultures, Taurus was associated with strength, fertility, and agriculture.</p>
+            <h3>Astronomy</h3>
+            <p>Taurus contains Aldebaran, the Hyades Cluster, and the famous Pleiades star cluster. Although Aldebaran appears within the Hyades, it is actually much closer to Earth.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Major objects include the Pleiades (M45), one of the nearest open clusters to Earth, and the Crab Nebula (M1), the remnant of a supernova observed in 1054 CE.</p>
+            <h3>Cultural Significance</h3>
+            <p>Taurus appears in Babylonian, Greek, Egyptian, Māori, and Indigenous Australian astronomy, often connected to seasonal change and farming cycles.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GEMINI -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-9">
+        <h2>Gemini</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gemini_IAU.svg/960px-Gemini_IAU.svg.png" alt="Gemini constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Twins” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Pollux — an orange giant ~34 ly away, magnitude ~1.1</li>
+            <li><strong>Location:</strong> Near Orion and Taurus</li>
+            <li><strong>Best months:</strong> December-March</li>
+            <li><strong>How to find it:</strong> Look for two bright stars close together representing the twins' heads</li>
+        </ul>
+
+        <label for="toggle-more-9" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Gemini represents the twins Castor and Pollux from Greek mythology. Similar twin figures appear in Babylonian and Roman astronomy traditions.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains the stars Pollux and Castor, though Pollux is brighter. Castor is actually a complex multiple star system.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Gemini contains the open cluster Messier 35 (M35) and several planetary nebulae. Pollux also hosts an exoplanet roughly twice the mass of Jupiter.</p>
+            <h3>Cultural Significance</h3>
+            <p>Gemini has long symbolised partnership, duality, and brotherhood in many cultures around the world.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LEO -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-10">
+        <h2>Leo</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Leo_IAU.svg/960px-Leo_IAU.svg.png" alt="Leo constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Lion” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Regulus — a blue-white multiple star system ~79 ly away, magnitude ~1.4</li>
+            <li><strong>Location:</strong> Northern side of the zodiac belt</li>
+            <li><strong>Best months:</strong> March-May</li>
+            <li><strong>How to find it:</strong> Look for a backwards question mark shape forming the lion's mane</li>
+        </ul>
+
+        <label for="toggle-more-10" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Leo represents the Nemean Lion defeated by Heracles in Greek mythology. It has been recognised since Mesopotamian times and was associated with kingship and power.</p>
+            <h3>Astronomy</h3>
+            <p>Regulus lies almost directly on the ecliptic, meaning the Moon and planets frequently pass nearby. Denebola marks the lion's tail.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Leo contains many galaxies, including the Leo Triplet — a group of interacting spiral galaxies visible through telescopes.</p>
+            <h3>Cultural Significance</h3>
+            <p>Leo has symbolised royalty, courage, and strength in cultures throughout history.</p>
+        </div>
+    </div>
+</section>
+
+<h1>Moderately Visible &#127775 &#127775</h1>
+
+<!-- VIRGO -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-11">
+        <h2>Virgo</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Virgo_IAU.svg/960px-Virgo_IAU.svg.png" alt="Virgo constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Maiden” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Spica — a blue giant binary system ~250 ly away, magnitude ~1.0</li>
+            <li><strong>Location:</strong> Between Leo and Libra</li>
+            <li><strong>Best months:</strong> April-June</li>
+            <li><strong>How to find it:</strong> Follow the curve of the Big Dipper's handle to bright orange Arcturus, then continue to Spica</li>
+        </ul>
+
+        <label for="toggle-more-11" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Virgo has been linked to harvest goddesses in many ancient cultures, including Demeter and Astraea in Greek mythology.</p>
+            <h3>Astronomy</h3>
+            <p>Virgo is the second-largest constellation in the sky and contains thousands of galaxies.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Virgo Cluster contains over 1,000 galaxies and forms part of the larger Virgo Supercluster.</p>
+            <h3>Cultural Significance</h3>
+            <p>Virgo is associated with agriculture, justice, and fertility across many cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LIBRA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-12">
+        <h2>Libra</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Libra_IAU.svg/960px-Libra_IAU.svg.png" alt="Libra constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Scales” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Zubeneschamali — a blue-white giant ~185 ly away, magnitude ~2.6</li>
+            <li><strong>Location:</strong> Between Virgo and Scorpius</li>
+            <li><strong>Best months:</strong> May-July</li>
+            <li><strong>How to find it:</strong> Look for a faint quadrilateral shape near bright Scorpius</li>
+        </ul>
+
+        <label for="toggle-more-12" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Libra was originally considered part of Scorpius before becoming its own constellation in Roman astronomy.</p>
+            <h3>Astronomy</h3>
+            <p>Libra is relatively faint, with no first-magnitude stars.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Libra contains several globular clusters and galaxies visible through telescopes.</p>
+            <h3>Cultural Significance</h3>
+            <p>The scales symbolise balance, justice, and order in many traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PUPPIS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-13">
+        <h2>Puppis</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Puppis_IAU.svg/960px-Puppis_IAU.svg.png" alt="Puppis constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Stern of the Ship”</li>
+            <li><strong>Brightest star:</strong> Naos — a blue supergiant ~1,090 ly away</li>
+            <li><strong>Location:</strong> Near Carina and Vela</li>
+            <li><strong>Best months:</strong> January-March</li>
+            <li><strong>How to find it:</strong> Follow the Milky Way east of Canis Major</li>
+        </ul>
+
+        <label for="toggle-more-13" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Puppis was once part of Argo Navis, the legendary ship of Jason and the Argonauts.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies in a dense region of the Milky Way rich in star clusters.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Puppis contains Messier 46 and Messier 47, two bright open clusters visible with binoculars.</p>
+            <h3>Cultural Significance</h3>
+            <p>Puppis is tied to ancient stories of voyages, exploration, and navigation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PHOENIX -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-14">
+        <h2>Phoenix</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Phoenix_IAU.svg/960px-Phoenix_IAU.svg.png" alt="Phoenix constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Phoenix”</li>
+            <li><strong>Brightest star:</strong> Ankaa — an orange giant ~85 ly away</li>
+            <li><strong>Location:</strong> Near Eridanus and Tucana</li>
+            <li><strong>Best months:</strong> October-December</li>
+            <li><strong>How to find it:</strong> Look for a curved line of stars below Achernar</li>
+        </ul>
+
+        <label for="toggle-more-14" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Phoenix was introduced by Dutch navigators in the 16th century and represents the mythical fire bird.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation is moderately faint but contains several nearby galaxies.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Phoenix contains the Phoenix Cluster, one of the most massive galaxy clusters known.</p>
+            <h3>Cultural Significance</h3>
+            <p>The phoenix symbolises rebirth, immortality, and renewal across many cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GRUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-15">
+        <h2>Grus</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Grus_IAU.svg/960px-Grus_IAU.svg.png" alt="Grus constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Crane”</li>
+            <li><strong>Brightest star:</strong> Alnair — a blue-white star ~100 ly away</li>
+            <li><strong>Location:</strong> Near Piscis Austrinus and Phoenix</li>
+            <li><strong>Best months:</strong> September-November</li>
+            <li><strong>How to find it:</strong> Look below Fomalhaut for a kite-shaped pattern</li>
+        </ul>
+
+        <label for="toggle-more-15" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Grus was created by Dutch astronomers during southern sky mapping expeditions.</p>
+            <h3>Astronomy</h3>
+            <p>Alnair is a rapidly rotating bright blue-white star.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Grus contains several spiral galaxies observable with telescopes.</p>
+            <h3>Cultural Significance</h3>
+            <p>Cranes are often associated with migration, longevity, and wisdom.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PAVO -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-16">
+        <h2>Pavo</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Pavo_IAU.svg/960px-Pavo_IAU.svg.png" alt="Pavo constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Peacock”</li>
+            <li><strong>Brightest star:</strong> Peacock — a blue-white subgiant ~180 ly away</li>
+            <li><strong>Location:</strong> Near Ara and Octans</li>
+            <li><strong>Best months:</strong> June-September</li>
+            <li><strong>How to find it:</strong> Look south of Sagittarius for a compact bright grouping</li>
+        </ul>
+
+        <label for="toggle-more-16" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Pavo was named after the peacock associated with the Greek goddess Hera.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies near the southern Milky Way.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Pavo contains globular clusters and distant galaxies.</p>
+            <h3>Cultural Significance</h3>
+            <p>Peacocks symbolise beauty, pride, and immortality in many traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ARA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-17">
+        <h2>Ara</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ara_IAU.svg/960px-Ara_IAU.svg.png" alt="Ara constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Altar”</li>
+            <li><strong>Brightest star:</strong> Beta Arae — an orange giant ~600 ly away</li>
+            <li><strong>Location:</strong> Between Scorpius and Pavo</li>
+            <li><strong>Best months:</strong> June-August</li>
+            <li><strong>How to find it:</strong> Look below Scorpius near the Milky Way centre</li>
+        </ul>
+
+        <label for="toggle-more-17" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Ara represented the altar used by Greek gods before battling the Titans.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains many dense Milky Way star fields.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Ara contains globular clusters such as NGC 6397, one of the closest to Earth.</p>
+            <h3>Cultural Significance</h3>
+            <p>Ara has long symbolised sacrifice and ceremony.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CORONA AUSTRALIS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-18">
+        <h2>Corona Australis</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Corona_Australis_IAU.svg/960px-Corona_Australis_IAU.svg.png" alt="Corona Australis constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Southern Crown”</li>
+            <li><strong>Brightest star:</strong> Alpha Coronae Australis — a blue-white star ~130 ly away</li>
+            <li><strong>Location:</strong> Below Sagittarius</li>
+            <li><strong>Best months:</strong> July-August</li>
+            <li><strong>How to find it:</strong> Look for a faint semicircle beneath Sagittarius</li>
+        </ul>
+
+        <label for="toggle-more-18" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Corona Australis was recognised by the Ancient Greeks as a southern crown.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies within rich Milky Way star fields.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>It contains dark nebulae and star-forming regions.</p>
+            <h3>Cultural Significance</h3>
+            <p>Crowns commonly symbolise power and achievement.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COLUMBA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-19">
+        <h2>Columba</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Columba_IAU.svg/960px-Columba_IAU.svg.png" alt="Columba constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Dove”</li>
+            <li><strong>Brightest star:</strong> Phact — a blue-white star ~260 ly away</li>
+            <li><strong>Location:</strong> Below Canis Major</li>
+            <li><strong>Best months:</strong> December-February</li>
+            <li><strong>How to find it:</strong> Look south of Sirius for a small kite-shaped pattern</li>
+        </ul>
+
+        <label for="toggle-more-19" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Columba was introduced during the Renaissance and linked to Noah's dove.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains several bright nearby stars.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Columba contains the globular cluster NGC 1851.</p>
+            <h3>Cultural Significance</h3>
+            <p>Doves often symbolise peace and hope.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ERIDANUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-20">
+        <h2>Eridanus</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Eridanus_IAU.svg/960px-Eridanus_IAU.svg.png" alt="Eridanus constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The River”</li>
+            <li><strong>Brightest star:</strong> Achernar — a hot blue-white star ~139 ly away, one of the flattest known stars due to rapid rotation</li>
+            <li><strong>Location:</strong> Southern sky stretching from Orion southward</li>
+            <li><strong>Best months:</strong> November-January</li>
+            <li><strong>How to find it:</strong> Follow a long winding chain of stars ending at bright Achernar</li>
+        </ul>
+
+        <label for="toggle-more-20" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Eridanus was known to ancient Greek astronomers as a celestial river, sometimes linked to the River Nile or the mythological river where Phaethon fell after losing control of the Sun chariot.</p>
+            <h3>Astronomy</h3>
+            <p>Achernar is extremely flattened from spinning rapidly. Eridanus is one of the largest constellations in the sky.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains the Witch Head Nebula and several nearby galaxies.</p>
+            <h3>Cultural Significance</h3>
+            <p>Its long river shape made it important in many ancient sky traditions and navigation systems.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HYDRUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-21">
+        <h2>Hydrus</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hydrus_IAU.svg/960px-Hydrus_IAU.svg.png" alt="Hydrus constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Water Snake”</li>
+            <li><strong>Brightest star:</strong> Beta Hydri — a yellow subgiant ~24 ly away, similar to an older Sun</li>
+            <li><strong>Location:</strong> Near the south celestial pole</li>
+            <li><strong>Best months:</strong> October-December</li>
+            <li><strong>How to find it:</strong> Look below Achernar for a faint zig-zag line of stars</li>
+        </ul>
+
+        <label for="toggle-more-21" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Hydrus was created by Dutch navigators in the 1500s to represent a small water snake distinct from the much larger Hydra constellation.</p>
+            <h3>Astronomy</h3>
+            <p>Beta Hydri is one of the closest Sun-like stars and is often studied to understand the Sun's future evolution.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Hydrus contains only a few faint galaxies and star systems due to its relatively empty region of sky.</p>
+            <h3>Cultural Significance</h3>
+            <p>Hydrus reflects the Age of Exploration, when European navigators mapped southern skies unseen from Europe.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOROLOGIUM -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-22">
+        <h2>Horologium</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Horologium_IAU.svg/960px-Horologium_IAU.svg.png" alt="Horologium constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Clock”</li>
+            <li><strong>Brightest star:</strong> Alpha Horologii — an orange giant ~117 ly away</li>
+            <li><strong>Location:</strong> Southern sky near Eridanus</li>
+            <li><strong>Best months:</strong> November-January</li>
+            <li><strong>How to find it:</strong> Look for a faint curved group of stars below Eridanus</li>
+        </ul>
+
+        <label for="toggle-more-22" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Horologium was created by Nicolas Lacaille in the 18th century and originally represented a pendulum clock.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation is faint but contains several interesting variable stars and galaxies.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Horologium contains the Horologium Supercluster, one of the largest known galaxy superclusters.</p>
+            <h3>Cultural Significance</h3>
+            <p>It reflects the scientific instruments and discoveries celebrated during the Enlightenment period.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RETICULUM -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-23">
+        <h2>Reticulum</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Reticulum_IAU.svg/960px-Reticulum_IAU.svg.png" alt="Reticulum constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Reticle”</li>
+            <li><strong>Brightest star:</strong> Alpha Reticuli — a yellow-white giant ~163 ly away</li>
+            <li><strong>Location:</strong> Southern sky near Hydrus</li>
+            <li><strong>Best months:</strong> December-February</li>
+            <li><strong>How to find it:</strong> Look for a faint diamond shape near Achernar</li>
+        </ul>
+
+        <label for="toggle-more-23" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Reticulum was named by Lacaille after the reticle of a telescope, used for measuring star positions.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation is small and faint but contains several binary stars.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Reticulum contains the Reticulum Dwarf Galaxy, a satellite galaxy orbiting the Milky Way.</p>
+            <h3>Cultural Significance</h3>
+            <p>It symbolises the growth of scientific astronomy and precision measurement.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TUCANA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-24">
+        <h2>Tucana</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tucana_IAU.svg/960px-Tucana_IAU.svg.png" alt="Tucana constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Toucan”</li>
+            <li><strong>Brightest star:</strong> Alpha Tucanae — a blue-white giant ~199 ly away</li>
+            <li><strong>Location:</strong> Southern sky near the Small Magellanic Cloud</li>
+            <li><strong>Best months:</strong> September-November</li>
+            <li><strong>How to find it:</strong> Look near the Small Magellanic Cloud for a faint bird-like shape</li>
+        </ul>
+
+        <label for="toggle-more-24" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Tucana was introduced by Dutch navigators and represents the tropical toucan bird.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies in a rich southern region filled with nearby galaxies and star clusters.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Tucana contains 47 Tucanae, one of the brightest globular clusters in the sky.</p>
+            <h3>Cultural Significance</h3>
+            <p>Tucana reflects the exploration and cataloguing of southern skies during the Age of Discovery.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CAELUM -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-25">
+        <h2>Caelum</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Caelum_IAU.svg/960px-Caelum_IAU.svg.png" alt="Caelum constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Chisel”</li>
+            <li><strong>Brightest star:</strong> Alpha Caeli — a binary star system ~65 ly away</li>
+            <li><strong>Location:</strong> Southern sky near Dorado</li>
+            <li><strong>Best months:</strong> December-January</li>
+            <li><strong>How to find it:</strong> Look for a faint triangular grouping below Orion</li>
+        </ul>
+
+        <label for="toggle-more-25" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Caelum was created by Nicolas Lacaille and named after a sculptor's chisel.</p>
+            <h3>Astronomy</h3>
+            <p>It is one of the faintest constellations and contains few bright stars.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Caelum contains several faint galaxies and distant star systems.</p>
+            <h3>Cultural Significance</h3>
+            <p>It reflects the scientific and artistic instruments celebrated during the Enlightenment.</p>
+        </div>
+    </div>
+</section>
+
+<h1>Faintly Visible &#127775</h1>
+
+<!-- SCULPTOR -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-26">
+        <h2>Sculptor</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Sculptor_IAU.svg/960px-Sculptor_IAU.svg.png" alt="Sculptor constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Sculptor”</li>
+            <li><strong>Brightest star:</strong> Alpha Sculptoris — a blue-white giant ~780 ly away</li>
+            <li><strong>Location:</strong> Southern sky near Cetus</li>
+            <li><strong>Best months:</strong> October-December</li>
+            <li><strong>How to find it:</strong> Look for a faint spread of stars below Aquarius</li>
+        </ul>
+
+        <label for="toggle-more-26" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Sculptor was named by Lacaille after a sculptor's workshop.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains many faint galaxies due to its position away from the Milky Way.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Sculptor Galaxy (NGC 253) is one of the brightest galaxies visible from Earth.</p>
+            <h3>Cultural Significance</h3>
+            <p>It symbolises creativity, craftsmanship, and scientific cataloguing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FORNAX -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-27">
+        <h2>Fornax</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Fornax_IAU.svg/960px-Fornax_IAU.svg.png" alt="Fornax constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Furnace”</li>
+            <li><strong>Brightest star:</strong> Dalim — a yellow-white subgiant ~46 ly away</li>
+            <li><strong>Location:</strong> Southern sky near Eridanus</li>
+            <li><strong>Best months:</strong> November-January</li>
+            <li><strong>How to find it:</strong> Look below Cetus for a faint bent line of stars</li>
+        </ul>
+
+        <label for="toggle-more-27" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Fornax was named by Lacaille after a chemical furnace used in laboratories.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains many distant galaxies and galaxy clusters.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Fornax Cluster is one of the nearest major galaxy clusters to the Milky Way.</p>
+            <h3>Cultural Significance</h3>
+            <p>Fornax reflects the rise of modern science and chemistry during the Enlightenment.</p>
+        </div>
+    </div>
+</section>
+</body>
+
+<!-- MENSA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-28">
+        <h2>Mensa</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Mensa_IAU.svg/960px-Mensa_IAU.svg.png" alt="Mensa constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Table Mountain”</li>
+            <li><strong>Brightest star:</strong> Alpha Mensae — a yellow dwarf star ~33 ly away, magnitude ~5.1</li>
+            <li><strong>Location:</strong> Deep southern sky near Chamaeleon and Dorado</li>
+            <li><strong>Best months:</strong> December–February</li>
+            <li><strong>How to find it:</strong> Look near the Large Magellanic Cloud beneath Dorado</li>
+        </ul>
+
+        <label for="toggle-more-28" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Mensa was created in the 18th century by Nicolas Lacaille and named after Table Mountain in South Africa, where he conducted astronomical observations.</p>
+            <h3>Astronomy</h3>
+            <p>Mensa is one of the faintest constellations in the sky and contains very few bright stars.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Part of the Large Magellanic Cloud extends into Mensa, giving it access to rich star fields and nebulae.</p>
+            <h3>Cultural Significance</h3>
+            <p>Mensa reflects the Age of Exploration and scientific mapping of the southern skies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DORADO -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-29">
+        <h2>Dorado</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Dorado_IAU.svg/960px-Dorado_IAU.svg.png" alt="Dorado constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Dolphinfish”</li>
+            <li><strong>Brightest star:</strong> Alpha Doradus — a blue giant system ~176 ly away, magnitude ~3.3</li>
+            <li><strong>Location:</strong> Southern sky near Mensa and Reticulum</li>
+            <li><strong>Best months:</strong> November–January</li>
+            <li><strong>How to find it:</strong> Look around the Large Magellanic Cloud</li>
+        </ul>
+
+        <label for="toggle-more-29" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Dorado was introduced by Dutch navigators in the 16th century and represents the dolphinfish, also called mahi-mahi.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies close to the south celestial pole and is best known for containing part of the Large Magellanic Cloud.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Dorado contains the Tarantula Nebula, one of the largest and most active star-forming regions in the Local Group of galaxies.</p>
+            <h3>Cultural Significance</h3>
+            <p>Dorado reflects the importance of navigation and ocean exploration during the European Age of Sail.</p>
+        </div>
+    </div>
+</section>
+
+<!-- VOLANS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-30">
+        <h2>Volans</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Volans_IAU.svg/960px-Volans_IAU.svg.png" alt="Volans constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Flying Fish”</li>
+            <li><strong>Brightest star:</strong> Beta Volantis — an orange giant ~108 ly away, magnitude ~3.8</li>
+            <li><strong>Location:</strong> Southern sky near Carina and Dorado</li>
+            <li><strong>Best months:</strong> January–March</li>
+            <li><strong>How to find it:</strong> Look beneath Carina near the Large Magellanic Cloud region</li>
+        </ul>
+
+        <label for="toggle-more-30" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Volans was created by Dutch navigators and represents the tropical flying fish seen during sea voyages.</p>
+            <h3>Astronomy</h3>
+            <p>Volans is a faint southern constellation with few bright stars but lies in a rich Milky Way region.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains several faint galaxies and open clusters visible with telescopes.</p>
+            <h3>Cultural Significance</h3>
+            <p>Volans reflects the connection between astronomy, navigation, and exploration during global maritime expansion.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CHAMAELEON -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-58">
+        <h2>Chamaeleon</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Chamaeleon_IAU.svg/960px-Chamaeleon_IAU.svg.png" alt="Chamaeleon constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Chameleon”</li>
+            <li><strong>Brightest star:</strong> Alpha Chamaeleontis — a blue-white giant ~63 ly away, magnitude ~4.1</li>
+            <li><strong>Location:</strong> Southern sky near Octans and Mensa</li>
+            <li><strong>Best months:</strong> January–March</li>
+            <li><strong>How to find it:</strong> Look south of Carina near the south celestial pole</li>
+        </ul>
+
+        <label for="toggle-more-58" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Chamaeleon was introduced by Dutch navigators in the late 1500s and named after the colour-changing reptile.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation contains several young stars and dark nebulae associated with nearby star formation.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Chamaeleon molecular cloud complex is one of the closest active star-forming regions to Earth.</p>
+            <h3>Cultural Significance</h3>
+            <p>Chamaeleon represents the influence of exploration and newly discovered southern wildlife on astronomy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MUSCA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-32">
+        <h2>Musca</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Musca_IAU.svg/960px-Musca_IAU.svg.png" alt="Musca constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Fly”</li>
+            <li><strong>Brightest star:</strong> Alpha Muscae — a blue-white subgiant ~315 ly away, magnitude ~2.7</li>
+            <li><strong>Location:</strong> Near Crux and Centaurus</li>
+            <li><strong>Best months:</strong> April–June</li>
+            <li><strong>How to find it:</strong> Look just below Crux in the southern Milky Way</li>
+        </ul>
+
+        <label for="toggle-more-32" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Musca was originally called Apis, meaning “the Bee,” before later being renamed “the Fly.”</p>
+            <h3>Astronomy</h3>
+            <p>Musca lies within a dense Milky Way region filled with bright star clouds and dark nebulae.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Dark Doodad Nebula, a long dark nebula discovered by astronomer Dennis di Cicco, lies within Musca.</p>
+            <h3>Cultural Significance</h3>
+            <p>Musca reflects the scientific naming traditions developed during mapping of the southern skies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- NORMA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-33">
+        <h2>Norma</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Norma_IAU.svg/960px-Norma_IAU.svg.png" alt="Norma constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Carpenter’s Square”</li>
+            <li><strong>Brightestp star:</strong> Gamma² Normae — a yellow giant ~123 ly away, magnitude ~4.0</li>
+            <li><strong>Location:</strong> Southern Milky Way near Scorpius</li>
+            <li><strong>Best months:</strong> June–August</li>
+            <li><strong>How to find it:</strong> Look between Scorpius and Triangulum Australe</li>
+        </ul>
+
+        <label for="toggle-more-33" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Norma was created by Nicolas Lacaille and represents a carpenter’s measuring tool used in science and engineering.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies along the Milky Way and contains dense star fields and numerous faint clusters.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Norma hosts several open clusters and the Norma Cluster of galaxies, a major galaxy concentration.</p>
+            <h3>Cultural Significance</h3>
+            <p>Norma symbolises the growing importance of scientific instruments during the Enlightenment.</p>
+        </div>
+    </div>
+</section>
+
+<!-- OCTANS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-34">
+        <h2>Octans</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Octans_IAU.svg/960px-Octans_IAU.svg.png" alt="Octans constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Octant”</li>
+            <li><strong>Brightest star:</strong> Nu Octantis — an orange giant ~69 ly away, magnitude ~3.7</li>
+            <li><strong>Location:</strong> Surrounds the south celestial pole</li>
+            <li><strong>Best months:</strong> Visible year-round in far southern skies</li>
+            <li><strong>How to find it:</strong> Look around the south celestial pole beneath Chamaeleon</li>
+        </ul>
+
+        <label for="toggle-more-34" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Octans was created by Nicolas Lacaille and named after the octant, a navigational instrument used to measure angles.</p>
+            <h3>Astronomy</h3>
+            <p>Octans contains the south celestial pole, although unlike Polaris in the north, there is no very bright pole star.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains faint galaxies and globular clusters visible mainly through telescopes.</p>
+            <h3>Cultural Significance</h3>
+            <p>Octans reflects the importance of astronomy and navigation in global exploration and scientific discovery.</p>
+        </div>
+    </div>
+</section>
+
+<label for="back to top" class="showmore-button"><a href="SouthernHem.html">Back to Top</a></label>
+
+</div>
+</body>
+</html> 

@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northern Hemisphere</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- BOX DROP DOWNS ---------- */
+.showmore-box {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.showmore-box input[type="checkbox"] {
+    display: none;
+}
+
+.showmore-button {
+    display: inline-block;
+    background-color: #A08CCF;
+    color: #140047;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.showmore-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.showmore-box input[type="checkbox"]:checked ~ .showmore-content {
+    max-height: 700px; /* adjust depending on how much content you have */
+}
+
+.showmore-box input[type="checkbox"]:checked + .showmore-button::after {
+    content: " (Show Less)";
+}
+
+.showmore-button::after {
+    content: "";
+}
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3, p, li, ul {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; 
+        padding-bottom: 5px;}
+    h3 { font-size: 18px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 12px;
+        line-height: 1.4;
+        color: #390978;
+        font-family: "Inter", Arial, sans-serif;
+        font-style: oblique;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 100%px;
+        max-width: 400px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+<header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+</header>
+
+<div class="container">
+    <h1 style="font-size: 50px; text-align: center;"><strong>NORTHERN HEMISPHERE</strong></h1>
+<h1>Most Visible &#127775 &#127775 &#127775</h1>
+
+<!-- URSA MAJOR -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n1">
+        <h2>Ursa Major</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ursa_Major_IAU.svg/960px-Ursa_Major_IAU.svg.png" alt="Ursa Major constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Great Bear” / contains the Big Dipper</li>
+            <li><strong>Brightest star:</strong> Alioth — a blue-white giant ~81 ly away, magnitude ~1.7</li>
+            <li><strong>Location:</strong> Northern sky near Ursa Minor</li>
+            <li><strong>Best months:</strong> March-June</li>
+            <li><strong>How to find it:</strong> Look for the Big Dipper asterism with four stars forming a bowl and three forming a handle</li>
+        </ul>
+
+        <label for="toggle-more-n1" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Ursa Major has been recognised by cultures worldwide for thousands of years. In Greek mythology it represents Callisto, transformed into a bear by Hera. Many Indigenous North American cultures also saw it as a great bear being chased across the sky.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains many bright stars including Dubhe, Merak, Alioth, and Mizar. The “pointer stars” Dubhe and Merak help locate Polaris in Ursa Minor.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Notable objects include Bode's Galaxy (M81), the Cigar Galaxy (M82), and the Pinwheel Galaxy (M101).</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Ursa Major has been used for navigation for centuries and remains one of the easiest constellations to identify in the Northern Hemisphere.</p>
+        </div>
+    </div>
+</section>
+
+<!-- URSA MINOR -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n2">
+        <h2>Ursa Minor</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Ursa_Minor_IAU.svg/960px-Ursa_Minor_IAU.svg.png" alt="Ursa Minor constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Little Bear”</li>
+            <li><strong>Brightest star:</strong> Polaris — a yellow-white supergiant ~433 ly away, the current North Star</li>
+            <li><strong>Location:</strong> Near the north celestial pole</li>
+            <li><strong>Best months:</strong> Visible all year in northern regions</li>
+            <li><strong>How to find it:</strong> Use the Big Dipper pointer stars to trace toward Polaris</li>
+        </ul>
+
+        <label for="toggle-more-n2" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Ursa Minor was associated with a smaller bear in Greek mythology. Polaris became extremely important in navigation because it remains almost fixed in the sky.</p>
+            <h3>Astronomy</h3>
+            <p>Polaris is actually a multiple star system. The constellation is circumpolar for many northern observers, meaning it never fully sets.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Ursa Minor contains fewer deep-sky objects than nearby constellations, but it includes several faint galaxies and nebulae.</p>
+            <h3>Cultural Significance</h3>
+            <p>Ursa Minor and Polaris guided sailors, explorers, and travellers for centuries before modern navigation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CASSIOPEIA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n3">
+        <h2>Cassiopeia</h2>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cassiopeia_IAU.svg/960px-Cassiopeia_IAU.svg.png" alt="Cassiopeia constellation diagram">
+        </div>
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Queen”</li>
+            <li><strong>Brightest star:</strong> Schedar — an orange giant ~230 ly away</li>
+            <li><strong>Location:</strong> Northern sky opposite the Big Dipper</li>
+            <li><strong>Best months:</strong> September-January</li>
+            <li><strong>How to find it:</strong> Look for a bright “W” or “M” shape of five stars</li>
+        </ul>
+
+        <label for="toggle-more-n3" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Cassiopeia represents the vain queen from Greek mythology who boasted about her beauty. Zeus placed her in the sky seated upon a throne.</p>
+            <h3>Astronomy</h3>
+            <p>The constellation lies within the Milky Way and contains rich star fields and clusters.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Important objects include the Heart Nebula, Soul Nebula, and the open clusters M52 and M103.</p>
+            <h3>Cultural Significance</h3>
+            <p>The W-shape makes Cassiopeia one of the easiest northern constellations to recognise.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CYGNUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n4">
+        <h2>Cygnus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cygnus_IAU.svg/960px-Cygnus_IAU.svg.png" alt="Cygnus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Swan” / “Northern Cross”</li>
+            <li><strong>Brightest star:</strong> Deneb — a blue-white supergiant ~2,600 ly away</li>
+            <li><strong>Location:</strong> Along the Milky Way</li>
+            <li><strong>Best months:</strong> June-October</li>
+            <li><strong>How to find it:</strong> Look for a large cross shape stretching through the Milky Way</li>
+        </ul>
+
+        <label for="toggle-more-n4" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Cygnus was associated with a swan in Greek mythology and appears in many cultures worldwide.</p>
+            <h3>Astronomy</h3>
+            <p>Deneb forms the Summer Triangle with Vega and Altair. Cygnus lies in one of the richest regions of the Milky Way.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>Objects include the North America Nebula, Veil Nebula, and many star-forming regions.</p>
+            <h3>Cultural Significance</h3>
+            <p>Cygnus has been important in mythology, navigation, and seasonal skywatching traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LYRA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n5">
+        <h2>Lyra</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lyra_IAU.svg/960px-Lyra_IAU.svg.png" alt="Lyra constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Lyre”</li>
+            <li><strong>Brightest star:</strong> Vega — a blue-white star ~25 ly away, magnitude ~0.0</li>
+            <li><strong>Location:</strong> Northern summer sky</li>
+            <li><strong>Best months:</strong> June-September</li>
+            <li><strong>How to find it:</strong> Locate the bright star Vega near the Summer Triangle</li>
+        </ul>
+
+        <label for="toggle-more-n5" class="showmore-button">Show More</label>
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Lyra represents the harp of Orpheus from Greek mythology. Its music was said to charm all living things.</p>
+            <h3>Astronomy</h3>
+            <p>Vega was once the North Star thousands of years ago due to Earth's axial precession.</p>
+            <h3>Deep-Sky Objects</h3>
+            <p>The Ring Nebula (M57), a famous planetary nebula, is located within Lyra.</p>
+            <h3>Cultural Significance</h3>
+            <p>Lyra has long been associated with music, poetry, and mythology.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AQUILA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n6">
+        <h2>Aquila</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Aquila_IAU.svg/960px-Aquila_IAU.svg.png" alt="Aquila constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Eagle”</li>
+            <li><strong>Brightest star:</strong> Altair — a white main-sequence star ~17 ly away</li>
+            <li><strong>Location:</strong> Along the Milky Way</li>
+            <li><strong>Best months:</strong> July-September</li>
+            <li><strong>How to find it:</strong> Locate Altair in the Summer Triangle with two stars on either side</li>
+        </ul>
+
+        <label for="toggle-more-n6" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Aquila represents Zeus's eagle in Greek mythology. It appears in many ancient sky traditions.</p>
+
+            <h3>Astronomy</h3>
+            <p>Altair rotates extremely quickly, causing it to bulge at the equator.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains open clusters and several planetary nebulae.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Aquila is important in seasonal astronomy and forms part of the Summer Triangle.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ANDROMEDA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n7">
+        <h2>Andromeda</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Andromeda_IAU.svg/960px-Andromeda_IAU.svg.png" alt="Andromeda constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Chained Princess”</li>
+            <li><strong>Brightest star:</strong> Alpheratz — a blue-white binary star ~97 ly away</li>
+            <li><strong>Location:</strong> Near Pegasus and Cassiopeia</li>
+            <li><strong>Best months:</strong> October-December</li>
+            <li><strong>How to find it:</strong> Follow the Great Square of Pegasus outward to a chain of stars</li>
+        </ul>
+
+        <label for="toggle-more-n7" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Andromeda represents the princess rescued by Perseus in Greek mythology.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains the Andromeda Galaxy, the nearest major spiral galaxy to the Milky Way.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The Andromeda Galaxy (M31) is visible to the naked eye under dark skies and contains roughly one trillion stars.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Andromeda is one of the most historically important constellations in astronomy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PEGASUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n8">
+        <h2>Pegasus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Pegasus_IAU.svg/960px-Pegasus_IAU.svg.png" alt="Pegasus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Winged Horse”</li>
+            <li><strong>Brightest star:</strong> Enif — an orange supergiant ~690 ly away</li>
+            <li><strong>Location:</strong> Northern autumn sky</li>
+            <li><strong>Best months:</strong> September-November</li>
+            <li><strong>How to find it:</strong> Look for the Great Square of Pegasus</li>
+        </ul>
+
+        <label for="toggle-more-n8" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Pegasus was the winged horse of Greek mythology, born from Medusa's blood.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains many galaxies and exoplanet systems.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Objects include Stephan's Quintet and the globular cluster M15.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Pegasus has symbolised imagination, flight, and heroism for centuries.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PERSEUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-n9">
+        <h2>Perseus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Perseus_IAU.svg/960px-Perseus_IAU.svg.png" alt="Perseus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Hero”</li>
+            <li><strong>Brightest star:</strong> Mirfak — a yellow-white supergiant ~590 ly away</li>
+            <li><strong>Location:</strong> Near Andromeda and Cassiopeia</li>
+            <li><strong>Best months:</strong> November-February</li>
+            <li><strong>How to find it:</strong> Trace outward from Cassiopeia toward a curved chain of stars</li>
+        </ul>
+
+        <label for="toggle-more-n9" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Perseus represents the Greek hero who defeated Medusa and rescued Andromeda.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains Algol, one of the most famous variable stars in the sky.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The Double Cluster, NGC 869 and NGC 884, is one of the finest binocular objects in the sky.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Perseus is deeply connected to Greek heroic mythology and seasonal northern skies.</p>
+        </div>
+    </div>
+</section>
+
+<h1>Moderately Visible &#127775 &#127775</h1> 
+
+<!-- DRACO -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-draco">
+
+        <h2>Draco</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Draco_IAU.svg/960px-Draco_IAU.svg.png" alt="Draco constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Dragon”</li>
+            <li><strong>Brightest star:</strong> Eltanin — an orange giant star ~150 ly away, magnitude ~2.2</li>
+            <li><strong>Location:</strong> Wraps around Ursa Minor in the northern sky</li>
+            <li><strong>Best months:</strong> June–September</li>
+            <li><strong>How to find it:</strong> Look for a long winding chain of stars curling around the Little Dipper</li>
+        </ul>
+
+        <label for="toggle-more-draco" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Draco represents the dragon Ladon from Greek mythology, who guarded the golden apples in the Garden of the Hesperides. Hercules later slew the dragon during his twelve labours. Draco was one of the original constellations recorded by the ancient Greeks and appears in many early star catalogues.</p>
+
+            <h3>Astronomy</h3>
+            <p>Draco is a very large northern constellation that coils around the north celestial pole. Its brightest star, Eltanin, was historically important because it helped James Bradley discover the aberration of starlight in the 1700s.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Draco contains the Cat’s Eye Nebula (NGC 6543), one of the most complex planetary nebulae known, as well as the Draco Dwarf Galaxy.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Dragons appear in myths worldwide, and Draco has often symbolised guardianship, danger, or cosmic power across many cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CEPHEUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-cepheus">
+
+        <h2>Cepheus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Cepheus_IAU.svg/960px-Cepheus_IAU.svg.png" alt="Cepheus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The King”</li>
+            <li><strong>Brightest star:</strong> Alderamin — a white giant star ~49 ly away, magnitude ~2.5</li>
+            <li><strong>Location:</strong> Near Cassiopeia and Draco</li>
+            <li><strong>Best months:</strong> August–November</li>
+            <li><strong>How to find it:</strong> Look for a house-shaped pentagon near Cassiopeia’s “W” shape</li>
+        </ul>
+
+        <label for="toggle-more-cepheus" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Cepheus was the king of Ethiopia in Greek mythology and husband of Cassiopeia. He was the father of Andromeda and forms part of the famous Perseus myth family placed together in the night sky.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains Delta Cephei, the prototype Cepheid variable star. Cepheid variables are extremely important in astronomy because their brightness changes can be used to measure distances across galaxies.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Cepheus contains the Wizard Nebula, the Iris Nebula, and several rich open star clusters along the Milky Way.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Cepheid variable stars helped astronomers discover the true scale of the universe and measure distances to faraway galaxies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BOOTES -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-bootes">
+
+        <h2>Boötes</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bootes_IAU.svg/960px-Bootes_IAU.svg.png" alt="Bootes constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Herdsman”</li>
+            <li><strong>Brightest star:</strong> Arcturus — an orange giant ~37 ly away, magnitude ~−0.05</li>
+            <li><strong>Location:</strong> Near Ursa Major</li>
+            <li><strong>Best months:</strong> April–July</li>
+            <li><strong>How to find it:</strong> Follow the curve of the Big Dipper’s handle to Arcturus</li>
+        </ul>
+
+        <label for="toggle-more-bootes" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Boötes is usually associated with a herdsman or ploughman in Greek mythology. Some myths identify him as Icarius, a man taught winemaking by Dionysus.</p>
+
+            <h3>Astronomy</h3>
+            <p>Arcturus is one of the brightest stars in Earth’s night sky and is much larger and older than the Sun. Boötes is also home to several binary and variable stars.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains many distant galaxies and the Boötes Void — one of the largest known empty regions of space.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Arcturus has been used for navigation and seasonal timing in cultures around the world for thousands of years.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HERCULES -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-hercules">
+
+        <h2>Hercules</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hercules_IAU.svg/960px-Hercules_IAU.svg.png" alt="Hercules constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Hero”</li>
+            <li><strong>Brightest star:</strong> Kornephoros — a yellow giant ~140 ly away</li>
+            <li><strong>Location:</strong> Between Lyra and Boötes</li>
+            <li><strong>Best months:</strong> June–August</li>
+            <li><strong>How to find it:</strong> Look for the “Keystone” shape in the centre of the constellation</li>
+        </ul>
+
+        <label for="toggle-more-hercules" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Hercules represents the legendary Greek hero famous for completing the twelve labours. The constellation has ancient origins dating back to Babylonian astronomy.</p>
+
+            <h3>Astronomy</h3>
+            <p>Although Hercules is large, many of its stars are relatively faint. The constellation sits high in northern summer skies.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Hercules contains the Great Hercules Cluster (M13), one of the brightest and most famous globular clusters visible from Earth.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Hercules symbolises strength, endurance, and heroism in many retellings of Greek mythology.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CORONA BOREALIS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-corona-borealis">
+
+        <h2>Corona Borealis</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Corona_Borealis_IAU.svg/960px-Corona_Borealis_IAU.svg.png" alt="Corona Borealis constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Northern Crown”</li>
+            <li><strong>Brightest star:</strong> Alphecca — a white binary star ~75 ly away</li>
+            <li><strong>Location:</strong> Between Boötes and Hercules</li>
+            <li><strong>Best months:</strong> May–July</li>
+            <li><strong>How to find it:</strong> Look for a semicircle or crown-shaped arc of stars</li>
+        </ul>
+
+        <label for="toggle-more-corona-borealis" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>This constellation represents the crown given to Ariadne by Dionysus in Greek mythology. The crown was later placed into the heavens.</p>
+
+            <h3>Astronomy</h3>
+            <p>Corona Borealis is small but easy to recognise because of its neat curved shape.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains the Corona Borealis Galaxy Cluster, a massive grouping of distant galaxies.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Crowns and circular star patterns have symbolised royalty and divinity in many ancient cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COMA BERENICES -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-coma">
+
+        <h2>Coma Berenices</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Coma_Berenices_IAU.svg/960px-Coma_Berenices_IAU.svg.png" alt="Coma Berenices constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “Berenice’s Hair”</li>
+            <li><strong>Brightest star:</strong> Beta Comae Berenices — a Sun-like star ~30 ly away</li>
+            <li><strong>Location:</strong> Near Leo and Virgo</li>
+            <li><strong>Best months:</strong> April–June</li>
+            <li><strong>How to find it:</strong> Look for a faint fuzzy patch of stars between Leo and Boötes</li>
+        </ul>
+
+        <label for="toggle-more-coma" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>The constellation is named after Queen Berenice II of Egypt, who sacrificed her hair to the gods for her husband’s safe return from war.</p>
+
+            <h3>Astronomy</h3>
+            <p>Coma Berenices contains many faint stars and lies far from the Milky Way plane, making distant galaxies easier to observe.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains the Coma Star Cluster and the huge Coma Galaxy Cluster.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>It is one of the few constellations directly named after a historical person rather than mythology.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DELPHINUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-delphinus">
+
+        <h2>Delphinus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Delphinus_IAU.svg/960px-Delphinus_IAU.svg.png" alt="Delphinus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Dolphin”</li>
+            <li><strong>Brightest star:</strong> Rotanev — a blue-white giant ~97 ly away</li>
+            <li><strong>Location:</strong> Near Aquila and Pegasus</li>
+            <li><strong>Best months:</strong> July–September</li>
+            <li><strong>How to find it:</strong> Look for a small diamond-shaped pattern with a tail</li>
+        </ul>
+
+        <label for="toggle-more-delphinus" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>In Greek mythology, Delphinus represents a dolphin sent by Poseidon. Dolphins were seen as intelligent and sacred creatures by ancient sailors.</p>
+
+            <h3>Astronomy</h3>
+            <p>Although small, Delphinus is relatively easy to identify because of its compact and distinctive shape.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Delphinus contains several faint globular clusters and planetary nebulae.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Dolphins appear in myths and navigation traditions throughout Mediterranean and Polynesian cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAGITTA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-39">
+        <h2>Sagitta</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Sagitta_IAU.svg/960px-Sagitta_IAU.svg.png" alt="Sagitta constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Arrow”</li>
+            <li><strong>Brightest star:</strong> Gamma Sagittae — a red giant ~275 ly away, magnitude ~3.5</li>
+            <li><strong>Location:</strong> Between Aquila and Cygnus</li>
+            <li><strong>Best months:</strong> July–September</li>
+            <li><strong>How to find it:</strong> Look for a small arrow-shaped line of stars near the Summer Triangle</li>
+        </ul>
+
+        <label for="toggle-more-39" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Sagitta is one of the oldest constellations, appearing in Greek and Roman astronomy. It represents an arrow shot by Hercules or Apollo depending on the myth.</p>
+
+            <h3>Astronomy</h3>
+            <p>Sagitta is small but easy to recognise due to its arrow shape. It lies within a rich Milky Way region.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains the globular cluster Messier 71, once thought to be an open cluster due to its loose structure.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Sagitta symbolises weapons, hunting, and heroic myths in many ancient sky traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- VULPECULA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-40">
+        <h2>Vulpecula</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Vulpecula_IAU.svg/960px-Vulpecula_IAU.svg.png" alt="Vulpecula constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Little Fox”</li>
+            <li><strong>Brightest star:</strong> Anser — a red giant ~300 ly away, magnitude ~4.4</li>
+            <li><strong>Location:</strong> Near Cygnus in the Milky Way</li>
+            <li><strong>Best months:</strong> July–October</li>
+            <li><strong>How to find it:</strong> Look between Cygnus and Sagitta in a dense Milky Way region</li>
+        </ul>
+
+        <label for="toggle-more-40" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Vulpecula was introduced by Johannes Hevelius in the 1600s and originally represented a fox carrying a goose.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is faint but sits directly within the Milky Way, making it rich in stars.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Vulpecula contains the Dumbbell Nebula (M27), the first planetary nebula ever discovered.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Although modern rather than ancient, Vulpecula reflects the trend of naming constellations after animals and tools during the Age of Exploration.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LACERTA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-41">
+        <h2>Lacerta</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Lacerta_IAU.svg/960px-Lacerta_IAU.svg.png" alt="Lacerta constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Lizard”</li>
+            <li><strong>Brightest star:</strong> Alpha Lacertae — a white main-sequence star ~100 ly away, magnitude ~3.8</li>
+            <li><strong>Location:</strong> Between Cygnus and Andromeda</li>
+            <li><strong>Best months:</strong> August–October</li>
+            <li><strong>How to find it:</strong> Look for a faint zig-zag chain of stars between Cygnus and Cassiopeia</li>
+        </ul>
+
+        <label for="toggle-more-41" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Lacerta was created by Johannes Hevelius in the 17th century and has no major mythology attached to it.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is faint and mainly composed of dim stars, but lies near rich Milky Way regions.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Lacerta contains the open cluster NGC 7243 and the BL Lacertae object, a powerful active galactic nucleus.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Lacerta represents the scientific naming traditions of early modern astronomers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AURIGA -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-42">
+        <h2>Auriga</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Auriga_IAU.svg/960px-Auriga_IAU.svg.png" alt="Auriga constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Charioteer”</li>
+            <li><strong>Brightest star:</strong> Capella — a yellow giant system ~43 ly away, magnitude ~0.1</li>
+            <li><strong>Location:</strong> Northern winter sky near Taurus and Gemini</li>
+            <li><strong>Best months:</strong> December–February</li>
+            <li><strong>How to find it:</strong> Look for a large pentagon shape with bright Capella at one corner</li>
+        </ul>
+
+        <label for="toggle-more-42" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Auriga is associated with Erichthonius, a legendary Greek charioteer and inventor of the four-horse chariot.</p>
+
+            <h3>Astronomy</h3>
+            <p>Capella is one of the brightest stars in the night sky and is actually a multiple-star system.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Auriga contains three bright open clusters: M36, M37, and M38, all visible with binoculars.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Auriga has appeared in Greek, Roman, and Arabic astronomy for thousands of years.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CANES VENATICI -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-43">
+        <h2>Canes Venatici</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Canes_Venatici_IAU.svg/960px-Canes_Venatici_IAU.svg.png" alt="Canes Venatici constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Hunting Dogs”</li>
+            <li><strong>Brightest star:</strong> Cor Caroli — a binary system ~110 ly away, magnitude ~2.8</li>
+            <li><strong>Location:</strong> Near Ursa Major and Boötes</li>
+            <li><strong>Best months:</strong> March–June</li>
+            <li><strong>How to find it:</strong> Look below the handle of the Big Dipper</li>
+        </ul>
+
+        <label for="toggle-more-43" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Created by Johannes Hevelius, the constellation represents the hunting dogs of Boötes.</p>
+
+            <h3>Astronomy</h3>
+            <p>Cor Caroli is one of the most beautiful binary stars visible in small telescopes.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Canes Venatici contains the Whirlpool Galaxy (M51), one of the most famous spiral galaxies in the sky.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>The constellation reflects hunting themes common in European astronomy traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LYNX -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-44">
+        <h2>Lynx</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Lynx_IAU.svg/960px-Lynx_IAU.svg.png" alt="Lynx constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Lynx”</li>
+            <li><strong>Brightest star:</strong> Alpha Lyncis — an orange giant ~200 ly away, magnitude ~3.1</li>
+            <li><strong>Location:</strong> Between Ursa Major and Auriga</li>
+            <li><strong>Best months:</strong> January–April</li>
+            <li><strong>How to find it:</strong> Look for a faint zig-zag chain of stars near Ursa Major</li>
+        </ul>
+
+        <label for="toggle-more-44" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Lynx was introduced by Hevelius, who joked that only someone with the eyes of a lynx could see it clearly.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is made mostly of faint stars and covers a large area of the sky.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Lynx contains several distant galaxies and galaxy groups observable with larger telescopes.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Lynx represents the expansion of constellation mapping during the scientific revolution.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CAMELOPARDALIS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-45">
+        <h2>Camelopardalis</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Camelopardalis_IAU.svg/960px-Camelopardalis_IAU.svg.png" alt="Camelopardalis constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Giraffe”</li>
+            <li><strong>Brightest star:</strong> Beta Camelopardalis — a yellow supergiant ~1,000 ly away, magnitude ~4.0</li>
+            <li><strong>Location:</strong> Near Ursa Minor and Cassiopeia</li>
+            <li><strong>Best months:</strong> December–March</li>
+            <li><strong>How to find it:</strong> Look for a large faint region between Ursa Major and Cassiopeia</li>
+        </ul>
+
+        <label for="toggle-more-45" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Camelopardalis was created in the 1600s and named after the giraffe, once believed to resemble a camel-leopard hybrid.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is large but faint, making it difficult to identify in bright skies.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Camelopardalis contains the Kemble Cascade, a beautiful line of stars visible with binoculars.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>It reflects the influence of exploration and newly discovered animals on constellation naming.</p>
+        </div>
+    </div>
+</section>
+
+<h1>Faintly Visible &#127775</h1>
+
+<!-- SEXTANS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-46">
+        <h2>Sextans</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Sextans_IAU.svg/960px-Sextans_IAU.svg.png" alt="Sextans constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Sextant”</li>
+            <li><strong>Brightest star:</strong> Alpha Sextantis — a white giant ~280 ly away, magnitude ~4.5</li>
+            <li><strong>Location:</strong> Near Leo and Hydra</li>
+            <li><strong>Best months:</strong> March–May</li>
+            <li><strong>How to find it:</strong> Look below Leo for a faint patch of stars</li>
+        </ul>
+
+        <label for="toggle-more-46" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Sextans was introduced by Johannes Hevelius to honour the sextant astronomy instrument.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is faint and difficult to observe without dark skies.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Sextans contains several distant galaxies and galaxy clusters.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Sextans reflects the rise of scientific instruments during the Age of Astronomy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MONOCEROS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-47">
+        <h2>Monoceros</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Monoceros_IAU.svg/960px-Monoceros_IAU.svg.png" alt="Monoceros constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Unicorn”</li>
+            <li><strong>Brightest star:</strong> Beta Monocerotis — a triple star system ~700 ly away, magnitude ~3.7</li>
+            <li><strong>Location:</strong> Between Orion and Canis Major</li>
+            <li><strong>Best months:</strong> January–March</li>
+            <li><strong>How to find it:</strong> Look for a faint region between Orion, Sirius, and Procyon</li>
+        </ul>
+
+        <label for="toggle-more-47" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Monoceros was introduced in the 1600s and represents the mythical unicorn.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation lies directly within the Milky Way and contains many star-forming regions.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Monoceros contains the Rosette Nebula, Christmas Tree Cluster, and Cone Nebula.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Monoceros reflects mythical creatures and imagination in constellation naming traditions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CANCER -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-48">
+        <h2>Cancer</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Cancer_IAU.svg/960px-Cancer_IAU.svg.png" alt="Cancer constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Crab” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Beta Cancri (Altarf) — an orange giant ~290 ly away, magnitude ~3.5</li>
+            <li><strong>Location:</strong> Between Gemini and Leo</li>
+            <li><strong>Best months:</strong> February–April</li>
+            <li><strong>How to find it:</strong> Look for a faint upside-down Y shape between Gemini and Leo</li>
+        </ul>
+
+        <label for="toggle-more-48" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>In Greek mythology, Cancer represents the crab sent by Hera to distract Hercules during his battle with the Hydra.</p>
+
+            <h3>Astronomy</h3>
+            <p>Cancer is relatively faint but lies along the zodiac, the path followed by the Sun, Moon, and planets.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains the Beehive Cluster (M44), one of the closest and brightest open clusters in the sky.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Cancer has appeared in Babylonian, Greek, and Roman astronomy for thousands of years.</p>
+        </div>
+    </div>
+</section>
+
+<!-- LEO MINOR -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-49">
+        <h2>Leo Minor</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leo_Minor_IAU.svg/960px-Leo_Minor_IAU.svg.png" alt="Leo Minor constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Smaller Lion”</li>
+            <li><strong>Brightest star:</strong> Praecipua — a yellow giant ~98 ly away, magnitude ~3.8</li>
+            <li><strong>Location:</strong> Between Leo and Ursa Major</li>
+            <li><strong>Best months:</strong> March–May</li>
+            <li><strong>How to find it:</strong> Look for a faint triangle of stars above Leo</li>
+        </ul>
+
+        <label for="toggle-more-49" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Leo Minor was introduced by Johannes Hevelius in the 17th century to fill a gap between larger constellations.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is faint and contains mainly dim stars.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Leo Minor contains several distant galaxies observable with medium to large telescopes.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>It reflects the expansion of constellation mapping during the scientific revolution.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TRIANGULUM -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-50">
+        <h2>Triangulum</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Triangulum_IAU.svg/960px-Triangulum_IAU.svg.png" alt="Triangulum constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Triangle”</li>
+            <li><strong>Brightest star:</strong> Beta Trianguli — a white star system ~125 ly away, magnitude ~3.0</li>
+            <li><strong>Location:</strong> Near Andromeda and Aries</li>
+            <li><strong>Best months:</strong> October–December</li>
+            <li><strong>How to find it:</strong> Look for a small thin triangle near Andromeda</li>
+        </ul>
+
+        <label for="toggle-more-50" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Triangulum is one of the oldest known constellations and was recognised by the Greeks and Babylonians.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is small but easy to identify due to its simple geometric shape.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Triangulum contains the Triangulum Galaxy (M33), one of the closest spiral galaxies to the Milky Way.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>The constellation’s triangular shape made it important in ancient geometry and astronomy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ARIES -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-51">
+        <h2>Aries</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Aries_IAU.svg/960px-Aries_IAU.svg.png" alt="Aries constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Ram” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Hamal — an orange giant ~66 ly away, magnitude ~2.0</li>
+            <li><strong>Location:</strong> Between Pisces and Taurus</li>
+            <li><strong>Best months:</strong> October–December</li>
+            <li><strong>How to find it:</strong> Look for a short curved line of three bright stars</li>
+        </ul>
+
+        <label for="toggle-more-51" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Aries represents the golden ram from Greek mythology whose fleece became the Golden Fleece sought by Jason and the Argonauts.</p>
+
+            <h3>Astronomy</h3>
+            <p>Aries lies along the zodiac and contains several bright nearby stars.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>The constellation contains several faint galaxies and star systems observable with telescopes.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Aries was historically important because the Sun once crossed the vernal equinox within it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PISCES -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-52">
+        <h2>Pisces</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pisces_IAU.svg/960px-Pisces_IAU.svg.png" alt="Pisces constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Fish” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Eta Piscium — a yellow giant ~350 ly away, magnitude ~3.6</li>
+            <li><strong>Location:</strong> Between Aquarius and Aries</li>
+            <li><strong>Best months:</strong> October–November</li>
+            <li><strong>How to find it:</strong> Look for two faint loops connected by a long line</li>
+        </ul>
+
+        <label for="toggle-more-52" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Pisces represents two fish tied together in Greek mythology, linked to Aphrodite and Eros escaping a monster.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is large but faint and lies along the zodiac.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Pisces contains the spiral galaxy M74, known for its well-defined spiral arms.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Pisces has appeared in Babylonian and Greek astronomy for over two thousand years.</p>
+        </div>
+    </div>
+</section>
+
+<!-- AQUARIUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-53">
+        <h2>Aquarius</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Aquarius_IAU.svg/960px-Aquarius_IAU.svg.png" alt="Aquarius constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Water Bearer” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Sadalsuud — a yellow supergiant ~540 ly away, magnitude ~2.9</li>
+            <li><strong>Location:</strong> Near Capricornus and Pisces</li>
+            <li><strong>Best months:</strong> August–October</li>
+            <li><strong>How to find it:</strong> Look for a faint zig-zag pattern called the “Water Jar”</li>
+        </ul>
+
+        <label for="toggle-more-53" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Aquarius is linked to Ganymede, the cupbearer of the gods in Greek mythology.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is large and faint but important due to its zodiac position.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Aquarius contains the Helix Nebula, one of the closest planetary nebulae to Earth.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Aquarius has long been associated with water, floods, and seasonal rains in ancient cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CAPRICORNUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-54">
+        <h2>Capricornus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Capricornus_IAU.svg/960px-Capricornus_IAU.svg.png" alt="Capricornus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Sea Goat” (Zodiac)</li>
+            <li><strong>Brightest star:</strong> Deneb Algedi — a white giant ~39 ly away, magnitude ~2.8</li>
+            <li><strong>Location:</strong> Between Sagittarius and Aquarius</li>
+            <li><strong>Best months:</strong> July–September</li>
+            <li><strong>How to find it:</strong> Look for a large faint triangular shape</li>
+        </ul>
+
+        <label for="toggle-more-54" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Capricornus represents the mythical sea-goat associated with the Greek god Pan.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation is faint but forms part of the zodiac.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Capricornus contains several globular clusters and distant galaxies.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>The constellation has roots in Babylonian astronomy dating back thousands of years.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EQUULEUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-55">
+        <h2>Equuleus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Equuleus_IAU.svg/960px-Equuleus_IAU.svg.png" alt="Equuleus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Little Horse”</li>
+            <li><strong>Brightest star:</strong> Kitalpha — a yellow giant ~190 ly away, magnitude ~3.9</li>
+            <li><strong>Location:</strong> Near Pegasus and Delphinus</li>
+            <li><strong>Best months:</strong> August–October</li>
+            <li><strong>How to find it:</strong> Look for a small faint shape beside Pegasus</li>
+        </ul>
+
+        <label for="toggle-more-55" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Equuleus is one of the smallest and oldest constellations in the sky.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation contains mainly faint stars and occupies a small area.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Equuleus contains few major deep-sky objects due to its small size.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>It is associated with horses and mythology in Greek astronomy.</p>
+        </div>
+    </div>
+</section>
+
+<!-- OPHIUCHUS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-56">
+        <h2>Ophiuchus</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Ophiuchus_IAU.svg/960px-Ophiuchus_IAU.svg.png" alt="Ophiuchus constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Serpent Bearer”</li>
+            <li><strong>Brightest star:</strong> Rasalhague — a white giant ~47 ly away, magnitude ~2.1</li>
+            <li><strong>Location:</strong> Above Scorpius and Sagittarius</li>
+            <li><strong>Best months:</strong> June–August</li>
+            <li><strong>How to find it:</strong> Look for a large figure holding the constellation Serpens</li>
+        </ul>
+
+        <label for="toggle-more-56" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Ophiuchus represents Asclepius, the Greek god of medicine and healing.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation lies across the Milky Way and is rich in star fields and clusters.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Ophiuchus contains many globular clusters and Barnard’s Star, one of the nearest stars to Earth.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Ophiuchus is sometimes called the “13th zodiac constellation” because the Sun passes through it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERPENS -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-57">
+        <h2>Serpens</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Serpens_IAU.svg/960px-Serpens_IAU.svg.png" alt="Serpens constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Serpent”</li>
+            <li><strong>Brightest star:</strong> Unukalhai — an orange giant ~74 ly away, magnitude ~2.6</li>
+            <li><strong>Location:</strong> Split around Ophiuchus</li>
+            <li><strong>Best months:</strong> June–August</li>
+            <li><strong>How to find it:</strong> Look for two separate star chains surrounding Ophiuchus</li>
+        </ul>
+
+        <label for="toggle-more-57" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Serpens is the only constellation officially divided into two sections: Serpens Caput and Serpens Cauda.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation stretches across rich Milky Way regions filled with stars and nebulae.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Serpens contains the Eagle Nebula (M16), home to the famous “Pillars of Creation.”</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Snakes symbolised healing, wisdom, and rebirth in many ancient cultures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SCUTUM -->
+<section class="container">
+    <div class="showmore-box">
+        <input type="checkbox" id="toggle-more-58">
+        <h2>Scutum</h2>
+
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Scutum_IAU.svg/960px-Scutum_IAU.svg.png" alt="Scutum constellation diagram">
+        </div>
+
+        <ul class="visible-info">
+            <li><strong>Nickname:</strong> “The Shield”</li>
+            <li><strong>Brightest star:</strong> Alpha Scuti — an orange giant ~175 ly away, magnitude ~3.8</li>
+            <li><strong>Location:</strong> Near Aquila and Sagittarius</li>
+            <li><strong>Best months:</strong> June–August</li>
+            <li><strong>How to find it:</strong> Look for a faint patch within the Milky Way below Aquila</li>
+        </ul>
+
+        <label for="toggle-more-58" class="showmore-button">Show More</label>
+
+        <div class="showmore-content">
+            <h3>Background & Mythology</h3>
+            <p>Scutum was created by Johannes Hevelius in the 1600s and named after a Polish king’s shield.</p>
+
+            <h3>Astronomy</h3>
+            <p>The constellation lies directly within the Milky Way and contains dense star fields.</p>
+
+            <h3>Deep-Sky Objects</h3>
+            <p>Scutum contains the Wild Duck Cluster (M11), one of the richest open clusters visible from Earth.</p>
+
+            <h3>Cultural Significance</h3>
+            <p>Scutum reflects the tradition of commemorating historical figures through astronomy.</p>
+        </div>
+    </div>
+</section>
+
+    <label for="back to top" class="showmore-button"><a href="NorthernHem.html">Back to Top</a></label>
+</div>
+</body>

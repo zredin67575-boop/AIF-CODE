@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exoplanets</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+
+</head>
+<body>
+    <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header>
+
+    <h1>The Wonder of Exoplanets</h1>
+    <p>Exoplanets are planets that exist outside of our solar system.</p>
+</body>
+</html>

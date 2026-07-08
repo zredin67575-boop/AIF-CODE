@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronomical Events</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3, p {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li, .intro {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .container3 {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+        background-color: whitesmoke;
+        color: #1a044d;
+        border-radius: 8px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 50%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .box4 {
+        width: 50%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .image-block img {
+        width: 90%;
+        height: 90%;
+        max-height: 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        display: flex;
+        align-items: flex-start;
+        margin: 0 auto;
+    }
+
+    .boximg {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 10px;
+    }
+</style>
+</head>
+
+<body>
+<header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+</header>
+
+<div class="container">
+    <h1 style="font-size: 42px; text-align: center;"><strong>ASTRONOMICAL EVENTS</strong></h1>
+    <p class="intro">There are many other astronomical and celestial events that can occur, these include:</p>
+
+    <div class="box">
+        <h2><strong>AURORAE</strong></h2>
+        <p>You may have heard of passenger planes flying over the Northern Lights, or the Aurora Borealis. But have you ever wondered why they happen?</p>
+        <p>There are two boxes a planet must tick for an aurora to occur: a magnetic field and an atmosphere. The magnetic field acts as a funnel, directing charged particles resulting from solar flares - which occur when 'twisted' magnetic fields in the sunrelease a tremendous amount of energy, towards the magnetic poles and upper atmosphere. When these particles interact with nitrogen (N2) and oxygen (O, O2), they trigger excitation and ionisation (when an atom changes energy levels through electron emission or attraction), and these reactions emit light, causing aurorae. Nitrogen emits blue and purple light, whilst oxygen emits red and green light.</p>
+    </div>
+
+<div class="container2">
+    <div class="box3">
+        <div class="image-block">
+            <img src="data:image/png;base64,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" alt="How aurorae occur">
+            <div class="caption">Charged particles from solar flares interact with Earth's atmostphere, creating aurorae.</div>
+        </div>
+    </div>
+
+    <div class="box3">
+        <div class="image-block">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZwsUfWbDWMxwDoIP-RM34s_vp8Y44tfr_-Q&s" alt="Jupiter Aurora">
+            <div class="caption">Hubble telescope image of an aurora on Jupiter using UV light.</div>
+        </div>
+    </div>
+</div> 
+
+    <div class="box">
+        <h2><strong>SUPERNOVAE</strong></h2>
+        <p>Supernovae are one of the many things that can happen to stars when they 'die'.</p>
+        <p>They are violent stellar explosions with so much energy that they can briefly outshine entire galaxies. Producing more energy in a short amount of time than the sun is predicted to over its entire lifespan. They can occur over various time lines, from hours all the way to months. But what makes them happen? 
+        <p>Supernovae can happen in one of two ways: by the gravitational collapse of the core of a massive star, or by a sudden re-ignition of nuclear fission in an extremely compact star. Both methods require the star to have an extreme mass of more than 8M, or 8 times the size of our sun, which is 1989000000000000000000000000000 kg, and takes up about 99.8% of mass in our solar system.</p>
+        <p>All things with mass have an inward gravitational pull and an internal outward pressure. Gravitational collapse occurs when matter is drawn towards the centre of gravity, which occurs when a celestial body runs out of nuclear gas, loses supporting heat, or exceeds a certain density of 10^-24 to 10^-18 g/cm^3. For context, the density of water is 1g/cm^3. The iron core of the star implodes in seconds, rebounds, and sends violent shockwaves that explode the star.</p>
+        <p>Interestingly, supernovae were first recognised by Chinese astronomers in 185 CE as 'guest stars' that were sudden, bright, stationary objects in the night sky that faded over a few months. It appeared quite close to Alpha Centauri in the Nan Mun constellation</p>
+        <p>Many other things can happen to stars when they die as well, such as forming white dwarves, neutron stars, and black holes. If you're interested in learning more about this, click <a href="poststars.html">here!</a></p>
+    </div>
+<div class="container2">
+    <div class="box3">
+        <div class="image-block">
+            <img src="data:image/jpeg;base64,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" alt="SN 1993">
+            <div class="caption">A supernova blast captured mid-explosion by the Hubble Telescope.</div>
+        </div>
+    </div>
+
+    <div class="box3">
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Crab_Nebula.jpg/500px-Crab_Nebula.jpg" alt="Supernova">
+            <div class="caption">The Crab Nebula is a puslar wind nebula associated with SN 1054.</div>
+        </div>
+    </div>
+</div>
+
+    <div class="box">
+        <h2><strong>OPPOSITIONS, CONJUNCTIONS, QUADRATURES, AND ELONGATIONS</strong></h2>
+        <p>Oppositions, conjunctions, and elongations are somewhat similar to eclispes. They occur when planets, the Earth and sun align in certain ways. Oppositions occur when Earth is in the middle of this alignment, causing the planet to look bigger, brighter, and closer, the planet is also visible all night.</p>
+        <p>There are two types of conjunctions, superior and inferior. Superior occurs when a superior planet (in a further orbit from the sun than Earth) (and I'm guessing that you can guess what an inferior planet is), aligns with the sun in the middle, inferior conjunction occurs when the an inferior planet (Mercury or Venus) is in the middle. If it aligns perfectly, a transit occurs, and there is a small dot on the sun, but it is usually invisible due to the suns glare.</p>
+        <p>The greatest elongation is the maximum angular distance (East or West) of an inferior planet from the sun. Similarly, quadrature occurs when there is a 90-degree angle between a superior planet and the sun.</p>
+    </div>
+<div class="container2">
+    <div class="box3">
+        <div class="image-block">
+            <img src="https://astronomy.swin.edu.au/cms/cpg15x/albums/userpics/elongationA.jpg" alt="Diagram">
+            <div class="caption">Conjunctions, oppositions, and quadratures depend on the position of the planets relative the Earth and sun.</div>
+        </div>
+    </div>
+
+        <div class="box3">
+            <div class="image-block">
+                <img src="https://starwalk.space/gallery/images/elongation-mercury/1920x1080.jpg" alt="Elongations">
+                <div class="caption">Elongations only happen to inferior planets (Mercury and Venus)</div>
+            </div>
+        </div>
+</div>
+
+    <div class="box">
+        <h2><strong>COMETS AND SHOOTING STARS</strong></h2>
+        <p>Comets and shooting stars are basically the same thing, just in different areas in space. Comets and asteroids are leftovers from the formation of our solar system, 4.6 billion years ago. Asteroids are the rocky remnants: metallic and rocky objects that orbit the sun, ranging in size from dust to hundreds of kilometres wide. They didn't form a planet due to the gravity of Jupiter, as it disturbed their orbits, causing them to collide and break apart. Jupiter's gravity does not affect all asteroids equally. Asteroids in specific regions, known as Kirkwood gaps, feel regular, reinforcing gravitational tugs from Jupiter. These resonances make their orbits unstable, causing them to be ejected from these areas, preventing the accumulation of material. Asteroids are mainly located in the asteroid belt and follow elliptical orbits around the Sun.</p>
+        <p>Comets, on the other hand are often called "dirty snowballs", composed of frozen gases, ice, and dust. They formed in the outer solar system, colder as it is further from the Sun, and are sometimes knocked into the inner solar system by gravity. As they approach the sun, solar radiation causes sublimation (ice directly to gas). This creates a glowing comet and a tail that always points away from the Sun due to solar wind.</p>
+        <p>Shooting stars are a streak of light caused by a small piece of rock or metal (meteoroid) from an asteroid or comet entering the Earth's atmosphere. Earth's orbit passes through debris trails left behind by comets or asteroids. As the particle hits the upper atmosphere at high speed, it compresses the gas in front of it. This intense compression and friction produce immense heat, melting and vaporising the outer layers of the meteoroid. The air molecules around it get ionised (losing or gaining electrons), glowing brightly. Sometimes people confuse satellites with shooting stars, but satellites move much more slowly, and you can often trace them across the night sky, whereas shooting stars move much quicker and leave colourful trails that taper off.</p>
+    </div>
+<div class="container2">
+    <div class="box3">
+        <div class="image-block">
+            <img src="https://d2pn8kiwq2w21t.cloudfront.net/images/imagesasteroid201004072151-20100421-640.width-1024.jpg" alt="Shooting stars">
+            <div class="caption">Meteor from the Kappa Cygnid Meteor Shower.</div>
+        </div>
+    </div>
+
+    <div class="box3">
+        <div class="image-block">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhIVFRUVFhcVFRUVFRUVFRUXFRUXFxUVFRcYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFQ8PFS0ZFR0tKy0tKy0tLS0tLS0tKy0rNy0tLS0tLS0tLS0tLS0tLS0tLS0tLTctLS0tNy03Ny0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAAAQIDBAUGB//EAC4QAAICAQIEBQQDAAMBAAAAAAABAhEDITEEQVFhBRKBkfBxobHhwdHxExQiBv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EAB8RAQADAQEAAgMBAAAAAAAAAAABAhExAwQhIjKBEv/aAAwDAQACEQMRAD8A/HmJPmVLYTVafhp/daM1BfoGOEW9Em+y1Ljhk4ykk2o15n082kb+rKzCExNA0IjRtbarVXpy1a176A0KgCgSY+1/1fexBQAAA4gFc/5V8uW/Pf69GMoACxNhTsBAAxAmJsqGpb6b/bVO17V6skGABYJaCX+AU0wUvm/5EAQivLtqtftrWoqKSAhIpRNIwNIwIIhDVX6mywxvd+W961rr5b37WOMDWMAIjiNIwNYxNfLfKtvx3CsFArym3kBx58uv5/K9wrFxJ8qLkzHzHn+R+ry/K/T+uCT6CTHJEnZ6LGNTEtRFSFNiJCyKaV6derSXq3ohWAgpsAGgAar+gT9hAMQJisIpS/ra9/qAhr6+xV0By39Of1ExAOxWJiKh2FiAppgIaCCiqGkaRgBEYmkYGkIGsYAZxgaqBcYG0cYGUcZtHGaxxmnlCxDOMB0OUkZSkRTlIylIbZE8miVLnrzd9fYhqJszfcU5mHnOPtG1ef3jasZEFz2Jo6w72AWH5+foKBBCYAFNLft3XVLTq9fz0AcUutO1pXJ3bvtp79gCAAGwFYWJiApiEOwhtiUhNjKG5fOv1Bc/tv1X7JEUMBIpR/rklr1b0XqUIce/z6DUenz4y4w/0ImKNYx0Wi+utv661/pUMRtHGBEcZrHGaRgapcgM44zSGM2hiNo4wrKGOjbHGqfTrTXs9PQ0UEiJzC4JSRjOQSZlOZF0SZEpETymE8hGdaTmZZZq3W3K967mUpmfmV63Wu2+2n3oIc5GXmFJmdnO/wBwzePpvPZEjkyDcOljoQzXLKOnli41FKWrl5pLeWqXlvTTWqKQyYiiSKAKhBt0k2+SSbb9ESEDFYMTCHYhDCaAsQ0igEND+wTThNppp00001umtU0JCHRTQUkOMDfHjKazjA6IYzXHh+fPQ2jjAzhjNYwNI4zpx8OFc8MR0QwnTDEaeSguMY4htpDnkMJ5PjCnkmYymZZspzZMpGdbTm6vkqTfJN3Sb9H7M5p5DOWQxlMiLlkMnMiUiGyKuUiGxMQUMI1zT96/gTCzFmbcbzql156+2hNXsnotefPfstUDEdG7ABiCQLBlQq9W651z7Lo3tdEMinGTWqbT6rRg1+L3T/GxIrAQDaEEkAA0GSGUolqBU1mkXHfl6pNez0ZaxmixlTWKh8+ehahZvDEdGHhyprDFhs7ceBtXV00rvXZ0kr2pdDbHw50Y8JVhzRwm2PAzuw8JZ1w4atg6RVw4+G6m8cR0yilucubiCNfUHNpHLmymWbMceXMGZs1y5zkyZjPLk9TnnkIxMtZ5DCeQieQzcgKcyHIlsRlTEwGFABQ0RUsSGwSMWZvxoxwm0002mmmmnTTWqaa2dg2B1bsExMKAImxWNiIpNg16jZIQCAaDISNIQFCJ1YsZWJlMMRvHCdOHAduPhOxpzm7zY4TSGA9WPBM7eH8NfQqRO8ePh4Q7sfCnsY+A7HZg8Mb5DXevnMvEx8I3yO/DwFbnsf8AVjBHLxGetjOu0UivWEsajucmbiOgs+fqcGTKpSUfMo26uTqK7t8kVmbFnznn5s5nmynHlmHOZa5M5zzzaV9H7X/bMZ5DKUiIueQynMlsn589wptifzYQLcgAH9Cnvv116+5FSikFLT731+UFEUACCyKJISQ2IzZn041miWEpWPWTrm3Strm9Lk6S+rpHV0sRLGmAZSIoPX82QS2If8EhAVFEmkAzLbFE9LhcRxcOj2uAxaosON5x28Dwd8j3+E8Ib5G3gfBW0fong3g6aWhrceLZvbIfF8P4A+h2R8I7H6BPwxJbHBxOFRMf619bw84iHysfDFHWRz8TOtFoeh4lxUY3qfJ+J+KrkWId7elawrjOIS5nh8Zxxx8Z4g2eVn4izWPLb0mXVxHFvqcOTiP9+fNTDJkMXMMdbZM23zm/cxnkEzfxLw/Jgm8eVeWSSbSaekkpJ2nWzRGohy/8mjjS1ad1/wClSapPkn5tV2XQzv8A3W19OX+DaIbCpYkMVGQ77AnyAaClQ0gAgYFRlXT1SYg0Q+v29+fpYUIgQIGCMWY9OHJCuvllMPv70/5OzrYlIG/n7CgoMkEkIGtCCWIbEEOL6o0xtab1zrTTs9ae/L3MiohmXdw7Pd8Nlqj53DI9fgc1Fhw9Ifo//wA/lVo/S/BuKikj8W8K4+q1PrOB8bpbmuvD+VLbD9K4vjopHxnj3jNXR53FeO2tz5fxTxC71JFYh6I+T6W59MvFfFG29T5ziuJb5l8XnPMzZS6612ellynLPIGSZzTmTXWIVKZk5ktksmrjVTLWT1+uvKjnTKTGtQ08xEgbEyNEkAxEQIpPUmgAdDQIry8/Tf8AjcKaiqt63aq9U1VP6a+tMmgAiiufz5qIB0QSNIaX09b17aFY/LWt+lGbM+nBJKtd+XTvZFFSEdodLEOcm227bbtt6tt7tvmwEwyliY6EyBAFFeTftruuqXrugJoa+frqDQIJLSEzqwZaOFGkJBiYe9wvG1zPUw+JvqfKY8pvDP3oa4z5xL6efibfM4c/G2eR/wBkiebTdc9NbW2u1c/t9LukebpzZzjyZTKeQzbJrpFTnMzbE2K/nz1DeE2Fjr56iIpoBIugCgQ6AKH2/YSd/rQQNgCYwHfz5sRSGFAQMQAA38+egk+YxAFBEATZm3GPTipks0miKO7rZIUW4hRExDXP03V+wqLokgmgKoGgYliKoJO9fwkvsiGJGgERMUmUpGY0GcaKXUlyHFc/K2tVetW0616867EspgcibG0D7EXEsKNcqV6apbNrytrk2rdPtbM6BhIYUMLhIoca6X83BE0xrlzuTtqK0Uf/ADGMVUYqK0Sq6Wr3b13M2wQRjrq6XWrLoQDGQJBQxxXegJGNgRSEOgCEAwsKlggHEzZz9ONsmxDAD0Q626EhyelfPUYEENAqvXT6L+AAKSf30CgAyhUOr0S+/uIAJCgAiBgAAFAMCAoFDft3XVLTrvyACoTQUAEU6HQAA3BVvr25b2n329yaAAGMAIGkNRvZX+lqAFCaCgAgQxAAUVOTbbk223bbttvq7AAQTE0AAIcRAZsx6cf/2Q==" alt="Comet">
+            <div class="caption">Comet Lovejoy is a long-period comet discovered in November 2011.</div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>

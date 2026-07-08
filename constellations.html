@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constellations</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 60px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0px;
+    margin-left: -30px;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 16px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block, .image-inside {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .image-inside img {
+        width: 80%;
+        height: 80%;
+        max-height: 400px;
+        max-width: 400px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+
+     table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-right: 20px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        margin-left: 10px;
+    }
+    
+    .th {text-align: center;}
+</style>
+</head>
+
+<body>
+    <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header> 
+
+<div class="container"> 
+    <h1 style="font-size: xx-large; text-align: center;"><b>CONSTELLATIONS</b></h1>
+
+    <div class="box intro">
+        <h2><b>WHAT ARE CONSTELLATIONS?</b></h2>
+        <p>Constellations are groups of stars that humans have connected into patterns and stories for thousands of years. Even though the stars in a constellation may appear close together from Earth, many are actually separated by enormous distances in space and are not physically connected at all.</p>
+        <p>Humans have looked to the stars for as long as civilisation has existed. Ancient cultures observed repeating patterns in the sky and used them to explain the world around them. These patterns became constellations, often representing animals, gods, heroes, tools, or important cultural stories.</p>
+        <p>Different cultures developed very different interpretations of the same stars. Ancient Greek astronomy imagined figures such as Orion the Hunter or Scorpius the Scorpion, while many Indigenous cultures used constellations as part of navigation, storytelling, seasonal calendars, law, and understanding the environment. For example, many Aboriginal Australian cultures identify constellations not just from stars, but from the dark dust lanes within the Milky Way itself, such as the “Emu in the Sky”.</p>
+        <p>Today, astronomers officially recognise 88 constellations, which divide the entire sky into sections. These regions act almost like a giant map of space, helping astronomers locate celestial objects such as stars, nebulae, galaxies, black holes, and exoplanets.</p>
+    </div>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Orion_constellation_-_Prodromus_astronomiae_1690_%285590584%29.jpg" alt="Constellations">
+            <div class="caption">Constellations are often based on ancient myths and stories.</div>
+        </div>
+
+    <div class="box">
+        <h2><B>HISTORICAL VS. MODERN USES</B></h2>
+        <p>Before modern technology, constellations were incredibly important to human survival and exploration. Long before compasses, GPS, clocks, or maps, people relied on the stars to navigate oceans, deserts, forests, and trade routes.</p>
+        <p>Sailors used constellations such as Crux (the Southern Cross) and Ursa Major (the Big Dipper) to determine direction. Farmers used the appearance of certain constellations to predict changing seasons, rainfall, migrations, or planting times. Many cultures also linked constellations to religion, mythology, ceremonies, and storytelling.</p>
+        <p>Today, constellations are still extremely important, but in a more scientific sense. Astronomers use them as reference systems to organise and map the night sky. Celestial objects are usually identified by the constellation region they are found in.</p>
+        <p>For example:</p>
+        <ul>
+            <li>The Orion Nebula is found in Orion</li>
+            <li>The Andromeda Galaxy is located in Andromeda</li>
+            <li>Many exoplanets are named after their host stars within constellations</li>
+        </ul>
+        <p>In this way, constellations act almost like “space addresses”, helping scientists locate objects across enormous distances.</p>
+    </div>
+
+    <div class="box">
+        <h2><B>WHY DO CONSTELLATIONS CHANGE THROUGHOUT THE YEAR?</B></h2>
+        <p>The constellations we see change throughout the year because Earth is constantly moving around the Sun. During different months, the night side of Earth faces different directions into space, meaning different constellations become visible.</p>
+        <p>This is why Orion dominates Australian summer skies, while Scorpius is most visible during winter. As Earth continues orbiting the Sun, the visible night sky gradually shifts.</p>
+        <p>Constellations also rise approximately four minutes earlier each night. Over weeks and months, this small difference becomes very noticeable.</p>
+        <div class="image-inside">
+            <img src="https://www.gpb.org/sites/default/files/styles/three_two_702x468/public/npr_story_images/2023/05/03/constellations-chart.en-083233a4678bdde9b9f1f1c094680e7a081aa1a7.jpg?h=337da750&itok=_aUmjTDl" alt="Earth moves in space">
+            <div class="caption">As the Earth moves around the Sun, constellations position relative to Earth change.</div>
+        </div>
+
+        <h2><B>CIRCUMPOLAR CONSTELLATIONS</B></h2>
+        <p>Some constellations never fully disappear below the horizon. These are called circumpolar constellations. They appear to rotate around the celestial poles and remain visible throughout the year.</p>
+        <p>In the Southern Hemisphere, Crux (the Southern Cross) is one of the most recognisable circumpolar constellations. In the Northern Hemisphere, Ursa Major and Ursa Minor are common examples.</p>
+        <p>The closer you are to the poles, the more circumpolar constellations you can see.</p>
+        <div class="image-inside">
+            <img src="https://c02.purpledshub.com/uploads/sites/48/2021/04/GettyImages-1262292981-34f5e9d-e1617273088150.jpg?webp=1&w=1200" alt="I can draw lines too y'know...">
+            <div class="caption">The apparent movement of the stars around the celestial pole can be seen in long-exposure images called star trails.</div>
+        </div>
+
+        <h2><b>DIFFERENT HEMISPHERES</b></h2>
+        <p>People in different hemispheres see different constellations because they are viewing space from different parts of Earth. Someone in Australia can see constellations such as Crux and Centaurus very clearly, while people in northern countries may never see them at all.</p>
+        <p>Likewise, many northern constellations, such as Ursa Major, appear much lower in Australian skies or may not be visible depending on location.</p>
+        <p>This is because Earth's curvature blocks part of the sky from view depending on where you are standing on the planet.</p>
+        <div class="image-inside">
+            <img src="https://cdn.mos.cms.futurecdn.net/h637Yb8JdR6XcQaAJzEXDE-1200-80.jpg.webp" alt="Different Hemispheres">
+            <div class="caption">Constellations are purely relative to Earth, meaning different hemispheres may be able to see different constellations more often.</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><B>STELLAR PARALLAX</B></h2>
+        <p>Stars may appear fixed in the night sky, but nearby stars slightly shift position throughout the year as Earth orbits the Sun. This tiny apparent movement is called stellar parallax.</p>
+        <p>Parallax occurs because astronomers are observing stars from slightly different positions in Earth's orbit at different times of year. Nearby stars appear to move slightly compared to distant background stars.</p>
+        <p>Astronomers use this movement to calculate the distance to nearby stars. The smaller the parallax shift, the further away the star is.</p>
+        <p>Although the movement is extremely tiny, modern telescopes can measure it with incredible precision.</p>
+        <div class="image-inside">
+            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/releases/2013/03/STScI-01EVVCQZS2MM8CB44JW05F23XF.jpg?w=2000&h=1882&fit=crop&crop=faces%2Cfocalpoint" alt="Stellar Paral lacks">
+            <div class="caption">Stellar parallax can be measured using trigonometric parallax.</div>
+        </div>
+
+        <h2><b>MEASURING STELLAR DISTANCES</b></h2>
+        <p>Space is unimaginably large, so kilometres quickly become impractical. Instead, astronomers use units such as astronomical units (AU), parsecs, and light-years.</p>
+        <p>A light-year is the distance light travels in one year — approximately 9.46 trillion kilometres.</p>
+        <p>This means when we observe distant stars and galaxies, we are actually looking into the past. If a star is 100 light-years away, the light entering your eyes tonight left that star 100 years ago.</p>
+        <p>Some galaxies visible through telescopes are millions or even billions of light-years away, meaning we see them as they existed long before humans evolved.</p>
+        <p>Additionally, using angular separation (more similar to parallax). This describes how spread out objects appear on the sky's dome, regardless of their actual distance from Earth.</p>
+        <p>You can estimate angular distances between stars in the night sky using your hand at arm's length, where a pinky finger equals roughly 1 degree, a fist 10 degrees, and a full hand-span about 20-25 degrees. This method measures angular separation, not direct distance, providing a "handy" guide for finding objects</p>
+        <div class="image-inside">
+            <img src="https://c.tadst.com/gfx/1200x630/measuring-sky-with-hand.png?1" alt="A 'handy' guide to stars, ha, ha, ha!">
+            <div class="caption">Using your hand is an excellent way to navigate the night sky.</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><B>STAR CLASSIFICATIONS</B></h2>
+        <p>Stars are classified based on characteristics such as temperature, colour, brightness, mass, and size. These classifications help astronomers understand how stars form, evolve, and eventually die.</p>
+
+        <h2><b>SPECTRAL CLASSES</b></h2>
+        <p>Astronomers classify stars using the spectral sequence:</p>
+        <p><b>O, B, A, F, G, K, M</b></p>
+
+        <div class="table">
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>Colour</th>
+                <th>Temperature Range</th>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>Blue</td>
+                <td>>30,000 K</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>Blue-white</td>
+                <td>10,000 - 30,000 K</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>White</td>
+                <td>7,500 - 10,000 K</td>
+            </tr>
+            <tr class="F">
+                <td>F</td>
+                <td>Yellow-white</td>
+                <td>6,000 - 7,500 K</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>Yellow</td>
+                <td>5,000 - 6,000 K</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>Orange</td>
+                <td>3,500 - 5,000 K</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>Red</td>
+                <td>3,500> K</td>
+            </tr>
+        </table>
+        </div> 
+
+        <p>A common memory trick is: <i>“Oh Be A Fine Girl, Kiss Me.”</i></p>
+        <p>Blue O-type stars are the hottest and most massive, while red M-type stars are cooler and usually smaller. Our Sun is a G-type star.</p>
+        <p>The colour of a star directly relates to its temperature:</p>
+        <ul>
+            <li>Blue = hottest</li>
+            <li>White = very hot</li>
+            <li>Yellow = moderate</li>
+            <li>Orange/red = cooler</li>
+        </ul>
+
+        <h2><b>GREEK LETTER NAMING</b></h2>
+        <p>Bright stars within constellations are often named using Greek letters. Typically, Alpha is the brightest star, Beta the second brightest, Gamma the third, and so on.</p>
+        <p>For example, Alpha Centauri is the brightest star system in Centaurus.</p>
+        <div class="image-inside">
+            <img src="https://visitsithonia.com/wp-content/uploads/2023/10/Greek-Alphabet.jpg" alt="Kebab Makers Alphabet">
+            <div class="caption">The Greek Alphabet</div>
+        </div>
+
+        <h2><b>FLAMSTEED DESIGNATION</b></h2>
+        <p>Some stars are also identified using the Flamsteed designation system, which assigns numbers based on a star's position within a constellation.</p>
+        <p>This system is still commonly used in astronomy today.</p>
+        <div class="image-inside">
+            <img src="https://docs.openspaceproject.com/latest/_images/stars_label_alternate.png" alt="Good ol' Johnny Flam-The-Man">
+        </div>
+
+        <h2><b>HERTZSPRUNG-RUSSELL DIAGRAM</b></h2>
+        <p>The Hertzsprung-Russell Diagram (H-R Diagram) is one of the most important tools in astronomy. It compares stars based on temperature and luminosity (true brightness).</p>
+        <p>Most stars, including the Sun, spend most of their lives in the “main sequence” section of the diagram, where they steadily fuse hydrogen into helium.</p>
+        <p>The H-R Diagram also helps astronomers understand how stars evolve into red giants, white dwarfs, neutron stars, or black holes.</p>
+        <div class="image-inside">
+            <img src="https://www.azoquantum.com/images/Article_Images/ImageForArticle_436_16875340187622576.jpg" alt="the hurt has sprung dearest Russell">
+            <div class="caption">Hertzsprung-Russell Diagram.</div>
+        </div>
+
+        <h2><b>APPARENT VS ABSOLUTE MAGNITUDE</b></h2>
+        <p>Apparent magnitude describes how bright a star appears from Earth, while absolute magnitude describes how bright the star truly is.</p>
+        <p>A nearby dim star can appear brighter than a much more powerful star that is extremely far away.</p>
+        <p>This is similar to how a nearby torch appears brighter than a distant streetlight.</p>
+
+        <h2><b>SOLAR MASSES</b></h2>
+        <p>A star's mass is usually compared to the Sun using “solar masses”. One solar mass equals the mass of our Sun.</p>
+        <p>Massive stars burn hotter, brighter, and much faster, sometimes surviving only millions of years. Smaller stars burn fuel slowly and can survive for billions or even trillions of years.</p>
+        <p>A star's mass is one of the main factors determining its entire life cycle.</p>
+        <div class="image-inside">
+            <img src="https://i.redd.it/v03wpwrspohb1.jpg" alt="Jeez thats pretty big">
+            <div class="caption">Although the Sun appears massive relative to us, it is comparably small.</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><B>WHY CONSTELLATIONS MATTER</B></h2>
+        <p>Constellations connect science, culture, exploration, mythology, navigation, and human curiosity. They helped ancient civilisations survive, inspired discoveries, and continue to guide astronomers today.</p>
+        <p>They also remind us that humans across thousands of years and cultures all looked up at the same sky and wondered about the universe.</p>
+        <p>Modern astronomy has revealed that stars are giant nuclear furnaces, galaxies stretch across unimaginable distances, and black holes can warp space and time itself. Yet despite all of this knowledge, humanity still understands only a tiny fraction of the universe.</p>
+        <p>Looking at constellations is not just about identifying patterns — it is about understanding humanity’s connection to space, time, history, and discovery.</p>
+    </div>
+
+    <div class="box">
+        <h2><B>SUMMARY</B></h2>
+        <p>Constellations are far more than simple patterns in the night sky. They are part of human history, culture, science, navigation, and exploration.</p>
+        <p>They helped ancient people survive, allowed sailors to cross oceans, inspired stories and myths, and today help astronomers map the universe.</p>
+        <p>Every star you see has its own history, planets, chemistry, and future. Some may already be dead, with their final light only now reaching Earth.</p>
+        <p>Even though humanity has learned an incredible amount about the cosmos, there is still so much left to discover. Every time we look into the night sky, we are looking into both the distant past and the future of exploration itself.</p>
+    </div>
+
+    <div class="box">
+        <h2><B>QUIZZES</B></h2>
+        <p>Test your knowledge with quizzes about:</p>
+        <ul>
+            <li>Constellation identification</li>
+            <li>Key astronomy definitions</li>
+            <li>Stars and exoplanets</li>
+            <li>Visibility and seasons</li>
+            <li>Constellation mythology and history</li>
+            <li>Star classifications and magnitudes</li>
+        </ul>
+        <p>These quizzes can help reinforce your understanding, improve your ability to identify constellations, and make exploring the night sky much easier and more engaging.</p>
+    </div>
+</div>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronomical Events</title>
+
+<style>
+/* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 30px; }
+
+    h4, h5 {
+    font-size: 24;
+    font-family: "Poppins", Arial, sans-serif;
+    }
+
+    h4{color: #534811;}
+    h5{color: #6443b1;}
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container3 {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+        background-color: whitesmoke;
+        color: #1a044d;
+        border-radius: 8px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+        width: 100%;
+    }
+
+    .box2 {
+        width: 70%;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 50%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .box4 {
+        width: 50%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .dates {
+        width: 30%;
+        max-width: 300px;
+        font-size: 18px;
+    }
+
+    .dates h3 {margin-bottom: 20px;}
+    .dates div {margin-bottom: 18px;}
+
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+    <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header>
+
+<div class="container">
+    <h1 style="font-size: 50px; text-align: center;">ASTRONOMICAL EVENTS</h1>
+</div>
+
+<div class="container2">
+    <div class="dates">
+        <h3><strong>2026 EVENTS</strong></h3> 
+
+        <div><h4>17 February (late morning - early afternoon) - annular solar eclipse</h4></div>
+        <div><h5 style="font-size: 18px;">28 February (just after sunset) - planet parade</h5></div>
+        <div><h4>2-3 March (peak at 10pm) - total lunar eclipse</h4></div>
+        <div><h5 style="font-size: 18px;">22-23 April (12-3 am in Lyra) - Lyrid meteor shower</h5></div>
+        <div><h4>9-10 June (just before sunrise) - Venus and Jupiter come together</h4></div>
+        <div><h5 style="font-size: 18px;">12 August (midday) - total solar eclipse</h5></div>
+        <div><h4>13 August (12-3 am in Perseus) - Perseid meteor shower</h4></div>
+        <div><h5 style="font-size: 18px;">27-28 August - partial lunar eclipse</h5></div>
+        <div><h4>2 November - lunar occulation of Jupiter</h4></div>
+    </div>
+    
+            
+    <div class="box2">
+        <h2>WHAT IS AN ECLIPSE?</h2>
+        <p>An eclipse is an astronomical event occuring when one celestial object, such as a moon or planet, moves into the shadow of another object or has another object pass between it and the viewer. This creates a syzygy, or alignment of three objects. The two main types of eclipses are solar - Moon blocks Sun - and lunar - Earth blocks Sun from Moon.</p>
+        
+        <H2>WHAT IS A PLANET PARADE?</H2>
+        <p>A planet parade is a rare astronomical event where multiple planets in our solar system are visible in the same area of the sky as seen from Earth. It only seems as though the planets are 'lining up' due to our perspective.</p>
+        <p>To see this year's planet parade, look to the western sky 30-90 minutes after sunset. Mercury, Venus, Jupiter, and Saturn can ususally be seen with the naked eye, but you may need binoculars or a telescope to see Uranus and Neptune.</p>
+
+        <h2>LUNAR OCCULTATIONS</h2>
+        <p>Lunar occultations occur when the moon passes infront of a celestial object such as a star, planet, or asteroid, temporarily hiding it from view. They're a bit like a localised miniature eclipse. Any occultation occurs when a body with a greater apparent diameter (how big it is from our perspective) passes in front of a body with a smaller apparent diameter. If the nearer object is smaller, it is called a mutual transit.</p>
+
+        <br><p style="padding-top: 15px;">For any questions about astronomical events or space in general, please email astrohub97@gmail.com</p>
+    </div>
+</div>
+
+<div class="container3">
+    <div class="box4">
+        <h3><strong>FULL MOONS</strong></h3> 
+        <li>Feb 1: Snow Moon</li>
+        <li>March 3: Blood Moon (Total Lunar Eclipse)</li>
+        <li>April 1: Pink Moon</li>
+        <li>May 1: Flower Moon</li>
+        <li>May 31: Blue Moon</li>
+        <li>June 29: Strawberry Moon (Micromoon)</li>
+        <li>July 29: Buck Moon</li>
+        <li>Aug 28: Sturgeon Moon (Partial Lunar Eclipse)</li>
+        <li>Sept 26: Harvest/Corn Moon</li>
+        <li>Oct 26: Hunter's Moon</li>
+        <li>Nov 24: Beaver Moon (Supermoon)</li>
+        <li>Dec 23: Cold Moon (Supermoon)</li>
+        <li>Jan 3: Wolf Moon (Supermoon)</li>
+    </div>
+            
+    <div class="box3">
+        <h3><strong>KEY LUNAR EVENTS</strong></h3>
+        <li>Blue Moon: A second full moon in one calendar month occurs on May 31.</li>
+        <li>Total Lunar Eclipse (Blood Moon): March 3, 2026.</li>
+        <li>Supermoons: The moons on January 3, November 24, and December 23 appear larger and brighter.</li>
+        <li>Micromoon: The June 29 moon is farther from Earth, appearing smaller.</li>
+    </div>
+</div>
+<div class="container2">
+    <div class="box">
+        <h3><strong>LUNAR PHASES</strong></h3>
+        <p>The lunar cycle occurs approximately every 29.5 days and follows a specific cycle with different phases. Key words to know when understanding the lunar cycle are gibbous, crescent, waxing, waning, new/full, and quarter. Gibbous refers to more than one half of the moon being illuminated, and crescent to less than one half. Waxing means getting bigger, and waning getting smaller. The reason the 'middle' phases are called first/third quarters, are because we only see one side of the moon, meaning only a quarter of the moon is illuminated.</p>
+        <div class="image-block">
+            <img src="https://c.tadst.com/gfx/600x337/moon-phases-explained.png?1" alt="Lunar Cycle">
+            <div class="caption">Phases of the moon.</div>
+        </div>
+    <h3><strong>THE MOON, TIDES, AND GRAVITY</strong></h3>
+        <p>The Moon drives tides through its gravitational pull, which stretches Earth's oceans into a "bulge" on both the near and far sides, creating two high tides and two low tides daily. The Moon's phases affect tide magnitude: new and full moons produce maximum spring tides (high high tides) due to aligned solar/lunar gravity, while quarter moons produce moderate neap tides.</p>
+        <p>When the Moon is closest to Earth (perigee), it exerts a stronger pull, resulting in higher-than-average tides known as perigean spring tides, often occurring 6-8 times a year.</p>
+        <p>Because the moon orbits the Earth, meaning its relative position changes, the high/low tides occur around 50 minutes later each day.</p>
+    
+    <h3><strong>LUNAR OBJECTS</strong></h3>
+        <p>Natural lunar objects consist of diverse geographical features and materials resulting from millions of years of cosmic and volcanic activity.</p>
+        <p>Some key formations include:</p>
+        <li>South Pole-Atiken (SPA) Basin: one of the largest and oldest impact craters in the solar system, spanning the far side of the moon.</li>
+        <li>Mare Imbrium (Sea of Rains): A massive lava-filled basin in the northern hemisphere.</li>
+        <div class="image-block">
+            <img src="https://www.lpi.usra.edu/lunar/missions/orbiter/images/la1_lg.gif" alt="Seas of the near side of the Moon">
+            <div class="caption">Map of seas on the near side of the moon.</div>
+        </div>
+        <li>Oceanus Procellarum (Ocean of Storms): The largest dark lunar "sea" (maria) located on the western side of the near side.</li>
+        <li>Aristarchus Crater: A bright, prominent crater located near the Bay of Rainbows, easily visible with binoculars.</li>
+        <li>Vallis Schröteri (Schröter's Valley): A sinuous rille (lava valley) near the Aristarchus crater.</li>
+        <li>Reiner Gamma: A notable "lunar swirl"—a high-albedo (bright) feature located in a region with a magnetic field.</li>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Reiner_gamma.jpg/250px-Reiner_gamma.jpg" alt="Reiner Gamma">
+            <div class="caption">Reiner Gamma.</div>
+        </div>
+        <li>Catena Mendeleev: A chain of craters within the Mendeleev crater</li>
+        <p>The newest (named) lunar object comes after the Artemis II mission, the Carroll Crater, named after one of the astronauts late wife.</p>
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Carroll_Crater.png" alt="Carroll Crater">
+            <div class="caption">Carroll Crater.</div>
+        </div>
+        <br>
+        <p>In addition to these, there are many man-made objects on the moon, such as the Apollo lunar rovers, driven by astronauts in the 70's. Laser retroreflectors, placed by Apollo11, 14, and 15 missions, as well as Soviet Lunokhod 1 and 2 rovers, these are still used to measure the distance from the Earth to the Moon. There are many more rovers and other things that humans have left on the moon. </p>
+        <div class="image-block">
+            <img src="https://i.sstatic.net/cCW7Y.jpg" alt="Apollo Rovers">
+            <div class="caption">Astronaut John W. Young driving the LRV in the Descartes Highlands.</div>
+        </div>
+
+    
+    </div>
+</div>
+
+
+</body>

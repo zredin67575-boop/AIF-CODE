@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Life Cycle of Stars</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+        max-height: 120px;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+        color: #140047;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block, .image-inside {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .image-inside img {
+        width: 80%;
+        height: 80%;
+        max-height: 400px;
+        max-width: 400px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+
+     table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-right: 20px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        margin-left: 10px;
+    }
+    
+    .th {text-align: center;}
+
+    .showmore-box {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.showmore-box input[type="checkbox"] {
+    display: none;
+}
+
+.showmore-button {
+    display: inline-block;
+    background-color: #A08CCF;
+    color: #140047;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.showmore-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.showmore-box input[type="checkbox"]:checked ~ .showmore-content {
+    max-height: 800px; /* adjust depending on how much content you have */
+}
+
+.showmore-box input[type="checkbox"]:checked + .showmore-button::after {
+    content: " (Show Less)";
+}
+
+.showmore-button::after {
+    content: "";
+}
+</style>
+
+</head>
+<body>
+   <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="">Space Physics</a>            <!-- add page -->
+                <a href="">Orbits</a>                   <!-- add page -->
+                <a href="">Gravity and Mechanics</a>    <!-- add page -->
+                <a href="">Relativity</a>               <!-- add page -->
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center; font-size: xx-large;"><strong>LIFE CYCLE OF STARS</strong></h1>
+
+        <div class="box intro">
+            <h2><b>WHAT IS A STAR?</b></h2>
+            <p>Many people will say that a star is a burning ball of gas in the sky, whilst this is partially correct, in theory any one could fill a ball full of hydrogen gas, set it on fire, and launch it into the cosmos. Due to this implication, a star is defined by the fat that it is the only place in the universe (as far as we know) that nuclear fusion can happen naturally. In the core of stars, hydrogen (the lightest element) fuse together at extremely high temperatures to form helium nuclei.</p>
+            <p>This stellar fusion allows the star to produce nuclear forces that counteract the gravitational forces that act on every object with mass, which would force the star to collapse inward if it ran out of hydrogen.</p>
+        </div>
+        
+        <div class="image-block">
+            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/astro/universe/internal_resources/496/Sun_Emits_Flare.jpeg?w=1024&h=1024&fit=clip&crop=faces%2Cfocalpoint" alt="My Sunny Girlfriend">
+            <div class="caption">Our Sun, a main sequence star, emits a strong solar flare flashes in this image captured by NASA's Solar Dynamics Observatory.</div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-1">
+            <h2><b>HOW IS A STAR MADE</b></h2>
+            <div class="visible-info">
+                <p>In the cosmos, there are massive clouds made up of dust and hydrogen gas called nebulae. Over millions and millions of years, gravity forces the particals together, reaching extremely high temperatures, forming what is called a protostar</p>
+                <div class="image-block">
+                    <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2018/05/the_orion_nebula_also_known_as_m42/17541448-1-eng-GB/The_Orion_Nebula_also_known_as_M42_pillars.jpg" alt="I frickin love M42">
+                    <div class="caption">The Orion Nebula, also known as M42, is a diffuse nebula situated in the Milky Way. It is one of the brightest nebulae, and is visible to the naked eye in the night sky.</div>
+                </div>
+                <p>A star can then form from this protostar when it becomes hot enough to fuse hydrogen nuclei in its core.</p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0__oOAkKC-eZnDIJIMUU-iJeUKN3r2ucXXQe406RvXg&s=10" alt="proto-type or proto-star">
+                    <div class="caption">A protostar is the earliest stage of stellar evolution.</div>
+                </div>
+                <p>The star then enters a long stable period, where the outward pressure of the heat generated by nuclear fusion is large enough to counter the inward gravitational forces.</p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvamlW2MrVulu7luDYKbZe5pSf368sVimuwkcErfi_Pw&s=10" alt="">
+                    <div class="caption"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-2">
+            <h2><b>STAGES OF STELLAR EVOLUTION</b></h2>
+            <div class="visible-info">
+                <p>After the star is formed from the protostar and nebula, it lives most of its life in the main sequence, where it can be stable for billions of years. A star will spend roughly 90% of its lifetime in this phase.</p>
+                <p>When the stars hydrogen stores begin to run out towards the end of its life, gravity overtakes pressure, causing the core to shrink and heat up while the outer layers expand and cool, stars roughly the size of our sun (1 solar mass (M)) become red giants, whereas stars that are exceptionally large become reg supergiants, which are capable of fusing elements up to iron.</p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtUhuopN3qfFa9O4JCPcOxtvHSlOWxvvI4cYHgcKX0RA&s=10" alt="yk what else is a giant...">
+                    <div class="caption">A red giant is a dying, bloated star in the late stages of its life</div>
+                </div>
+                <h2><b>WHAT HAPPENS AFTER A STAR DIES?</b></h2>
+                <p>What happens after a star runs out of fuel depends on its mass. A smaller star will grow into a red giant, increasing its temperature, larger ones will become red supergiants, capable of producing new cosmic objects after their deaths.</p>
+                <p>When our sun runs out of fuel, it will initially collapse inward, raising its temperature enough for the helium nuclei to fuse into heavier elements. This will cause it to expand large enough to engulf the first three planets. </p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6U1ljsy-k3_50IISzbMk4spMdQbuUvVSVWRYmb5UGAA&s=10" alt="its the end of the world as we know it, and i feel fineeee. i feel fine, thats  a beatles song!!">
+                    <div class="caption">Due to their proximity to the sun, Mercury, Venus, and the Earth will perish first.</div>
+                </div>
+            </div>
+
+            <label for="toggle-more-2" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>After the helium runs out, once again, the star will not be able to counteract gravity and it will collapse inward a second time, compressing it into a white dwarf. No more fusion can occur after this point as the temperatures did not rise high enough, so over millions of years the white dwarf cools down and stops emitting any heat and light, becoming a black dwarf, as cold as the empty space surrounding it.</p>
+                <p>Larger stars can take one of two paths after they explode in a supernova:
+                    <br>1. Neutron Stars: If the leftover core mass is roughly 1.4 to 3 solar masses, the immense gravitational crush forces protons and electrons together to create a superdense sphere of neutrons only a few miles wide.
+                    <br>2. Black Holes: If the remaining core is greater than about 3 solar masses, the collapse continues infinitely, creating a black hole with a gravitational pull so intense that not even light can escape.
+                </p>
+                    <div class="image-block">
+                        <img src="https://astronomy.swin.edu.au/cms/cpg15x/albums/userpics/neutronstar1.jpg" alt="Jimmy neutron">
+                        <div class="caption">A neutron star is the collapsed core of a massive supergiant star. It </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-3">
+            <h2><b>HOW DO STAR DEATHS MAKE NEW COSMIC OBJECTS?</b></h2>
+            <div class="visible-info">
+                <p>When a star reaches the end of its lifetime, it either explodes or gently sheds its outer layers scattering its remnants across the universe. These remnants can form into clouds of dust called nebulae. When a shockwave passes through, such as one from a nearby supernova, it triggers gravitational collapse of the dust to form either planets or stars.</p>
+                <p>In both the deaths of low-mass stars and high-mass stars, the star ejects its outer layers that can contain heavy elements that were fused in the core of the star. The Universe started with gas only consisting of hydrogen, helium and a trace amount of lithium. But as the stars ejected heavier elements, the gas clouds that create the next generation of stars contain higher fractions of metals (elements heavier than helium). So as time goes on, the stars become higher and higher in metallicity. The metals are also important for forming planets. Rocky planets like Earth are made almost exclusively out of metals, so higher metallicity stars will have more ingredients to create planets</p>
+            </div>
+
+            <label for="toggle-more-3" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>Stars are pretty much responsible for everything in the Universe: they are the building blocks of galaxies, which are the building blocks of galaxy clusters, which are the building blocks for the large-scale structure of the Universe. As a star evolves, it expands in radius, causing its mass to change. These mass changes significantly alter the stars fate, making stars that were otherwise doomed to collapse into black holes instead become neutron stars or white dwarves or vice versa. These mass changes happen much more often in binary star systems, where if the companion star is close enough, the outer layers can get sucked out by the gravity of the companion.</p>
+                <p>Another way stellar deaths can contribute to object formation is in the context of pulsar planets. The first planets discovered outside the solar system were actually pulsar planets, planets orbiting around pulsars; rapidly spinning neutron stars. This is a puzzle because neutron stars form supernova explosions of massive stars, and the discovered planets are orbiting at separations much smaller than the radius of massive stars.</p>
+                <p>Many questions remain about the remnants that supernovae explosions leave behind, what sets the distribution of initial masses of stars, how do stars spin up when gaining mass, and how much mass can they gain, how did gravitational waves, long gamma ray bursts, and tidal disruption events come to be? The answers to these questions would solve many more about how things form in the universe</p>
+            </div>
+        </div>
+
+        <div class="image-block">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDEMMV5UeNg1SVGkQ0W3QClSmcv17GKwNcHJhH62pX9Q&s=10" alt="Crab hands crab hands">
+            <div class="caption">The Crab Nebula is a 6-light-year-wide supernova remnant located 6,500 light-years away in the constellation Taurus. Its core houses a rapidly spinning neutron star that powers the nebula's ongoing expansion.</div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-4">
+            <h2><b>WHAT CAN OUR SUN TEACH US?</b></h2>
+            <div class="visible-info">
+                <p>The Sun is the cornerstone of astrophysics. It is the only star we can observe in two-dimensions (even 3 dimensions sometimes)  - every other star is just a point of light. It is the only star close enough to us to reveal details about its surface. Without the Sun, we would not have easily guessed that other stars also have spots and hot outer atmospheres. The Sun is the key to understanding other stars.</p>
+                <p>Additionally, the Sun allows scientists to study how stars generate light and heat through nuclear fusion. Star spots, solar flares, and atypical calmness would not be known without studying our Sun. Intense magnetic fields cause regions on stars to shift, mass ejections teach us about violent space weather emitted by other stars. </p>
+            </div>
+
+            <label for="toggle-more-4" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>Compared to many stars similar to it, the sun is significantly calmer and less active, teaching us how uniquely stable a star must be to not burn its whole planetary system down and be able to harbour life for long periods of time.</p>
+                <p>As a G-type main sequence star, the sun is in the longest and most stable part of its life. Using this information, the past and future of billions of similar stars can be known.</p>
+                <p>Because we know the Sun's chemical composition and how it absorbs and emits light, we can use it to calibrate spectroscopy (starlight analysis). The Sun teaches us how to "read" the chemical barcode of distant stars, revealing their temperatures, composition, and ages without ever leaving our solar system. </p>
+            </div>
+        </div>
+        <div class="image-block">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUwyiko2jF4MhrxHs_3ywnx6EhMBBWeg4s5THw4fRP4Q&s=10" alt="here comes the sun do do do do">
+            <div class="caption">The Sun is a glowing laboratory that provides the foundation for all of astrophysics.</div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-5">
+            <h2><b>WHAT IS A BINARY STAR?</b></h2>
+            <div class="visible-info">
+                <p>A binary star is a system of two stars that are gravitationally bound together, orbiting a common center of mass. Unlike our solitary Sun, over half of the stars in the universe belong to binary or multiple star systems</p>
+                    <div class="image-block">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBkPya_lICKBQINwY-vAavkh_BKb6XgYHUYg0F6e3-_C90ZeC3vPjpEXk&s=10" alt="what if they identify as non-binary, what happens then?!?!">
+                    </div>
+                <p>Astronomers classify these systems in two primary ways: how they interact, and how we observe them. </p>
+                    <p><b>Based on observation:</b>
+                        <br>Visual Binaries: Systems where the two stars are separated enough that they can be distinguished using a telescope or binoculars. 
+                        <br>Eclipsing Binaries: Systems where the orbits are oriented edge-on from our perspective on Earth. As the stars circle each other, one periodically passes in front of the other, causing a temporary dip in the combined brightness.   
+                        <br>Spectroscopic Binaries: Systems where the stars are too close to be seen individually, but their distinct movements can be detected through periodic shifts in their light spectra.
+                    </p>
+
+                    <p><b>Based on stellar interaction:</b>
+                        <br>Wide Binaries: Stars that are separated by large distances, orbiting each other very slowly (sometimes over thousands of years) with little physical interaction. 
+                        <br>Close/Contact Binaries: Stars orbiting so close together that gravity pulls material from one star onto the other, which can occasionally result in dramatic explosions like novae.
+                    </p>
+                        <div class="image-block">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvAPkKaFMIH9awCvvx0m-aL4bNs9T3vKmUa8mbm0u-KA&s=10" alt="binary">
+                            <div class="caption">The two stars of the binary system [BHB2007] 11 are in the process of forming, drawing material from the disk surrounding both via a pair of filaments, wound up due to the motion of the stars around each other.</div>
+                        </div>
+            </div>
+
+            <label for="toggle-more-5" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>Astronomers can also now observe stars in larger systems than just binaries. As stars are often bron in groups, it would be rare that the only two possibilities are 1 or 2. We can see this in Gamma Velorum, a spectroscopic binary where each of the stars are a binary star system themselves.</p>
+                    <div class="image-block">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEla9IB6FmePIBy5czr3frQDRo34XGMaERapCJtCVtg&s=10" alt="My FAVOURITE star everrrr">
+                        <div class="caption">Image of Gamma Velorum, where the two stars in the main binary are clearly seen next to the smaller ones</div>
+                    </div> 
+                <h2><b>WHY BINARY STARS MATTER</b></h2>
+                <p>Binary stars are crucial to astrophysics because they allow scientists to directly measure stellar masses. By observing the orbital periods and distances between the two stars, astronomers can calculate the mass of each object using Kepler's laws of motion. </p>
+            </div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-6">
+            <h2><b>DIFFERENCES OF BINARY SYSTEMS TO REGULAR STARS</b></h2>
+           <div class="visible-info">
+                <p>It is difficult to say in one sentence how binary stars can differ from singles because there is so much diversity in the way binaries can evolve, depending on the masses of the stars, properties of the orbit, etc. We now know that many stars are born in triple, quadruple, or higher order multiple systems, so the diversity becomes even larger. </p>
+            </div>
+
+            <label for="toggle-more-6" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>Binaries can significantly alter the appearance and evolution of stars; so we may be misinterpreting properties of distant galaxies. The masses in distant galaxies are often modelled based on populations of single star models, but we already know that half of all stars are in binaries and the majority of the brighter stars are all in binaries, so this mismatch may have a significant effect.</p>
+                <p>There is a theory that if the supernova occurred in a binary system, the new-born neutron star can sometimes be "kicked" towards the companion, captures a bit of gas and form new planets out of it. So the death of a star immediately leads to the birth of a planetary system around the corpse.</p>
+                <p>Stars in binaries experience tidal interactions, changing their rotation.  Extreme tides can lead to mass transfer, when mass flows from one star to its companion.  Mass transfer in binaries changes the masses and evolutionary history of stars, and leads to a variety of observational phenomena (e.g., luminous red novae, X-ray binaries, thermonuclear supernovae).  Binary interactions change nucleosynthesis, so they play a role in explaining the current distribution of elements in the Universe</p>
+            </div>
+        </div>
+        <div class="image-block">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9m9QxxwIyT-TMl29L8GnB9aLgd0IcT6ddEPeEOKfNHg&s=10" alt="woowowoowowo">
+            <div class="caption">Neutron star binary systems are inredibly interesting and unique systems that allow astronomers to study the emmision of gravitational waves and tidal distruptions.</div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-8">
+            <h2><b>HOW DO ASTRONOMERS DETERMINE A STARS AGE?</b></h2>
+            <div class="visible-info">
+                <p>Astronomers determine a star's age by combining theoretical computer models with observable physical traits, since a star's mass, brightness, and internal composition change in predictable ways as it ages. There are a few key methods for doing this:</p>
+                <p><b>Astroseismology:</b>Often called "star shaking," this method studies vibrations and sound waves traveling through a star's interior. It allows astronomers to calculate core density and how much hydrogen has been converted into helium—the more helium in the core, the older the star. Asteroseismology uses many repeat observations of either the brightness or the radial velocity of a star to measure its strongest oscillation frequencies and work out what the internal structure must be. It's one of the only ways to get that kind of information.</p>
+                <p><b>Gyrochronology:</b> Young stars spin rapidly, but gradually slow down over billions of years due to magnetic braking. By measuring a star's rotation rate (often using tiny dips in brightness from passing starspots), astronomers can estimate its age.</p>
+                <p><b>Cluster Analysis:</b>Stars in a cluster are born at roughly the same time. Astronomers plot their brightness and temperature on a Hertzsprung-Russell (H-R) diagram. By seeing where heavier, shorter-lived stars begin to die off, they can estimate the exact age of the whole cluster.</p>
+            </div>
+        </div>
+
+        <div class="showmore-box">
+            <input type="checkbox" id="toggle-more-9">
+            <h2><b>HOW DO ASTRONOMERS OBSERVE STARS AT DIFFERENT POINTS IN THEIR LIVES?</b></h2>
+            <div class="visible-info">
+                <p>Astronomers can look at many stars of the same type, each in a different stage. By doing this, they build up a picture of what happens, with the help of theory and computer models, even though individual stars change too slowly for them to notice (with a few exceptions, such as supernova explosions).</p>
+            </div>
+
+            <label for="toggle-more-9" class="showmore-button">Show More</label>
+            <div class="showmore-content">
+                <p>Star clusters are really useful for this. Usually, stars form in big groups rather than just one at a time, since you need to get quite a lot of gas together for gravitational collapse to happen, and then you have enough gas to make many stars at the same time. This allows astronomers to look at stars of different masses which go through their lives at different speeds.</p>
+                <p>The physics that governs how stars work (which is mainly using fusion to convert hydrogen into helium to produce energy) hasn't changed in the age of the Universe, so comparing star clusters with different ages gives us a look into what the future holds for young stars, or what old stars used to be like.</p>
+            </div>
+        </div>
+
+        <div class="image-block">
+            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/releases/2004/06/STScI-01EVVEYWX1TA3MGBK5F6EFQVGQ.tif?w=4877&h=3515&fit=clip&crop=faces%2Cfocalpoint" alt="plead to the stars">
+            <div class="caption">These brilliant stars are members of the popular open star cluster known as the Pleiades, or Seven Sisters.</div>
+        </div>
+    </div>
+</body>
+</html>

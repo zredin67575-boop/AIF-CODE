@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstroHUB</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+    <header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn">Physics</button>
+            <div class="dropdown-content">
+                <a href="gravity.html">Gravity</a>       
+                <a href="orbits.html">Orbits</a>             
+                <a href="relativity.html">Relativity</a>          
+                <a href="astrophysics.html">Astrophysics</a>        
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn"><a href="AstroEvents.html">Astronomical Events</a></button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+    </nav>
+    </header>
+
+<div class="container">
+    <h1 style="font-size: 50px; text-align: center;"><strong>AstroHUB</strong></h1>
+   
+    <div style="padding-bottom: 25px;">
+        <p2><strong>AstroHUB</strong> is an education resource with a mission to provide accessible and understandable information to those who are curious about space. Why space…? Keep reading to find out! You'll be amazed at what space can teach us about ourselves and our planet.</p2>
+    </div>
+
+    <div class="box">
+        <h2>WHAT IS THE IMPORTANCE OF SPACE?</h2>
+        <p>Really, space is everything. It's not just some far-fetched place, or “out there”. Space is where everything, and I mean everything, began, including us. By learning about space, we learn how the universe works, how planets form, and even how life started.</p>
+        <p>Space is really frickin cool. It's huge, ever-changing and expanding, and full of mystery and discovery. There are exploding stars, black holes, galaxies colliding, and so much we don't even know about yet. It's one of the few areas where we know we learn, the more we realise we don't know.</p>
+        <p>Space can teach us so much about where we came from, the universe started with the Big Bang, and over billions of years, stars and galaxies formed, eventually leading to planets like Earth and life as we know it. Even with all the technology we have, we've only explored a tiny fraction of the universe. Most of it is unknown, meaning there are endless discoveries waiting.</p>
+    </div>
+        <div class="image-block">
+            <img src="https://cdn.eso.org/images/screen/eso9845d.jpg" alt="Galaxy image">
+            <div class="caption">A spiral galaxy similar to our Milky Way.</div>
+        </div>
+
+    <div class="box">
+        <h2>WHY SHOULD WE LEARN ABOUT SPACE?</h2>
+        <p>Because space connects to almost everything we know. From studying space, we develop physics and maths to understand and explain motion, gravity, and energy. When we apply physics, we get chemistry, explaining how elements and reactions work. From chemistry, we get biology, which explains life. From biology, we get medicine, nutrition, and health sciences.</p>
+        <p>Even if you don't want to become an astronaut, space still links to your life and future.</p>
+    </div>
+        <div class="image-block">
+            <img src="https://www.cnet.com/a/img/resize/69bfe678994d4b8eb65326630c00c4eb36be9183/hub/2018/10/10/225fec46-806b-42ba-9c78-ae1cb0649cd2/kat41gosully.jpg?auto=webp&width=1200" alt="Space Walk">
+            <div class="caption">Astronauts rely on physics, biology, and engineering to keep them safe during space walks.</div>
+        </div>
+
+    <div class="box">
+        <h2>SPACE-RELATED CAREERS:</h2>
+        <p>Working in space doesn't just mean being an astronaut or building rockets. Obviously, engineering and physics are key elements of many space careers, but there is also medicine and biology, helping to keep astronauts in space, and doing experiments on how life works in zero-gravity environments. Computer science and data analysis are imperative as modern space exploration relies on software-driven technology and processing large, complex datasets. Even space law exists!</p>
+        <p>Space law is the body of international and national laws, treaties, and agreements regulating human activity in outer space. It governs space exploration, liability for damages, satellite use, and environmental safety (debris mitigation).</p>
+        <p>Environmental science is used to help astronauts grow their own safely, and look into how we could potentially make a self-sufficient colonisation on another planet. Space communication, design, and education are key elements that intersect to prepare professionals for satellite technology, mission operations, and innovative learning environments.</p>
+        <p>Space agencies need media communicators, web developers, marketers, product designers. Space suits require fashion designers and material specialists.</p>
+        <p>Space is such a broad field that almost any skill can connect to it, it isn't just STEM!</p>
+    </div>
+        <div class="image-block">
+            <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2004/02/mission_control_houston/9795266-3-eng-GB/Mission_Control_Houston_article.jpg" alt="Mission Control">
+            <div class="caption">Mission control teams support every space mission.</div>
+        </div>
+
+    <div class="box">
+        <h2>HOW DOES SPACE RELATE TO OUR ORIGINS?</h2>
+        <p>When someone tells you you're a star, they aren't just embellishing for the sake of a compliment. We are literally made of star dust. How cool is that? The elements in our bodies, like carbon, oxygen, and iron, were created inside stars billions of years ago. When those stars exploded, they spread elements across the universe, eventually forming planets and life. So everything that makes you you, was once part of a star.</p>
+    </div>
+        <div class="image-block">
+            <img src="https://static.scientificamerican.com/dam/m/59f5e9ef8694b020/original/sa0225Mosk01.jpg?m=1737147782.961&w=1350" alt="Supernova">
+            <div class="caption">Supernovae create the elements that form planets and life.</div>
+        </div>
+
+    <div class="box">
+        <h2>HOW HAS SPACE INNOVATION IMPACTED LIFE ON EARTH?</h2>
+        <p>We use our smartphones to take pictures or chat, but we never really think about why they were created. Did you know that the technology behind those cameras was initially designed for Mars rovers? A lot of everyday technology actually comes from space research. Advances in medical technology, like imaging and monitoring devices were enhanced by space imaging techniques such as CRISPR, used to manage the supermassive black hole at the centre of our universe.</p>
+        <p>More efficient and powerful satellites, GPS, and communication systems, improvements in materials engineering, and problem-solving, they all come from space.</p>
+        <p>Space exploration pushes us to invent new things, and more often than not, those inventions end up improving life on Earth.</p>
+    </div>
+        <div class="image-block">
+            <img src="data:image/jpeg;base64,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" alt="Satellite in orbit">
+            <div class="caption">Satellites power communication, GPS, and weather forecasting.</div>
+        </div>
+
+    <div class="intro">
+        <h2 style="font-size: 30px;">TIME LINE OF OUR UNDERSTANDING OF SPACE:</h2>
+        <p2 style="color: #000F47;">Humanity's understanding of space has grown from looking at constellations and planets through the human eye to sending rovers and collecting samples. Take a look at where it began and where it's heading:</p2>
+    </div>
+
+</div>
+
+    <div class="container2">
+
+        <div class="box3">
+            <h3><strong>BEFORE 500 BCE</strong></h3>
+        </div>
+
+        <div class="box2">
+            <h2>ANCIENT ASTRONOMY</h2>
+            <p>
+                <li>Early civilizations observed the sky to track time and seasons</li>
+                <li>Constellations were used for navigation, storytelling, and calendars</li>
+                <li>Cultures like Indigenous Australians, Egyptians, and Mesopotamians all had unique sky knowledge</li>
+                Ancient astronomy is where it all started, by simply looking up.
+            </p>
+            <div class="image-block">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzyZfm3z0UenpzsbN70RXCZDuZiZx1xik9Pw&s" alt="Ancient sky watchers">
+                <div class="caption">Ancient cultures mapped the sky long before telescopes.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box3">
+            <h3><strong>500 BCE - 1500 CE</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>CLASSICAL ASTRONOMY</h2>
+            <p>
+                <li>Aritotle suggested Earth was the centre of the universe.</li>
+                <li>Ptolemy developed the geocentric (Earth-centric) model.</li>
+                <li>Astronomy was based on observation, but limited by belief systems.</li>
+            </p>
+            <div class="image-block">
+                <img src="https://cdn.britannica.com/36/137736-050-C05FC854/diagram-Ptolemaic-Harmonia-Macrocosmica-Andreas-Cellarius-system-1660.jpg?w=300" alt="Geocentric Model">
+                <div class="caption">The geocentric model placed the Earth at the centre of the universe.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box3">
+            <h3><strong>16th - 17th CENT.</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>THE SCIENTIFIC REVOLUTION</h2>
+            <p>
+               <li>Galileo Galilei used a telescope to observe moons, planets, and stars.</li>
+               <li>Nicolaus Copernicus proposed the Sun-centred (heliocentric) model.</li>
+               <li>Johnanes Kepler discovered planets move in elliptical orbits.</li>
+            </p>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Copernican_heliocentrism_diagram-2.jpg/500px-Copernican_heliocentrism_diagram-2.jpg" alt="Heliocentric model">
+                <div class="caption">The heliocentric model overturned the long-held geocentric model, with further confirmation from Galileo's observations and Kepler's elliptical orbits.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box3">
+            <h3><STRong>17th - 18th CENT.</STRong></h3>
+        </div>
+        <div class="box2">
+            <h2>LAWS OF PHYSICS</h2>
+            <p>
+                <li>Isaac Newton explained gravity and motion, his laws explained how planets move and why.</li>
+                <li>Newton's first law, the law of inertia (an object's ability to resist motion) states that an object at rest will stay at rest and an object in motion will stay in motion unless acted upon by an unbalanced force.</li>
+                <li>His second law, the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass, shifted the view of space from a mystical realm into a predicatable and measurable one.</li>
+                <li>Newton's third law states that every action will have an equal and opposite reaction. If object A exerts a force on object B, object B simultaneously exerts a force of equal magnitude and opposite direction on object A</li>
+                <li>His 'fourth' law, or the law of universal gravitation, which states every object with mass is attracted to other objects with mass with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them.</li>
+            </p>
+            <div class="image-block">
+                <img src="https://static.scientificamerican.com/sciam/cache/file/946BF98C-AC84-44F8-8781B24AEDD8BDDB_source.jpg?w=1350" alt="Laws of physics">
+                <div class="caption">A diagram from Isaac Newton's <i>Philosophiae Naturalis Principia Mathematica.</i></div>
+            </div>
+        </div>
+    </div>
+
+     <div class="container2">  
+        <div class="box3">
+            <h3><strong>20th CENT.</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>EXPANDING UNIVERSE</h2>
+            <p>
+                <li>Albert Einstein developed relativity (space and time are connected).</li>
+                <li>Edwin Hubble discovered galaxies beyond ours.</li>
+                <li>Scientists realised the universe is expanding.</li>
+            </p>
+            <div class="image-block">
+                <img src="https://rinconeducativo.org/wp-content/uploads/2022/09/einstein_albert_teoria_relatividad.jpg" alt="Theory of relativity">
+                <div class="caption">His theory specify how the local density of matter and energy determines the geometry of space-time.</div>
+            </div>
+        </div>
+    </div>
+
+     <div class="container2"> 
+        <div class="box3">
+            <h3><strong>20th CENT - PRES.</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>SPACE AGE</h2>
+            <p>
+                <li>First satellites launche - the Soviet Union launched Sputnik 1 on October 4th, 1957. Sputnik 2 closely followed, carryig Laika the dog.</li>
+                <li>Humans travelled to space.</li>
+                <li>Neil Armstrong walks on the moon (1969)</li>
+                <li>Space telescopes like Hubble and James Webb explore deep space.</li>
+                We went from only looking at space, to <i>exploring</i> it.
+            </p>
+            <div class="image-block">
+                <img src="data:image/jpeg;base64,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" alt="First steps on the moon">
+                <div class="caption">Sputnik 1 was the first artificial satellite, and initiated the USSR-US space race.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box3">
+            <h3><strong>TODAY</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>MODERN ASTRONOMY</h2>
+            <p>
+                <li>Study of black holes, dark matter, and exoplanets.</li>
+                <li>Powerful telescopes like the James Webb Space Telescope see the early universe</li>
+                <li>Ongoing search for life beyond Earth</li>
+            </p>
+            <div class="image-block">
+                <img src="data:image/jpeg;base64,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" alt="Supermassive black hole">
+                <div class="caption">Messier 87 was the first black hole ever imaged, in 2019 by the Event Horizon Telescope.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container2">
+         <div class="box3">
+            <h3><strong>FUTURE</strong></h3>
+        </div>
+        <div class="box2">
+            <h2>WHO KNOWS?</h2>
+            <p>
+                <li>Missions to Mars and Beyond.</li>
+                <Li>Search for extraterrestrial life.</Li>
+                <li>New physics and astrophysics discoveries.</li>
+            </p>
+            <div class="image-block">
+                <img src="data:image/jpeg;base64,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" alt="Mars Base">
+                <div class="caption">A Mars base is a proposed, sustainable human habitat deisgned for long-term exploration.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
