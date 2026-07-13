@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relativity</title>
+<title>Questions</title>
 
 <style>
     /* ---------- GLOBAL STYLES ---------- */
@@ -171,6 +171,43 @@
         font-style: italic;
         padding-bottom: 20px;
     }
+
+    .question-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-field, .textarea-field {
+        width: 100%;
+       padding: 12px;
+        border-radius: 6px;
+       border: 2px solid #A08CCF;
+        font-size: 16px;
+        font-family: "Inter", Arial, sans-serif;
+        background: #fff;
+    }
+
+    .textarea-field {
+        height: 150px;
+        resize: vertical;
+    }
+
+    .submit-btn {
+        background-color: #A08CCF;
+        color: #140047;
+        font-weight: bold;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.2s;
+    }
+
+    .submit-btn:hover {
+        background-color: #C7B6F2;
+    }
+
 </style>
 </head>
 
@@ -180,7 +217,7 @@
 
         <!-- LOGO (clickable homepage link) -->
         <a href="index.html" class="logo">
-            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+            <img src="file:///C:/Users/ZRedin.67575/OneDrive%20-%20Seymour%20College/2022/Desktop/2026/AIF/Website%20Images/astrohub_logo_option_2.png">
         </a>
 
         <!-- CONSTELLATIONS DROPDOWN -->
@@ -198,10 +235,10 @@
         <div class="dropdown">
             <button class="dropbtn">Physics</button>
             <div class="dropdown-content">
-                <a href="gravity.html">Gravity</a>       
-                <a href="orbits.html">Orbits</a>             
-                <a href="relativity.html">Relativity</a>          
-                <a href="astrophysics.html">Astrophysics</a>        
+                <a href="Gravity.html">Gravity</a>       
+                <a href="Orbits.html">Orbits</a>             
+                <a href="Relativity.html">Relativity</a>          
+                <a href="Astrophysics.html">Astrophysics</a>        
             </div>
         </div>
 
@@ -230,35 +267,39 @@
 
     </nav>
     </header>
-    
 <div class="container">
-    <h1><b>RELATIVITY</b></h1>
-    <div class="intro" style="color:#000F47;">
-        <p>Relativity is a theory in physics that describes the relationship between space, time, and gravity. It was developed by Albert Einstein in the early 20th century and has had a profound impact on our understanding of the universe.</p>
-        <p>There are two main types of relativity: special relativity and general relativity. Special relativity deals with objects moving at constant speeds, while general relativity deals with the effects of gravity on space and time.</p>
-        <p>One of the key principles of relativity is that the laws of physics are the same for all observers, regardless of their relative motion. This means that time and space are not absolute, but rather depend on the observer's frame of reference.</p>
-        <p>Relativity has been confirmed by numerous experiments and observations, including the bending of light around massive objects, time dilation for fast-moving objects, and the expansion of the universe.</p>
+    <div class="box">
+        <h2>Ask a Question</h2>
+        <p>Write your astronomy or physics question below and I'll reply to you personally.</p>
+
+        <form action="https://formspree.io/f/meeyqqyy" method="POST" class="question-form">
+            <label for="name">Your Name (optional)</label><br>
+            <input type="text" id="name" name="name" placeholder="Name" class="input-field"><br><br>
+
+            <label for="email">Your Email (required)</label><br>
+            <input type="email" id="email" name="email" placeholder="Email" required class="input-field"><br><br>
+
+            <label for="question">Your Question</label><br>
+            <textarea id="question" name="question" placeholder="Write your question here..." required class="textarea-field"></textarea><br><br>
+
+            <button type="submit" class="submit-btn">Send Question</button>
+        </form>
     </div>
 
     <div class="box">
-        <h2><b>TIME DILATION</b></h2>
-        <p>Time dilation is a phenomenon predicted by Einstein's theory of relativity, where time appears to pass more slowly for an observer in motion relative to a stationary observer. This effect becomes more pronounced as the relative speed approaches the speed of light.</p>
-        <p>For example, if an astronaut travels at a significant fraction of the speed of light, they would experience less passage of time compared to someone who remains on Earth. This means that when the astronaut returns, they would have aged less than their counterparts on Earth.</p>
-        <p>Time dilation has been experimentally confirmed through observations of particles moving at high speeds and precise measurements using atomic clocks on fast-moving aircraft and satellites.</p>
-    </div>
-
-    <div class="box">
-        <h2><b>GRAVITATIONAL TIME DILATION</b></h2>
-        <p>Gravitational time dilation is another consequence of Einstein's theory of general relativity. It states that time passes more slowly in stronger gravitational fields. This means that clocks closer to massive objects, such as planets or stars, will tick more slowly compared to clocks further away from these objects.</p>
-        <p>This effect has been confirmed through experiments involving precise atomic clocks placed at different altitudes and in varying gravitational potentials. For instance, clocks on the surface of the Earth run slightly slower than those on satellites orbiting the Earth.</p>
-        <p>Gravitational time dilation has important implications for our understanding of the universe, including the behavior of black holes and the evolution of cosmic structures over time.</p>            
-    </div>
-
-    <div class="box">
-        <h2><b>SPACETIME</b></h2>
-        <p>Spacetime is a four-dimensional continuum that combines the three dimensions of space with the dimension of time. It is a fundamental concept in Einstein's theory of relativity, which describes how objects move and interact within this framework.</p>
-        <p>In spacetime, the presence of mass and energy can cause curvature, which we perceive as gravity. This means that objects with mass can bend the fabric of spacetime, influencing the motion of other objects nearby.</p>
-        <p>The concept of spacetime has revolutionized our understanding of the universe, leading to new insights into the nature of black holes, the expansion of the universe, and the behavior of light and matter in extreme conditions.</p>
+        <h2>FAQs</h2>
+        <p>Here are some questions that have been asked by other users:</p>
+            <li><strong>Question:</strong> What is the difference between a black hole and a neutron star?</li>
+            <p><b>Answer:</b> A black hole is a region in space where the gravitational pull is so strong that nothing, not even light, can escape from it. A neutron star is the collapsed core of a massive star, which is incredibly dense and has a strong magnetic field.</p>
+            <li><strong>Question:</strong> How do astronomers measure the distance to faraway galaxies?</li>
+            <p><b>Answer:</b> Astronomers use various methods such as observing the brightness of certain types of stars, measuring the redshift of light from distant galaxies, and using cosmic distance ladders to determine these distances.</p>
+            <li><strong>Question:</strong> Can you explain the concept of dark matter?</li>
+            <p><b>Answer:</b> Dark matter is a type of matter that does not emit, absorb, or reflect light, making it invisible to current telescopes. It is thought to make up about 27% of the universe's mass-energy content and is inferred from its gravitational effects on visible matter, radiation, and the large-scale structure of the universe.</p>
+            <li><strong>Question:</strong> What causes the phases of the Moon?</li>
+            <p><b>Answer:</b> The phases of the Moon are caused by the relative positions of the Earth, Moon, and Sun. As the Moon orbits the Earth, different portions of its surface are illuminated by the Sun, resulting in the various phases we observe from Earth.</p>
+            <li><strong>Question:</strong> How does gravity affect time according to Einstein's theory of relativity?</li>
+            <p><b>Answer:</b> According to Einstein's theory of general relativity, gravity can warp spacetime. This means that time runs slower in stronger gravitational fields. For example, a clock closer to a massive object (like a planet) will tick more slowly compared to a clock that is further away from the object.</p>
     </div>
 </div>
-</body>
+
+    </body>
