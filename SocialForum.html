@@ -99,17 +99,6 @@
         line-height: 1.6;
         font-family: "Inter", Arial, sans-serif;
     }
-    li{
-        padding-left: 10px;
-        margin-left: 20px;
-    }
-
-    p2 {
-        font-size: 22px;
-        line-height: 1.6;
-        color: #000F47;
-        font-family: "Inter", Arial, sans-serif;
-    }
 
     /* ---------- LAYOUT ---------- */
     .container,.container2 {
@@ -118,58 +107,12 @@
         margin: 30px auto;
     }
 
-    .container2 {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
     .box {
         background-color: whitesmoke;
         padding: 20px;
         margin-bottom: 20px;
         border-radius: 8px;
         color: #1a044d;
-    }
-
-    .box2 {
-        width: 65%;
-        max-width: 650px;
-        background-color: whitesmoke;
-        padding: 20px;
-        border-radius: 8px;
-        color: #1a044d;
-    }
-
-    .box3 {
-        width: 35%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    /* ---------- IMAGE + CAPTION ---------- */
-    .image-block {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .image-block img {
-        width: 80%;
-        height: 80%;
-        max-height: 500px;
-        max-width: 500px;
-        border-radius: 8px;
-        display: flex;
-        margin: 0 auto;
-    }
-
-    .caption {
-        font-size: 14px;
-        margin-top: 8px;
-        color: #140047;
-        font-style: italic;
-        padding-bottom: 20px;
     }
 
     .forum-messages {
@@ -322,6 +265,7 @@
         measurementId: "G-HXVDYLDFRS"
     };
 
+
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     const messagesRef = ref(db, "forumMessages");
@@ -394,7 +338,7 @@
             replyBox.appendChild(replyDiv);
         });
 
-        box.scrollTop = box.scrollHeight;
+        box.scrollTop = box.scrollHeight;      
     });
 </script>
 
