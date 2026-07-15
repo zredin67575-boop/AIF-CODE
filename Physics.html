@@ -1,181 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Physics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics</title>
 
-<style>
-    /* ---------- GLOBAL STYLES ---------- */
-    body {
-        margin: 0;
-        font-family: "Inter", Arial, Helvetica, sans-serif;
-        background: #EDE6FF;
-        color: #234553;
-    }
+    <style>
+        /* ---------- GLOBAL STYLES ---------- */
+        body {
+            margin: 0;
+            font-family: "Inter", Arial, Helvetica, sans-serif;
+            background: #EDE6FF;
+            color: #234553;
+        }
 
-    /* ---------- NAVBAR ---------- */
-    .navbar {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #A08CCF;
-    padding: 10px 25px;
-    max-height: 100px;
-    }
+        /* ---------- NAVBAR ---------- */
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #A08CCF;
+            padding: 10px 25px;
+            max-height: 100px;
+        }
 
-    /* ---------- LOGO ---------- */
-    .logo img {
-    height: 120px;
-    width: auto;
-    display: block;
-    padding-top: 0;
-    padding-right: 0;
-    }
+        /* ---------- LOGO ---------- */
+        .logo img {
+            height: 120px;
+            width: auto;
+            display: block;
+            padding-top: 0;
+            padding-right: 0;
+        }
 
-    /* ---------- NAV  S ---------- */
-    .navbar a,.dropbtn {
-        font-family: "Inter", Arial, sans-serif;
-        font-size: 18px;
-        color: #140047;
-        text-decoration: none;
-        font-weight: bold;
-        background: none;
-        border: none;
-        padding: 14px 14px;
-        cursor: pointer;
-    }
+        /* ---------- NAV  S ---------- */
+        .navbar a,
+        .dropbtn {
+            font-family: "Inter", Arial, sans-serif;
+            font-size: 18px;
+            color: #140047;
+            text-decoration: none;
+            font-weight: bold;
+            background: none;
+            border: none;
+            padding: 14px 14px;
+            cursor: pointer;
+        }
 
         /* ---------- DROPDOWN ---------- */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 200px;
-        border-radius: 6px;
-        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-        z-index: 10;
-    }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            border-radius: 6px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
 
-    .dropdown-content a {
-        color: #140047;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-    }
+        .dropdown-content a {
+            color: #140047;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
 
-    .dropdown-content a:hover {
-        background-color: #E4D9FF;
-    }
+        .dropdown-content a:hover {
+            background-color: #E4D9FF;
+        }
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-    .dropdown:hover .dropbtn {
-        background-color: #C7B6F2;
-        border-radius: 6px;
-    }
+        .dropdown:hover .dropbtn {
+            background-color: #C7B6F2;
+            border-radius: 6px;
+        }
 
-/* ---------- TEXT ---------- */
-    h1, h2, h3 {
-        font-family: "Poppins", Arial, sans-serif;
-        color: #140047;
-        margin-top: 0;
-    }
+        /* ---------- TEXT ---------- */
+        h1,
+        h2,
+        h3 {
+            font-family: "Poppins", Arial, sans-serif;
+            color: #140047;
+            margin-top: 0;
+        }
 
-    h1 { font-size: 28px; }
-    h2 { font-size: 24px; }
-    h3 { font-size: 48px; }
+        h1 {
+            font-size: 28px;
+        }
 
-    p, li {
-        font-size: 17px;
-        line-height: 1.6;
-        font-family: "Inter", Arial, sans-serif;
-    }
-    li{
-        padding-left: 10px;
-        margin-left: 20px;
-    }
+        h2 {
+            font-size: 24px;
+        }
 
-    p2 {
-        font-size: 22px;
-        line-height: 1.6;
-        color: #000F47;
-        font-family: "Inter", Arial, sans-serif;
-    }
+        h3 {
+            font-size: 48px;
+        }
 
-    /* ---------- LAYOUT ---------- */
-    .container,.container2 {
-        width: 85%;
-        max-width: 1000px;
-        margin: 30px auto;
-    }
+        p,
+        li {
+            font-size: 17px;
+            line-height: 1.6;
+            font-family: "Inter", Arial, sans-serif;
+        }
 
-    .container2 {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-    }
+        li {
+            padding-left: 10px;
+            margin-left: 20px;
+        }
 
-    .box {
-        background-color: whitesmoke;
-        padding: 20px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        color: #1a044d;
-    }
+        p2 {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #000F47;
+            font-family: "Inter", Arial, sans-serif;
+        }
 
-    .box2 {
-        width: 65%;
-        max-width: 650px;
-        background-color: whitesmoke;
-        padding: 20px;
-        border-radius: 8px;
-        color: #1a044d;
-    }
+        /* ---------- LAYOUT ---------- */
+        .container,
+        .container2 {
+            width: 85%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
 
-    .box3 {
-        width: 35%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-    }
+        .container2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
 
-    /* ---------- IMAGE + CAPTION ---------- */
-    .image-block {
-        text-align: center;
-        margin-top: 20px;
-    }
+        .box {
+            background-color: whitesmoke;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            color: #1a044d;
+        }
 
-    .image-block img {
-        width: 80%;
-        height: 80%;
-        max-height: 500px;
-        max-width: 500px;
+        /* ---------- IMAGE + CAPTION ---------- */
+        .image-block {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-block img {
+            width: 80%;
+            height: 80%;
+            max-height: 500px;
+            max-width: 500px;
+            border-radius: 8px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+    .image-equation img {
+        width: 50%;
+        height: 50%;
+        max-height: 200px;
+        max-width: 200px;
         border-radius: 8px;
         display: flex;
         margin: 0 auto;
     }
 
-    .caption {
-        font-size: 14px;
-        margin-top: 8px;
-        color: #140047;
-        font-style: italic;
-        padding-bottom: 20px;
-    }
-</style>
+        .caption {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #140047;
+            font-style: italic;
+            padding-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>  
+<header>  
     <nav class="navbar">
 
         <!-- LOGO (clickable homepage link) -->
@@ -196,18 +205,18 @@
 
         <!-- PHYSICS -->
         <div class="dropdown">
-            <button class="dropbtn">Physics</button>
+            <button class="dropbtn"><a href="Physics.html">Physics</a></button>
             <div class="dropdown-content">
-                <a href="gravity.html">Gravity</a>       
-                <a href="orbits.html">Orbits</a>             
-                <a href="relativity.html">Relativity</a>          
-                <a href="astrophysics.html">Astrophysics</a>        
+                <a href="Gravity.html">Gravity</a>       
+                <a href="Orbits.html">Orbits</a>             
+                <a href="Relativity.html">Relativity</a>          
+                <a href="Astrophysics.html">Astrophysics</a>        
             </div>
         </div>
 
         <!-- ASTRONOMICAL EVENTS -->
          <div class=" dropdown">
-            <button class="dropbtn"><a href="AstroEvents.html">Astronomical Events</a></button>
+            <button class="dropbtn">Astronomical Events</button>
             <div class="dropdown-content">
                 <a href="2026Events.html">2026 Events</a>                      
                 <a href="Types of Events.html">Types of Events</a>                  
@@ -228,75 +237,111 @@
             <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
         </div>
 
+        <!-- SOCIAL-->
+        <div class="dropdown">
+            <button class="dropbtn">Social and Quizzes</button>
+            <div class="dropdown-content">
+                <a href="Quizzes.html">Quizzes</a>
+                <a href="Questions.html">Questions</a>
+                <a href="SocialForum.html">Social Forum</a>
+            </div>
+        </div>
     </nav>
-    </header>
-<div class="container">
-    <h1 style="font-size: 48px; text-align: center;"><b>PHYSICS</b></h1>
-    <div class="box">
-        <p>Physics is the branch of science concerned with the nature and properties of matter and energy. It encompasses concepts such as motion, force, energy, mass, and the fundamental laws that govern the universe. In the context of astronomy, physics plays a crucial role in understanding celestial phenomena, from the behavior of stars and galaxies to the dynamics of planetary systems.</p>
-    </div>
+</header>
+    <div class="container">
+        <h1 style="font-size: 48px; text-align: center;"><b>PHYSICS</b></h1>
+        <div class="box">
+            <p>Physics is the branch of science concerned with the nature and properties of matter and energy. It encompasses concepts such as motion, force, energy, mass, and the fundamental laws that govern the universe. In the context of astronomy, physics plays a crucial role in understanding celestial phenomena, from the behavior of stars and galaxies to the dynamics of planetary systems.</p>
+        </div>
 
-<div class="container">
-    <h1><b>PHYSICS</b></h1>
-    <div class="box">
-        <p>Physics is the branch of science concerned with the nature and properties of matter and energy. It encompasses concepts such as motion, force, energy, mass, and the fundamental laws that govern the universe. In the context of astronomy, physics plays a crucial role in understanding celestial phenomena, from the behavior of stars and galaxies to the dynamics of planetary systems.</p>
-    </div>
+        <div class="box">
+            <h2>KEY CONCEPTS IN PHYSICS RELEVANT TO ASTRONOMY</h2>
+            <ul>
+                <li><b>GRAVITY:</b> The force that attracts two bodies towards each other, crucial for understanding planetary orbits and the structure of galaxies.</li>
+                <li><b>ELECTROMAGNETISM:</b> Governs the behavior of charged particles and is essential for understanding light, radiation, and magnetic fields in space.</li>
+                <li><b>THERMODYNAMICS:</b> The study of heat and energy transfer, important for understanding stellar evolution and the life cycle of stars.</li>
+                <li><b>RELATIVITY:</b> Einstein's theory that describes the relationship between space, time, and gravity, essential for understanding black holes and cosmology.</li>
+                <li><b>QUANTUM MECHANICS:</b> Explains the behavior of particles at atomic and subatomic scales, relevant for understanding phenomena like neutron stars and quantum effects in astrophysics.</li>
+            </ul>
+        </div>
 
-    <div class="box">
-        <h2>KEY CONCEPTS IN PHYSICS RELEVANT TO ASTRONOMY</h2>
-        <ul>
-            <li><b>GRAVITY:</b> The force that attracts two bodies towards each other, crucial for understanding planetary orbits and the structure of galaxies.</li>
-            <li><b>ELECTROMAGNETISM:</b> Governs the behavior of charged particles and is essential for understanding light, radiation, and magnetic fields in space.</li>
-            <li><b>THERMODYNAMICS:</b> The study of heat and energy transfer, important for understanding stellar evolution and the life cycle of stars.</li>
-            <li><b>RELATIVITY:</b> Einstein's theory that describes the relationship between space, time, and gravity, essential for understanding black holes and cosmology.</li>
-            <li><b>QUANTUM MECHANICS:</b> Explains the behavior of particles at atomic and subatomic scales, relevant for understanding phenomena like neutron stars and quantum effects in astrophysics.</li>
-        </ul>
-    </div>
+        <div class="box">
+            <h2>APPLICATIONS OF PHYSICS IN ASTRONOMY</h2>
+            <ul>
+                <li><b>STELLAR DYNAMICS:</b> Physics helps explain how stars form, evolve, and die, including processes like nuclear fusion and supernovae.</li>
+                <li><b>COSMOLOGY:</b> The study of the universe's origin, structure, and evolution relies heavily on physical principles.</li>
+                <li><b>ASTROPHYSICAL PHENOMENA:</b> Understanding phenomena such as black holes, neutron stars, and pulsars requires advanced physics concepts.</li>
+                <li><b>SPACE EXPLORATION:</b> Physics is fundamental in designing spacecraft, understanding orbital mechanics, and navigating through space.</li>
+            </ul>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS68RDNguaJT3fX-zkz1pH6Q-1EdDLBAmdVe8dLOGdvnA&s=10" alt="space exploration">
+                    <div class="caption">Space exploration concepts covered in physics can improve systems on Earth, such as navigation and communication technologies.</div>
+                </div>
+            <p>Physics can predict motion by using the relationship between an object's mass, its current state and the forces acting on it. By applying mathematical concepts such as trigonometry and vectors, physicists can calculate how an object will travel, fall or orbit over time. </p>
+            <p>When designing spacecraft, engineers apply laws of motion to generate thrust, thermodynamics to manage extreme temperatures and orbital mechanics to calculate precise trajectories.</p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBgcXgTA0xyqkayGEiTgDOhXRl1Tb1YGxOvrKBSTsEeg&s=10" alt="orion capsule">
+                    <div class="caption">The Orion capsule is an example of a spacecraft designed using principles of physics.</div>
+                </div>        
+        </div>
 
-    <div class="box">
-        <h2>APPLICATIONS OF PHYSICS IN ASTRONOMY</h2>
-        <ul>
-            <li><b>STELLAR DYNAMICS:</b> Physics helps explain how stars form, evolve, and die, including processes like nuclear fusion and supernovae.</li>
-            <li><b>COSMOLOGY:</b> The study of the universe's origin, structure, and evolution relies heavily on physical principles.</li>
-            <li><b>ASTROPHYSICAL PHENOMENA:</b> Understanding phenomena such as black holes, neutron stars, and pulsars requires advanced physics concepts.</li>
-            <li><b>SPACE EXPLORATION:</b> Physics is fundamental in designing spacecraft, understanding orbital mechanics, and navigating through space.</li>
-        </ul>
-        <p>Physics can predict motion by using the relationship between an object's mass, its current state and the forces acting on it. By applying mathematical concepts such as trigonometry and vectors, physicists can calculate how an object will travel, fall or orbit over time. </p>
-        <p>When designing spacecraft, engineers apply laws of motion to generate thrust, thermodynamics to manage extreme temperatures and orbital mechanics to calculate precise trajectories.</p>
-    </div>  
+        <div class="box">
+            <h2><b>LAWS OF PHYSICS</b></h2>
+            <p style="font-weight: bold;">NEWTON'S LAWS OF MOTION</p>
+            <p>1. An object at rest stays at rest and an object in motion stays in motion unless acted upon by an external force.</p>
+            <p>2. The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass (F = ma).</p>
+            <p>3. For every action, there is an equal and opposite reaction.</p>
+            <p style="font-weight: bold;">LAW OF UNIVERSAL GRAVITATION</p>
+            <p>Every particle of matter in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers.</p>
+                <div class="image-equation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQngZbIOQZbd8Z39aN5X7xXyXlqHtEWk42065SfhuQ-6aOl1RlCBmcIP_87&s=10" alt="ulg">
+                </div>
+            <p style="font-weight: bold;">LAWS OF THERMODYNAMICS</p>
+            <p>0. The zeroth law of thermodynamics states that if two systems are each in thermal equilibrium with third system, then they are in thermal equilibrium with each other.</p>
+            <p>1. The total energy of an isolated system remains constant over time, so energy cannot be created or destroyed.</p>
+            <p>2. Heat flows from a hotter object to a colder object, never the reverse.</p>
+            <p>3. It is impossible to convert heat completely into work without other changes.</p>
+            <p style="font-weight: bold;">MAXWELL'S EQUATIONS</p>
+            <p>These four equations describe the behavior of electric and magnetic fields and their interactions with matter.</p>
+            <p>1. Electricity</p>          
+            <p>2. Magnetism</p>         
+            <p>3. Faraday's Induction</p>           
+            <p>4. Displacement Current</p>
+                <div class="image-equation">
+                    <img src="https://www.elprocus.com/wp-content/uploads/Maxwells-Equations.jpeg" alt="maxwell's equations">
+                </div>            
+            <p style="font-weight: bold;">RELATIVITY</p>
+            <p>Mass-energy equivalence:</p>
+                <div class="image-equation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4fSbe4Mdx988qzSwjCtkLttRhThKoFj2f4mKT3fArpQ&s=10" alt="e=mc2">
+                </div>
+            <p>Total Relativistic Energy:</p>
+                <div class="image-image equation">
+                    <img src="data:image/png;base64,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" alt="relativistic energy">
+                </div>            
+            <p>General Relativity Equation:</p>
+                <div class="image-equation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7GCvPWE3xK3KEhe0xw1Nzz8f52ZzOgl4TRcLkh4wrOQ&s=10" alt="genrev">
+                </div>            
+            <p>Time Dilation:</p>
+                <div class="image-equation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq-q01VLdFnRxD0GXEYHfZBbz1EsU32zKzS7r2K1sJ&s=10" alt="time dilation">
+                </div>            
+            <p>Length Contraction:</p>
+                <div class="image-equation">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7ywWLrGc54SaQE6vuF9btkRVQsK-XGmIq9bj5Ck4&s=10" alt="length contraction">
+                </div>
+        </div>
 
-    <div class="box">
-        <h2><b>LAWS OF PHYSICS</b></h2>        
-        <p style="font-weight: bold;">NEWTON'S LAWS OF MOTION</p>
-        <p>1. An object at rest stays at rest and an object in motion stays in motion unless acted upon by an external force.</p>
-        <p>2. The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass (F = ma).</p>
-        <p>3. For every action, there is an equal and opposite reaction.</p>
-        <p style="font-weight: bold;">LAW OF UNIVERSAL GRAVITATION</p>
-        <p>Every particle of matter in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers (F = G * (m1 * m2) / r^2).</p>
-        <p style="font-weight: bold;">LAWS OF THERMODYNAMICS</p>
-        <p>0. The zeroth law of thermodynamics states that if two systems are each in thermal equilibrium with a third system, then they are in thermal equilibrium with each other.</p>
-        <p>1. The total energy of an isolated system remains constant over time, so energy cannot be created or destroyed.</p>
-        <p>2. Heat flows from a hotter object to a colder object, never the reverse.</p>
-        <p>3. It is impossible to convert heat completely into work without other changes.</p>
-        <p style="font-weight: bold;">MAXWELL'S EQUATIONS</p>
-        <p>These four equations describe the behavior of electric and magnetic fields and their interactions with matter.</p>
-        <p>1. Electricity</p>
-        <p>2. Magnetism</p>
-        <p>3. Faraday's Induction</p>
-        <p>4. Displacement Current</p>
-        <p style="font-weight: bold;">RELATIVITY</p>
-        <p>Mass-energy equivalence: E = mc^2</p>
-        <p>Total Relativistic Energy: E = γmc^2</p>
-        <p>General Relativity Equation: Gμν = 8πTμν</p>
-        <p>Time Dilation: Δt' = Δt / √(1 - v²/c²)</p>
-        <p></p>
-    </div>
-
-    <div class="box">
-        <h2><b>RED AND BLUE SHIFT</b></h2>
-        <p>Red shift and blue shift are phenomena related to the Doppler effect in the context of light waves.</p>
-        <p><b>Red Shift:</b> Occurs when light from an object is stretched to longer wavelengths, typically indicating the object is moving away from the observer.</p>
-        <p><b>Blue Shift:</b> Occurs when light from an object is compressed to shorter wavelengths, typically indicating the object is moving towards the observer.</p>
-    </div>
-</body>
+        <div class="box">
+            <h2><b>RED AND BLUE SHIFT</b></h2>
+            <p>Red shift and blue shift are phenomena related to the Doppler effect in the context of light waves.</p>
+            <p><b>Red Shift:</b> Occurs when light from an object is stretched to longer wavelengths, typically indicating the object is moving away from the observer.</p>
+            <p><b>Blue Shift:</b> Occurs when light from an object is compressed to shorter wavelengths, typically indicating the object is moving towards the observer.</p>
+                <div class="image-block">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXYCGiw2ZUpX2GRbGlB-9hur0FQAsm11FubMZrOkVW-A&s=10" alt="red/blue shift">
+                    <div class="caption">Red and blue Shift depends on the motion of the source relative to the observer.</div>
+                </div>        
+        </div>
+    </body>
 </body>
