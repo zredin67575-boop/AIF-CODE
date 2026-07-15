@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Forum</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+
+    p {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .forum-messages {
+        background: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        height: 400px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        border: 2px solid #A08CCF;
+    }
+
+    .forum-input {  
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+.forum-input input, .forum-input textarea {
+        width: 935px;
+        padding: 12px;
+        border-radius: 6px;
+        border: 2px solid #A08CCF;
+        font-size: 16px;
+        background: #fff;
+    }
+
+    .forum-input button {
+        background-color: #A08CCF;
+        color: #140047;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .forum-input button:hover {
+        background-color: #C7B6F2;
+    }
+
+.message {
+    padding: 10px;
+    background: #fdfdfd;
+    border-radius: 6px;
+    border-left: 4px solid #A08CCF;
+}
+
+.reply {
+    padding: 8px;
+    background: #f7f3ff;
+    border-radius: 6px;
+    border-left: 3px solid #C7B6F2;
+}
+
+</style>
+</head>
+
+<body>
+<header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn"><a href="Physics.html">Physics</a></button>
+            <div class="dropdown-content">
+                <a href="Gravity.html">Gravity</a>       
+                <a href="Orbits.html">Orbits</a>             
+                <a href="Relativity.html">Relativity</a>          
+                <a href="Astrophysics.html">Astrophysics</a>        
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+        <!-- SOCIAL-->
+        <div class="dropdown">
+            <button class="dropbtn">Social and Quizzes</button>
+            <div class="dropdown-content">
+                <a href="Quizzes.html">Quizzes</a>
+                <a href="Questions.html">Questions</a>
+                <a href="SocialForum.html">Social Forum</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <h2 style=" font-size: 48px; text-align: center;"><b>SOCIAL FORUM</b></h2>
+    <div class="box">
+        
+        <p>Chat with other astronomy enthusiasts!</p>
+
+        <div id="messages" class="forum-messages"></div>
+
+        <div class="forum-input">
+            <input type="text" id="username" placeholder="Your name">
+            <textarea id="message" placeholder="Write a message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { 
+        initializeApp 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+    import { 
+        getDatabase, ref, push, onChildAdded, update 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+    /* ------------------ FIREBASE CONFIG ------------------ */
+    const firebaseConfig = {
+        apiKey: "AIzaSyAprPn8Zqg_YUFetfa0X8Hkyv0QvrXyLks",
+        authDomain: "astrohub-forum.firebaseapp.com",
+        databaseURL: "https://astrohub-forum-default-rtdb.firebaseio.com",
+        projectId: "astrohub-forum",
+        storageBucket: "astrohub-forum.firebasestorage.app",
+        messagingSenderId: "237719612492",
+        appId: "1:237719612492:web:45cb87f6a8bcc961cf58e9",
+        measurementId: "G-HXVDYLDFRS"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const messagesRef = ref(db, "forumMessages");
+
+    /* ------------------ SEND MAIN MESSAGE ------------------ */
+    window.sendMessage = function () {
+        const username = document.getElementById("username").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!username || !message) return;
+
+        push(messagesRef, {
+            user: username,
+            text: message,
+            time: Date.now(),
+            replies: {}
+        });
+
+        document.getElementById("message").value = "";
+    };
+
+    /* ------------------ SEND REPLY ------------------ */
+    window.sendReply = function (parentId) {
+        const replyUser = prompt("Your name:");
+        const replyText = prompt("Your reply:");
+
+        if (!replyUser || !replyText) return;
+
+        const replyRef = ref(db, `forumMessages/${parentId}/replies`);
+        push(replyRef, {
+            user: replyUser,
+            text: replyText,
+            time: Date.now()
+        });
+    };
+
+    /* ------------------ DISPLAY MESSAGES ------------------ */
+    onChildAdded(messagesRef, (snapshot) => {
+        const msg = snapshot.val();
+        const msgId = snapshot.key;
+
+        const box = document.getElementById("messages");
+
+        const div = document.createElement("div");
+        div.classList.add("message");
+        div.style.marginBottom = "20px";
+
+        div.innerHTML = `
+            <strong>${msg.user}</strong>: ${msg.text}
+            <br>
+            <button onclick="sendReply('${msgId}')"
+                style="margin-top:8px; background:#C7B6F2; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">
+                Reply
+            </button>
+            <div id="replies-${msgId}" style="margin-left:20px; margin-top:10px;"></div>
+        `;
+
+        box.appendChild(div);
+
+        /* ------------------ DISPLAY REPLIES ------------------ */
+        const repliesRef = ref(db, `forumMessages/${msgId}/replies`);
+        onChildAdded(repliesRef, (replySnap) => {
+            const reply = replySnap.val();
+            const replyBox = document.getElementById(`replies-${msgId}`);
+
+            const replyDiv = document.createElement("div");
+            replyDiv.style.marginBottom = "10px";
+            replyDiv.innerHTML = `<strong>${reply.user}</strong>: ${reply.text}`;
+
+            replyBox.appendChild(replyDiv);
+        });
+
+        box.scrollTop = box.scrollHeight;      
+    });
+</script>
+
+
+    </body>
