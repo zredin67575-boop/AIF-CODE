@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Holes</title>
+
+<style>
+    /* ---------- GLOBAL STYLES ---------- */
+    body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        background: #EDE6FF;
+        color: #234553;
+    }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #A08CCF;
+    padding: 10px 25px;
+    max-height: 100px;
+    }
+
+    /* ---------- LOGO ---------- */
+    .logo img {
+    height: 120px;
+    width: auto;
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    }
+
+    /* ---------- NAV  S ---------- */
+    .navbar a,.dropbtn {
+        font-family: "Inter", Arial, sans-serif;
+        font-size: 18px;
+        color: #140047;
+        text-decoration: none;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 14px 14px;
+        cursor: pointer;
+    }
+
+        /* ---------- DROPDOWN ---------- */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
+
+    .dropdown-content a {
+        color: #140047;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #E4D9FF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #C7B6F2;
+        border-radius: 6px;
+    }
+
+/* ---------- TEXT ---------- */
+    h1, h2, h3 {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #140047;
+        margin-top: 0;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 48px; }
+
+    p, li {
+        font-size: 17px;
+        line-height: 1.6;
+        font-family: "Inter", Arial, sans-serif;
+    }
+    li{
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+    p2 {
+        font-size: 22px;
+        line-height: 1.6;
+        color: #000F47;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* ---------- LAYOUT ---------- */
+    .container,.container2 {
+        width: 85%;
+        max-width: 1000px;
+        margin: 30px auto;
+    }
+
+    .container2 {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .box {
+        background-color: whitesmoke;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box2 {
+        width: 65%;
+        max-width: 650px;
+        background-color: whitesmoke;
+        padding: 20px;
+        border-radius: 8px;
+        color: #1a044d;
+    }
+
+    .box3 {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGE + CAPTION ---------- */
+    .image-block {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .image-block img {
+        width: 80%;
+        height: 80%;
+        max-height: 500px;
+        max-width: 500px;
+        border-radius: 8px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .caption {
+        font-size: 14px;
+        margin-top: 8px;
+        color: #140047;
+        font-style: italic;
+        padding-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+<header>  
+    <nav class="navbar">
+
+        <!-- LOGO (clickable homepage link) -->
+        <a href="index.html" class="logo">
+            <img src="C:\Users\ZRedin.67575\OneDrive - Seymour College\2022\Desktop\2026\AIF\Website Images\astrohub_logo_option_2.png">
+        </a>
+
+        <!-- CONSTELLATIONS DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="constellations.html">Constellations</a></button>
+            <div class="dropdown-content">
+                <a href="SouthernHem.html">Southern Hemisphere</a>
+                <a href="NorthernHem.html">Northern Hemisphere</a>
+                <a href="AncientAstronomy.html">Ancient Astronomy</a>
+                <a href="ConstInteractive.html">Interactive</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="dropdown">
+            <button class="dropbtn"><a href="Physics.html">Physics</a></button>
+            <div class="dropdown-content">
+                <a href="Gravity.html">Gravity</a>       
+                <a href="Orbits.html">Orbits</a>             
+                <a href="Relativity.html">Relativity</a>          
+                <a href="Astrophysics.html">Astrophysics</a>   
+                <a href="BlackHoles.html">Black Holes</a>     
+            </div>
+        </div>
+
+        <!-- ASTRONOMICAL EVENTS -->
+         <div class=" dropdown">
+            <button class="dropbtn">Astronomical Events</button>
+            <div class="dropdown-content">
+                <a href="2026Events.html">2026 Events</a>                      
+                <a href="Types of Events.html">Types of Events</a>                  
+                <a href="How to Look for and Image Events.html">How to Image and Look For Events</a> 
+            </div>
+        </div>
+
+        <!-- SOLAR SYSTEM DROPDOWN -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="SolarSystem.html">Solar System</a> </button>
+            <div class="dropdown-content">
+                <a href="exoplanets.html">Exoplanets</a>
+            </div>
+        </div>
+
+        <!-- NORMAL LINKS -->
+        <div class="dropdown">
+            <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
+        </div>
+
+        <!-- SOCIAL-->
+        <div class="dropdown">
+            <button class="dropbtn">Social and Quizzes</button>
+            <div class="dropdown-content">
+                <a href="Quizzes.html">Quizzes</a>
+                <a href="Questions.html">Questions</a>
+                <a href="SocialForum.html">Social Forum</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <h1 style="text-align: center; font-size: 42px"><b>BLACK HOLES</b></h1>
+    <div class="box">
+        <p>Black holes are regions of spacetime where gravity is so strong that nothing, not even light, can escape from them. They are formed when massive stars collapse under their own gravity at the end of their life cycle. The boundary surrounding a black hole is called the event horizon, beyond which nothing can return.</p>
+        <div class="image-block">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAI8A9gMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQIDBAUGB//EACYQAQACAgICAgEEAwAAAAAAAAABAgMRBAUSITFBQiIyYaEGExT/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAfEQEAAgMAAgMBAAAAAAAAAAAAAQIDERIEIRMiMRT/2gAMAwEAAhEDEQA/APmoCFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABKFoRK9faNGl4g8Uba8Qxi0wjSds5ogTo0bRwgTo0bOEACswAJQAAAAAAAAAAAAAAAAAAJiUAtWWWqzFErRKmnRWdpmNpim18dPKW7i42/pS1+XRTFNmlGGZ+k/6ZdSONqPgnBDL5m/8zkTjmPpWa6dO+BrZcWl65Nsr4NNKYVZrVY5htEuO9FQFtsJABAAAAAAAAAAAAAAAAAC0QiZXrG0QyUruYIq2+Nh8rQztbUOrFj3LPw8EzMenZw8XVfhfrOF5THp2r8OaYvh5OfyPtp62OkVhwM8RSGlOau/lk7W80vMQ5PnO3Tipuu2WTNzbTqV1eGLNh/hfr62yS6d+HaafClrxS2mlftG3msuLU/DWtV2eXg8d+nMy11t2Y79Q482PTVmFV7Ky3h52SEALMgAAAAAAAAAAAAAAABeqiYlEw0pOmxi9y6vBxxNocjFPt1eFk1MObN+PS8aY29v0mCs+Pp3eZw6/8+4j6ea6fmVp4+3qacuubD47eFaNWnptm6i0TH4+c99xLRlmYiflxace976isvpPO6yOTaZ1GpYeJ/jsecT4f068Xl81517RetLT1MuL0nV21EzV3c/CimH3H073G66nGx7mIj05/bZqVrMQ5cs2mdymmeJtzT8eI7TFFbTp53k+pl6DtMsTazzvIncvV8XevZnn01bSotZV3w8jJIAsyAAAAAAAAAAAAAAAAABMSvWW3gzeOmlC9bM7Rt1YsmnoeHzZpMe3oeD2kxr9TwmPNMTHtv8AG5k1+3n5/Fiz0qZotGpfTeFz8d9eUw7OLnYMdN/p2+YcXs7V/Juz3NvH9zijFkxz9Vcnj1u9j2PcViJ1aHkez7Tzm2rOXy+0vb8nIz8qbT8tsfi2tPV01imKPTNy+R5zPtzMs7na9skyx2l6eOnLDJfphtCrJaFJbRLgyQgBZiAAAAAAAAAAAAAAAAAAmEwqlEtKytEr1yTDElXTWLzH426ciY+2SeVOvlobNqfHDaPItDZvnm32xTfbHtG1orEM7Zplk2bY9m06V+RaZVmfZtC0QytbYAlmAAAAAAAAAAAAAAAAAAAAkQI0tEpJNoNJmQBKmwA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//Z" alt="messy">
+            <div class="caption">Messier 87, the first black hole ever directly imaged.</div>
+        </div>
+        <p>Black holes can be classified into three main types: stellar-mass black holes, intermediate-mass black holes, and supermassive black holes. Stellar-mass black holes are formed from the remnants of massive stars, while supermassive black holes are found at the centers of galaxies and can have masses millions to billions of times that of our Sun.</p>
+    </div>
+
+    <div class="box">
+        <h2><b>FORMATION OF BLACK HOLES</b></h2>
+        <p>Black holes are formed from the remnants of massive stars that have exhausted their nuclear fuel. When a star with a mass greater than about 20 times that of the Sun reaches the end of its life, it undergoes a supernova explosion, leaving behind a dense core. If this core's mass exceeds the Tolman–Oppenheimer–Volkoff limit (approximately 2-3 solar masses), it collapses under its own gravity to form a black hole.</p>
+        <p>In addition to stellar-mass black holes, there are also supermassive black holes that reside at the centers of galaxies. These black holes can have masses ranging from millions to billions of times that of our Sun and are thought to have formed through the accretion of matter and mergers with other black holes over cosmic time.</p>
+            <div class="image-block">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwUhHidwSJUA-0Kry1IJkMcCZzP-tZduL08EElWAt5BX3VV4f-zL2T1QXf&s=10" alt="formation of blackholes">
+    </div>
+
+    <div class="box">
+        <h2 style="text-align: center;"><b>PARTS OF BLACK HOLES</b></h2>
+        <h2><b>EVENT HORIZON</b></h2>
+        <p>The event horizon is the boundary surrounding a black hole beyond which nothing can escape. It is the point of no return, and any matter or radiation that crosses this boundary is inevitably pulled into the black hole.</p>
+        <h2><b>SINGULARITY</b></h2>
+        <p>At the center of a black hole lies the singularity, a point where the curvature of spacetime becomes infinite and the laws of physics as we know them break down.</p>
+        <h2><b>PHOTON RING</b></h2>
+        <p>The photon ring is a bright ring of light that surrounds the event horizon of a black hole. It is formed by photons that are orbiting the black hole before being pulled in.</p>
+        <h2><b>ACCRETION DISK</b></h2>
+        <p>An accretion disk is a rotating disk of matter that spirals into a black hole. As matter falls toward the black hole, it heats up and emits radiation, making the disk visible.</p>
+        <h2><b>DOPPLER BEAMING</b></h2>
+        <p>Doppler beaming is the phenomenon where the radiation emitted by matter in an accretion disk is amplified when it is moving toward the observer and dimmed when it is moving away.</p>
+            <div class="image-block">
+                <img src="https://www.nasa.gov/wp-content/uploads/2019/09/bh_labeled.jpg" alt="diagram of black hole">
+                <div class="caption">Diagram of a black hole and its parts.</div>
+            </div>
+    </div>
+</body>
