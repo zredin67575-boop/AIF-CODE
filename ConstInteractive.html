@@ -72,54 +72,19 @@
 <body>
 
 <h1>Explore the Orion Constellation</h1>
-proper stuff: Example
  <div class="constellation-container">        
         <div class="image-block">             
-            <img src="" alt="constellation diagram">         
-            <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Betelgeuse</div></div>
-            <div class="star" style="top: 65.7%; left: 54.9%;"><div class="tooltip">Rigel</div></div>
-            <div class="star" style="top: 44.6%; left: 52%;"><div class="tooltip">Bellatrix</div></div>
-            <div class="star" style="top: 56.3%; left: 46.8%;"><div class="tooltip">Alnitak</div></div>
-            <div class="star" style="top: 55.3%; left: 48%;"><div class="tooltip">Alnilam</div></div>
-            <div class="star" style="top: 54%; left: 49.5%;"><div class="tooltip">Mintaka</div></div>
-            <div class="star" style="top: 68%; left: 45%;"><div class="tooltip">Saiph</div></div>
-        </div>  
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Orion_IAU.svg/960px-Orion_IAU.svg.png" alt="Orion constellation diagram">         
+            <div class="star" style="top: 43%; left: 42.8%;" onclick="showFacts('Betelgeuse')"><div class="tooltip">Betelgeuse</div></div>
+            <div class="star" style="top: 65.7%; left: 54.9%;" onclick="showFacts('Rigel')"><div class="tooltip">Rigel</div></div>
+            <div class="star" style="top: 44.6%; left: 52%;" onclick="showFacts('Bellatrix')"><div class="tooltip">Bellatrix</div></div>
+            <div class="star" style="top: 56.3%; left: 46.8%;" onclick="showFacts('Alnitak')"><div class="tooltip">Alnitak</div></div>
+            <div class="star" style="top: 55.3%; left: 48%;" onclick="showFacts('Alnilam')"><div class="tooltip">Alnilam</div></div>
+            <div class="star" style="top: 54%; left: 49.5%;" onclick="showFacts('Mintaka')"><div class="tooltip">Mintaka</div></div>
+            <div class="star" style="top: 68%; left: 45%;" onclick="showFacts('Saiph')"><div class="tooltip">Saiph</div></div>
+        </div>   
     </div>
 
-
-<div class="constellation-container">
-    <!-- Orion image from Space.com -->
-    <img 
-        src="https://cdn.mos.cms.futurecdn.net/4v7xJr2uOeGZ5ER5YjZ3oP.jpg" 
-        alt="Orion Constellation" 
-        class="constellation-img"
-    >
-
-    <!-- Star hotspots (positions estimated for this image) -->
-    <div class="star" style="top: 70%; left: 38%;" onclick="showFacts('Betelgeuse')">
-        <div class="tooltip">Betelgeuse</div>
-    </div>
-
-    <div class="star" style="top: 55%; left: 70%;" onclick="showFacts('Rigel')">
-        <div class="tooltip">Rigel</div>
-    </div>
-
-    <div class="star" style="top: 40%; left: 60%;" onclick="showFacts('Bellatrix')">
-        <div class="tooltip">Bellatrix</div>
-    </div>
-
-    <div class="star" style="top: 48%; left: 50%;" onclick="showFacts('Orions Belt - Alnitak')">
-        <div class="tooltip">Alnitak</div>
-    </div>
-
-    <div class="star" style="top: 50%; left: 55%;" onclick="showFacts('Orions Belt - Alnilam')">
-        <div class="tooltip">Alnilam</div>
-    </div>
-
-    <div class="star" style="top: 52%; left: 60%;" onclick="showFacts('Orions Belt - Mintaka')">
-        <div class="tooltip">Mintaka</div>
-    </div>
-</div>
 
 <div id="star-facts">
     Hover over a star, then click it to learn more.
@@ -129,11 +94,12 @@ proper stuff: Example
     function showFacts(star) {
         const facts = {
             "Betelgeuse": "Betelgeuse is a red supergiant nearing the end of its life. It may go supernova within the next million years.",
-            "Rigel": "Rigel is a blue supergiant and the brightest star in Orion. t shines about 120,000 times brighter than the Sun.",
+            "Rigel": "Rigel is a blue supergiant and the brightest star in Orion. It shines about 120,000 times brighter than the Sun.",
             "Bellatrix": "Bellatrix is a hot blue giant known as the Amazon Star. It is around 240 light-years away.",
-            "Orions Belt - Alnitak": "Alnitak is a triple star system and the easternmost star in Orion's Belt.",
-            "Orions Belt - Alnilam": "Alnilam is a massive blue supergiant about 2,000 light-years away and the middle star of Orion's Belt.",
-            "Orions Belt - Mintaka": "Mintaka is a multiple star system and the westernmost star of Orion's Belt."
+            "Alnitak": "Alnitak is a triple star system and the easternmost star in Orion's Belt.",
+            "Alnilam": "Alnilam is a massive blue supergiant about 2,000 light-years away and the middle star of Orion's Belt.",
+            "Mintaka": "Mintaka is a multiple star system and the westernmost star of Orion's Belt.",
+            "Saiph": "Saiph is a blue supergiant and the sixth brightest star in Orion. It is located about 650 light-years away."
         };
 
         document.getElementById("star-facts").innerText = facts[star];

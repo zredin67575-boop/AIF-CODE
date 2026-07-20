@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gravity</title>
+<title>Questions</title>
 
 <style>
     /* ---------- GLOBAL STYLES ---------- */
@@ -171,6 +171,43 @@
         font-style: italic;
         padding-bottom: 20px;
     }
+
+    .question-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-field, .textarea-field {
+        width: 100%;
+       padding: 12px;
+        border-radius: 6px;
+       border: 2px solid #A08CCF;
+        font-size: 16px;
+        font-family: "Inter", Arial, sans-serif;
+        background: #fff;
+    }
+
+    .textarea-field {
+        height: 150px;
+        resize: vertical;
+    }
+
+    .submit-btn {
+        background-color: #A08CCF;
+        color: #140047;
+        font-weight: bold;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.2s;
+    }
+
+    .submit-btn:hover {
+        background-color: #C7B6F2;
+    }
+
 </style>
 </head>
 
@@ -239,31 +276,39 @@
         </div>
     </nav>
 </header>
-
 <div class="container">
-    <h1 style="font-size: 48px; text-align: center;"><b>GRAVITY</b></h1>
     <div class="box">
-        <p>Gravity is a fundamental force of nature that attracts objects with mass towards each other. It is responsible for the motion of planets, stars, and galaxies, as well as the formation of celestial bodies. The strength of gravity depends on the masses of the objects involved and the distance between them, as described by Newton's law of universal gravitation.</p>
-        <p>Sir Isaac Newton proposed that every object attracts every other object and that the strength of this pull depends directly on the masses of the objects and the distance between them. </p>
-            <div class="image-block">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSha8dIguOSo8mBoABNbd_SDMT33rSJw292089BC002-s05fE8VWYUDkJyM&s=10" alt="isaac newton">
-                <div class="caption">Sir Isaac Newton, the father of classical mechanics.</div>
-            </div>        
-        <p>Einstein later refined our understanding of gravity with his theory of general relativity, describing it as the curvature of spacetime caused by mass and energy.</p>
-            <div class="image-block">
-                <img src="https://www.economist.com/sites/default/files/images/2015/11/blogs/economist-explains/20151128_stc969.png" alt="general relativity">
-                <div class="caption">Einstein's theory of general relativity describes gravity as the curvature of spacetime.</div>
-            </div>    
+        <h2>Ask a Question</h2>
+        <p>Write your astronomy or physics question below and I'll reply to you personally.</p>
+
+        <form action="https://formspree.io/f/meeyqqyy" method="POST" class="question-form">
+            <label for="name">Your Name (optional)</label><br>
+            <input type="text" id="name" name="name" placeholder="Name" class="input-field"><br><br>
+
+            <label for="email">Your Email (required)</label><br>
+            <input type="email" id="email" name="email" placeholder="Email" required class="input-field"><br><br>
+
+            <label for="question">Your Question</label><br>
+            <textarea id="question" name="question" placeholder="Write your question here..." required class="textarea-field"></textarea><br><br>
+
+            <button type="submit" class="submit-btn">Send Question</button>
+        </form>
     </div>
 
     <div class="box">
-        <h2><b>MASS VERSUS WEIGHT:</b></h2>        
-        <p>Whilst used interchangeably in general conversation, physicists can become incredibly annoyed during such conversations due to a simple difference between the two. </p>
-        <p>Mass is a scalar quantity meaning it doesn't have a direction and is measurable in kilograms. On the other hand, weight is a vector meaning it has both magnitude and direction</p>
-        <p>On earth if someone had a mass of 50 kilograms they would have a weight of 490 newtons but if they were floating in zero g they would still be 50 kilograms but their weight would be zero newtons. </p>
-            <div class="image-block">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS66Mv-HYwbq5IWPiXNAvdK4ewBmNzhew70pi7wqmQlOkFxQXxRVX2G0TM&s=10" alt="mass vs weight">
-                <div class="caption">Mass is the amount of matter in an object, while weight is the force exerted by gravity on that mass.</div>
-            </div>    
+        <h2>FAQs</h2>
+        <p>Here are some questions that have been asked by other users:</p>
+            <li><strong>Question:</strong> What is the difference between a black hole and a neutron star?</li>
+            <p><b>Answer:</b> A black hole is a region in space where the gravitational pull is so strong that nothing, not even light, can escape from it. A neutron star is the collapsed core of a massive star, which is incredibly dense and has a strong magnetic field.</p>
+            <li><strong>Question:</strong> How do astronomers measure the distance to faraway galaxies?</li>
+            <p><b>Answer:</b> Astronomers use various methods such as observing the brightness of certain types of stars, measuring the redshift of light from distant galaxies, and using cosmic distance ladders to determine these distances.</p>
+            <li><strong>Question:</strong> Can you explain the concept of dark matter?</li>
+            <p><b>Answer:</b> Dark matter is a type of matter that does not emit, absorb, or reflect light, making it invisible to current telescopes. It is thought to make up about 27% of the universe's mass-energy content and is inferred from its gravitational effects on visible matter, radiation, and the large-scale structure of the universe.</p>
+            <li><strong>Question:</strong> What causes the phases of the Moon?</li>
+            <p><b>Answer:</b> The phases of the Moon are caused by the relative positions of the Earth, Moon, and Sun. As the Moon orbits the Earth, different portions of its surface are illuminated by the Sun, resulting in the various phases we observe from Earth.</p>
+            <li><strong>Question:</strong> How does gravity affect time according to Einstein's theory of relativity?</li>
+            <p><b>Answer:</b> According to Einstein's theory of general relativity, gravity can warp spacetime. This means that time runs slower in stronger gravitational fields. For example, a clock closer to a massive object (like a planet) will tick more slowly compared to a clock that is further away from the object.</p>
     </div>
-</body>
+</div>
+
+    </body>

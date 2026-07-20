@@ -19,7 +19,7 @@
     align-items: center;
     gap: 20px;
     background-color: #A08CCF;
-    padding: 10px 25px;
+    padding: 10px 20px;
     max-height: 100px;
     }
 
@@ -30,6 +30,7 @@
     display: block;
     padding-top: 0;
     padding-right: 0;
+    margin-left: -16px;
     }
 
     /* ---------- NAV  S ---------- */
@@ -41,7 +42,7 @@
         font-weight: bold;
         background: none;
         border: none;
-        padding: 14px 14px;
+        padding: 8px 8px;
         cursor: pointer;
     }
 
@@ -58,12 +59,12 @@
         min-width: 200px;
         border-radius: 6px;
         box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-        z-index: 10;
+        z-index: 8;
     }
 
     .dropdown-content a {
         color: #140047;
-        padding: 12px 16px;
+        padding: 12px 14px;
         text-decoration: none;
         display: block;
         font-size: 16px;
@@ -253,12 +254,12 @@
 
         <!-- PHYSICS -->
         <div class="dropdown">
-            <button class="dropbtn">Physics</button>
+            <button class="dropbtn"><a href="Physics.html">Physics</a></button>
             <div class="dropdown-content">
-                <a href="">Space Physics</a>            <!-- add page -->
-                <a href="">Orbits</a>                   <!-- add page -->
-                <a href="">Gravity and Mechanics</a>    <!-- add page -->
-                <a href="">Relativity</a>               <!-- add page -->
+                <a href="Gravity.html">Gravity</a>       
+                <a href="Orbits.html">Orbits</a>             
+                <a href="Relativity.html">Relativity</a>          
+                <a href="Astrophysics.html">Astrophysics</a>        
             </div>
         </div>
 
@@ -285,6 +286,15 @@
             <button class="dropbtn"> <a href="poststars.html">Life Cycle of Stars</a> </button>
         </div>
 
+        <!-- SOCIAL-->
+        <div class="dropdown">
+            <button class="dropbtn">Social and Quizzes</button>
+            <div class="dropdown-content">
+                <a href="Quizzes.html">Quizzes</a>
+                <a href="Questions.html">Questions</a>
+                <a href="SocialForum.html">Social Forum</a>
+            </div>
+        </div>
     </nav>
 </header>
 
@@ -300,15 +310,35 @@
     <div class="constellation-container">        
         <div class="image-block">             
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Orion_IAU.svg/960px-Orion_IAU.svg.png" alt="Orion constellation diagram">         
-            <div class="star" style="top: 43%; left: 42.8%;"><div class="tooltip">Betelgeuse</div></div>
-            <div class="star" style="top: 65.7%; left: 54.9%;"><div class="tooltip">Rigel</div></div>
-            <div class="star" style="top: 44.6%; left: 52%;"><div class="tooltip">Bellatrix</div></div>
-            <div class="star" style="top: 56.3%; left: 46.8%;"><div class="tooltip">Alnitak</div></div>
-            <div class="star" style="top: 55.3%; left: 48%;"><div class="tooltip">Alnilam</div></div>
-            <div class="star" style="top: 54%; left: 49.5%;"><div class="tooltip">Mintaka</div></div>
-            <div class="star" style="top: 68%; left: 45%;"><div class="tooltip">Saiph</div></div>
+            <div class="star" style="top: 43%; left: 42.8%;" onclick="showFacts('Betelgeuse')"><div class="tooltip">Betelgeuse</div></div>
+            <div class="star" style="top: 65.7%; left: 54.9%;" onclick="showFacts('Rigel')"><div class="tooltip">Rigel</div></div>
+            <div class="star" style="top: 44.6%; left: 52%;" onclick="showFacts('Bellatrix')"><div class="tooltip">Bellatrix</div></div>
+            <div class="star" style="top: 56.3%; left: 46.8%;" onclick="showFacts('Alnitak')"><div class="tooltip">Alnitak</div></div>
+            <div class="star" style="top: 55.3%; left: 48%;" onclick="showFacts('Alnilam')"><div class="tooltip">Alnilam</div></div>
+            <div class="star" style="top: 54%; left: 49.5%;" onclick="showFacts('Mintaka')"><div class="tooltip">Mintaka</div></div>
+            <div class="star" style="top: 68%; left: 45%;" onclick="showFacts('Saiph')"><div class="tooltip">Saiph</div></div>
         </div>  
     </div>  
+
+    <div id="star-facts" style="padding-top: 10px; padding-bottom: 10px; font-size: 16px; color: #140047;">
+        Hover over a star, then click it to learn more.
+    </div>
+
+    <script>
+    function showFacts(star) {
+        const facts = {
+            "Betelgeuse": "Betelgeuse is a red supergiant nearing the end of its life. It may go supernova within the next million years.",
+            "Rigel": "Rigel is a blue supergiant and the brightest star in Orion. It shines about 120,000 times brighter than the Sun.",
+            "Bellatrix": "Bellatrix is a hot blue giant known as the Amazon Star. It is around 240 light-years away.",
+            "Alnitak": "Alnitak is a triple star system and the easternmost star in Orion's Belt.",
+            "Alnilam": "Alnilam is a massive blue supergiant about 2,000 light-years away and the middle star of Orion's Belt.",
+            "Mintaka": "Mintaka is a multiple star system and the westernmost star of Orion's Belt.",
+            "Saiph": "Saiph is a blue supergiant and the sixth brightest star in Orion. It is located about 650 light-years away."
+        };
+
+        document.getElementById("star-facts").innerText = facts[star];
+    }
+</script>
 
         <ul class="visible-info">             
             <li><strong>Nickname:</strong> “The Hunter” / “The Saucepan”</li>             
@@ -340,16 +370,38 @@
         <div class="constellation-container">      
             <div class="image-block">             
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Scorpius_IAU.svg/960px-Scorpius_IAU.svg.png" alt="Scorpius constellation diagram">         
-                <div class="star" style="top: 44.86%; left: 54.3%;"><div class="tooltip">Antares</div></div>
-                <div class="star" style="top: 61.2%; left: 38.4%;"><div class="tooltip">Shaula</div></div>
-                <div class="star" style="top: 69.93%; left: 38.42%;"><div class="tooltip">Sargas</div></div>
-                <div class="star" style="top: 44.77%; left: 62.4%;"><div class="tooltip">Acrab</div></div>
-                <div class="star" style="top: 43.47%; left: 56.53%;"><div class="tooltip">Alniyat</div></div>
-                <div class="star" style="top: 39.8%; left: 62.4%;"><div class="tooltip">Dschubba</div></div>
-                <div class="star" style="top: 35.4%; left: 61.44%;"><div class="tooltip">Graffias</div></div>
-                <div class="star" style="top: 61.4%; left: 39%;"><div class="tooltip">Lesath</div></div>
+                <div class="star" style="top: 44.86%; left: 54.3%;" onclick="showfacts('Antares')"><div class="tooltip">Antares</div></div>
+                <div class="star" style="top: 61.2%; left: 38.4%;" onclick="showfacts('Shaula')"><div class="tooltip">Shaula</div></div>
+                <div class="star" style="top: 69.93%; left: 38.42%;" onclick="showfacts('Sargas')"><div class="tooltip">Sargas</div></div>
+                <div class="star" style="top: 44.77%; left: 62.4%;" onclick="showfacts('Acrab')"><div class="tooltip">Acrab</div></div>
+                <div class="star" style="top: 43.47%; left: 56.53%;" onclick="showfacts('Alniyat')"><div class="tooltip">Alniyat</div></div>
+                <div class="star" style="top: 39.8%; left: 62.4%;" onclick="showfacts('Dschubba')"><div class="tooltip">Dschubba</div></div>
+                <div class="star" style="top: 35.4%; left: 61.44%;" onclick="showfacts('Graffias')"><div class="tooltip">Graffias</div></div>
+                <div class="star" style="top: 61.4%; left: 39%;" onclick="showfacts('Lesath')"><div class="tooltip">Lesath</div></div>
             </div>       
-        </div>      
+        </div>    
+        
+        <div id="star-facts2" style="padding-top: 10px; padding-bottom: 10px; font-size: 16px; color: #140047;">
+            Hover over a star, then click it to learn more.
+        </div>
+
+        <script>
+            function showfacts(star) {
+                const facts = {
+                    "Antares": "Antares is a red supergiant and the brightest star in Scorpius. It is about 550 light-years away and has a diameter roughly 700 times that of the Sun.",
+                    "Shaula": "Shaula is a blue subgiant and the second brightest star in Scorpius. It is located about 570 light-years away.",
+                    "Sargas": "Sargas is a yellow giant star approximately 270 light-years away. It is part of the tail of the scorpion.",
+                    "Acrab": "Acrab, also known as Beta Scorpii, is a multiple star system located about 500 light-years away.",
+                    "Alniyat": "Alniyat, or Sigma Scorpii, is a binary star system located around 570 light-years away.",
+                    "Dschubba": "Dschubba, or Delta Scorpii, is a variable star that can change in brightness. It is about 490 light-years away.",
+                    "Graffias": "Graffias, or Beta1 Scorpii, is part of the head of the scorpion and is located approximately 500 light-years away.",
+                    "Lesath": "Lesath, or Upsilon Scorpii, is a blue-white giant star located about 580 light-years away."
+                };
+
+                document.getElementById("star-facts2").innerText = facts[star];
+            }
+        </script>
+
         <ul class="visible-info">             
             <li><strong>Nickname:</strong> “The Scorpion” (Zodiac)</li>             
             <li><strong>Brightest star:</strong> Antares — a red supergiant ~170 ly away, magnitude ~1.0, deep orange colour</li>             

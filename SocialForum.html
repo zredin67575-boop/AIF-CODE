@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gravity</title>
+<title>Social Forum</title>
 
 <style>
     /* ---------- GLOBAL STYLES ---------- */
@@ -91,37 +91,18 @@
     }
 
     h1 { font-size: 28px; }
-    h2 { font-size: 24px; }
-    h3 { font-size: 48px; }
 
-    p, li {
+    p {
         font-size: 17px;
         line-height: 1.6;
         font-family: "Inter", Arial, sans-serif;
     }
-    li{
-        padding-left: 10px;
-        margin-left: 20px;
-    }
-
-    p2 {
-        font-size: 22px;
-        line-height: 1.6;
-        color: #000F47;
-        font-family: "Inter", Arial, sans-serif;
-    }
 
     /* ---------- LAYOUT ---------- */
-    .container,.container2 {
+    .container {
         width: 85%;
         max-width: 1000px;
         margin: 30px auto;
-    }
-
-    .container2 {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
     }
 
     .box {
@@ -132,45 +113,60 @@
         color: #1a044d;
     }
 
-    .box2 {
-        width: 65%;
-        max-width: 650px;
-        background-color: whitesmoke;
-        padding: 20px;
+    .forum-messages {
+        background: #fff;
         border-radius: 8px;
-        color: #1a044d;
+        padding: 15px;
+        height: 400px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        border: 2px solid #A08CCF;
     }
 
-    .box3 {
-        width: 35%;
+    .forum-input {  
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    /* ---------- IMAGE + CAPTION ---------- */
-    .image-block {
-        text-align: center;
-        margin-top: 20px;
+.forum-input input, .forum-input textarea {
+        width: 935px;
+        padding: 12px;
+        border-radius: 6px;
+        border: 2px solid #A08CCF;
+        font-size: 16px;
+        background: #fff;
     }
 
-    .image-block img {
-        width: 80%;
-        height: 80%;
-        max-height: 500px;
-        max-width: 500px;
-        border-radius: 8px;
-        display: flex;
-        margin: 0 auto;
-    }
-
-    .caption {
-        font-size: 14px;
-        margin-top: 8px;
+    .forum-input button {
+        background-color: #A08CCF;
         color: #140047;
-        font-style: italic;
-        padding-bottom: 20px;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
     }
+
+    .forum-input button:hover {
+        background-color: #C7B6F2;
+    }
+
+.message {
+    padding: 10px;
+    background: #fdfdfd;
+    border-radius: 6px;
+    border-left: 4px solid #A08CCF;
+}
+
+.reply {
+    padding: 8px;
+    background: #f7f3ff;
+    border-radius: 6px;
+    border-left: 3px solid #C7B6F2;
+}
+
 </style>
 </head>
 
@@ -241,29 +237,118 @@
 </header>
 
 <div class="container">
-    <h1 style="font-size: 48px; text-align: center;"><b>GRAVITY</b></h1>
+    <h2 style=" font-size: 48px; text-align: center;"><b>SOCIAL FORUM</b></h2>
     <div class="box">
-        <p>Gravity is a fundamental force of nature that attracts objects with mass towards each other. It is responsible for the motion of planets, stars, and galaxies, as well as the formation of celestial bodies. The strength of gravity depends on the masses of the objects involved and the distance between them, as described by Newton's law of universal gravitation.</p>
-        <p>Sir Isaac Newton proposed that every object attracts every other object and that the strength of this pull depends directly on the masses of the objects and the distance between them. </p>
-            <div class="image-block">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSha8dIguOSo8mBoABNbd_SDMT33rSJw292089BC002-s05fE8VWYUDkJyM&s=10" alt="isaac newton">
-                <div class="caption">Sir Isaac Newton, the father of classical mechanics.</div>
-            </div>        
-        <p>Einstein later refined our understanding of gravity with his theory of general relativity, describing it as the curvature of spacetime caused by mass and energy.</p>
-            <div class="image-block">
-                <img src="https://www.economist.com/sites/default/files/images/2015/11/blogs/economist-explains/20151128_stc969.png" alt="general relativity">
-                <div class="caption">Einstein's theory of general relativity describes gravity as the curvature of spacetime.</div>
-            </div>    
-    </div>
+        
+        <p>Chat with other astronomy enthusiasts!</p>
 
-    <div class="box">
-        <h2><b>MASS VERSUS WEIGHT:</b></h2>        
-        <p>Whilst used interchangeably in general conversation, physicists can become incredibly annoyed during such conversations due to a simple difference between the two. </p>
-        <p>Mass is a scalar quantity meaning it doesn't have a direction and is measurable in kilograms. On the other hand, weight is a vector meaning it has both magnitude and direction</p>
-        <p>On earth if someone had a mass of 50 kilograms they would have a weight of 490 newtons but if they were floating in zero g they would still be 50 kilograms but their weight would be zero newtons. </p>
-            <div class="image-block">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS66Mv-HYwbq5IWPiXNAvdK4ewBmNzhew70pi7wqmQlOkFxQXxRVX2G0TM&s=10" alt="mass vs weight">
-                <div class="caption">Mass is the amount of matter in an object, while weight is the force exerted by gravity on that mass.</div>
-            </div>    
+        <div id="messages" class="forum-messages"></div>
+
+        <div class="forum-input">
+            <input type="text" id="username" placeholder="Your name">
+            <textarea id="message" placeholder="Write a message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
-</body>
+</div>
+
+<script type="module">
+    import { 
+        initializeApp 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+    import { 
+        getDatabase, ref, push, onChildAdded, update 
+    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+    /* ------------------ FIREBASE CONFIG ------------------ */
+    const firebaseConfig = {
+        apiKey: "AIzaSyAprPn8Zqg_YUFetfa0X8Hkyv0QvrXyLks",
+        authDomain: "astrohub-forum.firebaseapp.com",
+        databaseURL: "https://astrohub-forum-default-rtdb.firebaseio.com",
+        projectId: "astrohub-forum",
+        storageBucket: "astrohub-forum.firebasestorage.app",
+        messagingSenderId: "237719612492",
+        appId: "1:237719612492:web:45cb87f6a8bcc961cf58e9",
+        measurementId: "G-HXVDYLDFRS"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const messagesRef = ref(db, "forumMessages");
+
+    /* ------------------ SEND MAIN MESSAGE ------------------ */
+    window.sendMessage = function () {
+        const username = document.getElementById("username").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!username || !message) return;
+
+        push(messagesRef, {
+            user: username,
+            text: message,
+            time: Date.now(),
+            replies: {}
+        });
+
+        document.getElementById("message").value = "";
+    };
+
+    /* ------------------ SEND REPLY ------------------ */
+    window.sendReply = function (parentId) {
+        const replyUser = prompt("Your name:");
+        const replyText = prompt("Your reply:");
+
+        if (!replyUser || !replyText) return;
+
+        const replyRef = ref(db, `forumMessages/${parentId}/replies`);
+        push(replyRef, {
+            user: replyUser,
+            text: replyText,
+            time: Date.now()
+        });
+    };
+
+    /* ------------------ DISPLAY MESSAGES ------------------ */
+    onChildAdded(messagesRef, (snapshot) => {
+        const msg = snapshot.val();
+        const msgId = snapshot.key;
+
+        const box = document.getElementById("messages");
+
+        const div = document.createElement("div");
+        div.classList.add("message");
+        div.style.marginBottom = "20px";
+
+        div.innerHTML = `
+            <strong>${msg.user}</strong>: ${msg.text}
+            <br>
+            <button onclick="sendReply('${msgId}')"
+                style="margin-top:8px; background:#C7B6F2; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">
+                Reply
+            </button>
+            <div id="replies-${msgId}" style="margin-left:20px; margin-top:10px;"></div>
+        `;
+
+        box.appendChild(div);
+
+        /* ------------------ DISPLAY REPLIES ------------------ */
+        const repliesRef = ref(db, `forumMessages/${msgId}/replies`);
+        onChildAdded(repliesRef, (replySnap) => {
+            const reply = replySnap.val();
+            const replyBox = document.getElementById(`replies-${msgId}`);
+
+            const replyDiv = document.createElement("div");
+            replyDiv.style.marginBottom = "10px";
+            replyDiv.innerHTML = `<strong>${reply.user}</strong>: ${reply.text}`;
+
+            replyBox.appendChild(replyDiv);
+        });
+
+        box.scrollTop = box.scrollHeight;      
+    });
+</script>
+
+
+    </body>
