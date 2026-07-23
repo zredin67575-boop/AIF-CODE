@@ -241,9 +241,14 @@
     <nav class="navbar">
 
         <!-- LOGO (clickable homepage link) -->
-        <a href="index.html" class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5fK5_uVOdL9u38EOyr6rA6BV7wVBc2zAk2O8KTHs8fw&s=10" alt="AstroHub">
-        </a>
+        <div class="dropdown">
+            <a href="index.html" class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5fK5_uVOdL9u38EOyr6rA6BV7wVBc2zAk2O8KTHs8fw&s=10" alt="AstronHub">
+            </a>
+            <div class="dropdown-content">  
+                <a href="Timeline.html">Time Line</a>
+            </div>
+        </div>
 
         <!-- CONSTELLATIONS DROPDOWN -->
         <div class="dropdown">
@@ -1424,7 +1429,9 @@
     </div>
 </section>
 
-<label for="back to top" class="showmore-button"><a href="SouthernHem.html">Back to Top</a></label>
+<div class="dropdown">
+    <button class="dropbtn"><a href="#top">Back to Top</a></button>
+</div>
 
 </div>
 </body>
